@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FinOne Theme and Page Customizer</title>
+<link rel="stylesheet" href="customizer.css">
+</head>
+<body class="cz">
+<aside id="side">
+  <div class="tabs"><button data-tab="brand" class="on">Brand</button><button data-tab="page">Page Builder</button></div>
+  <div class="pane on" id="pane-brand"></div>
+  <div class="pane" id="pane-page"></div>
+</aside>
+<section id="main">
+  <div id="bar">
+    <div class="seg" id="vp"><label><input type="radio" name="vp" value="ultra">2560</label><label><input type="radio" name="vp" value="wide">1920</label><label><input type="radio" name="vp" value="desktop" checked>Desktop 1440px</label><label><input type="radio" name="vp" value="tablet">Tablet 768px</label><label><input type="radio" name="vp" value="mobile">Mobile 390px</label></div>
+    <span class="st" id="status"></span><span class="sp"></span>
+    <button class="b" id="reset">Reset all</button><button class="b p" id="hide">Hide controls</button>
+  </div>
+  <div id="stage"><div id="wrap"><iframe id="frame" title="Page preview"></iframe></div></div>
+</section>
+<button class="b p" id="showctl">Show controls</button>
+<script type="module" src="js/customizer/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+/* ==========================================================================
+   tokens.css - brand-agnostic design tokens for the FinOne block library.
+   Default preset: "Granite Credit Union" (values taken 1:1 from the
+   engineer's live build, finone.finalytics.ai/blocks, theme.css :root).
+
+   Every block style in blocks.css reads ONLY these variables. To theme
+   a different credit union, override this file (or any subset). No
+   other file needs to change.
+
+   Engineer name -> token:
+     --sunset      -> --color-accent            (links, rates, CTAs, focus ring)
+     --sunset-dark -> --color-accent-dark       (CTA hover)
+     --denim       -> --color-dark              (primary dark surface / ink)
+     --sky         -> --color-secondary
+     --granite     -> --color-tint              (warm neutral surface)
+     --haze        -> --color-tertiary
+     --haze-light  -> --color-tertiary-light
+     --field       -> --color-highlight
+     --gray        -> --color-surface           (+ --color-gray-2..7)
+   ========================================================================== */
+
+:root {
+  /* ---- Brand palette ---- */
+  --color-accent:          #F94D2B;
+  --color-accent-dark:     #C12000;
+  --color-dark:            #1c2b39;
+  --color-secondary:       #45bfe5;
+  --color-tint:            #dddddc;
+  --color-tertiary:        #4b56a8;
+  --color-tertiary-light:  #838DDD;
+  --color-highlight:       #fdb913;
+  --color-primary:         var(--color-accent);   /* brand primary; Swiper sliders read this. Alias of the accent unless a theme sets it. */
+
+  /* ---- Neutrals ---- */
+  --color-white:           #FFFFFF;
+  --color-black:           #000000;
+  --color-ink:             #000000;   /* engineer: --roadtrip */
+  --color-paper:           #ffffff;   /* engineer: --powder   */
+  --color-surface:         #F5F5F5;   /* engineer: --gray     */
+  --color-gray-2:          #CCCCCC;   /* borders              */
+  --color-gray-3:          #979797;
+  --color-gray-4:          #BEBEBE;
+  --color-gray-5:          #D9D9D9;
+  --color-gray-6:          #A4A4A4;
+  --color-gray-7:          #f9f9f9;
+  --color-surface-alt:     #f8f9fa;   /* bootstrap --bs-light, used by breadcrumbs/profile */
+  --color-body:            #212529;   /* bootstrap --bs-dark                               */
+  --color-link:            var(--color-accent);  /* engineer references --linkblue (undefined) */
+
+  /* ---- Typography ---- */
+  --font-body:    "Source Sans 3", "Source Sans 3 Fallback", sans-serif;
+  --font-heading: "Source Sans 3", "Source Sans 3 Fallback", sans-serif;
+  --font-rate:    "Source Serif 4", "Source Serif 4 Fallback", serif;   /* rate display numerals */
+
+  /* ---- Radii ---- */
+  --radius-xs:     2px;     /* focus ring */
+  --radius-sm:     4px;
+  --radius-button: 5px;     /* buttons, inputs */
+  --radius-md:     12px;
+  --radius-card:   16px;    /* cards, rate tiles, profile */
+  --radius-lg:     20px;
+  --radius-pill:   50px;
+  --radius-round:  50%;
+
+  /* ---- Layout ---- */
+  --container-max:    1440px;   /* >= 1450px viewport */
+  --container-max-width: var(--container-max);  /* alias used by fullbleed.css */
+  --container-gutter: 20px;     /* --bs-gutter-x      */
+  --bp-sm: 680px;
+  --bp-md: 1050px;
+  --bp-lg: 1300px;
+  --bp-xl: 1450px;
+  --section-space-50:  50px;    /* .pt-50 / .pb-50 */
+  --section-space-75:  75px;
+  --section-space-100: 100px;
+
+  /* ---- Motion ---- */
+  --transition-base: all 0.2s ease-out;
+
+}

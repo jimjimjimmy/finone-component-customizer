@@ -1,0 +1,8 @@
+.DS_Store
+node_modules/
+_scratch/
+.claude/
+*.log
+*.tmp
+.cache/
+.npm/

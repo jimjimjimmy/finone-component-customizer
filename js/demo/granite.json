@@ -1,0 +1,3313 @@
+{
+ "0": {
+  "type": "hero",
+  "props": {
+   "size": "marquee",
+   "boxed": false,
+   "tone": "light",
+   "reverse": false,
+   "image": "assets/uploads/hero-woman-child-1920x1080-1.webp",
+   "imageClass": "attachment-full size-full",
+   "eyebrow": "Hero Marquee",
+   "title": "Tap into the Value of Your Home",
+   "body": "Your possibilities are endless with a 12-month Personal Loan at 8.99% APR*.",
+   "buttons": [
+    {
+     "label": "Apply Today",
+     "href": "#",
+     "variant": "primary-white"
+    },
+    {
+     "label": "Speedbump Test",
+     "href": "https://google.com",
+     "variant": "secondary-white"
+    }
+   ],
+   "noImage": false,
+   "bg": "secondary",
+   "overlay": 50,
+   "id": "customID",
+   "spacing": {
+    "section": {
+     "pt": "none",
+     "pb": "none",
+     "mt": "none",
+     "mb": "none",
+     "bg": "none",
+     "id": "customID"
+    },
+    "layouts": {
+     "hero": {
+      "pt": "none",
+      "pb": "none",
+      "mt": "none",
+      "mb": "none",
+      "bg": "secondary",
+      "style": "background-position: center;background-size: cover;background-repeat: no-repeat;"
+     }
+    }
+   }
+  }
+ },
+ "1": {
+  "type": "hero",
+  "props": {
+   "size": "large",
+   "boxed": false,
+   "tone": "light",
+   "reverse": false,
+   "image": "assets/uploads/hero-large-1920x860-1.webp",
+   "imageClass": "attachment-full size-full",
+   "eyebrow": "Hero Large",
+   "title": "Tap into the Value of Your Home",
+   "body": "Your possibilities are endless with a 12-month Personal Loan at 8.99% APR*.",
+   "buttons": [
+    {
+     "label": "Apply Today",
+     "href": "#",
+     "variant": "primary-white"
+    },
+    {
+     "label": "Speedbump Test",
+     "href": "https://google.com",
+     "variant": "secondary-white"
+    }
+   ],
+   "noImage": false,
+   "bg": "dark",
+   "id": "customID",
+   "spacing": {
+    "section": {
+     "pt": "none",
+     "pb": "none",
+     "mt": "none",
+     "mb": "none",
+     "bg": "none",
+     "id": "customID"
+    },
+    "layouts": {
+     "hero": {
+      "pt": "none",
+      "pb": "none",
+      "mt": "none",
+      "mb": "none",
+      "bg": "dark",
+      "style": "background-position: center;background-size: cover;background-repeat: no-repeat;"
+     }
+    }
+   }
+  }
+ },
+ "2": {
+  "type": "hero",
+  "props": {
+   "size": "medium",
+   "boxed": false,
+   "tone": "dark",
+   "reverse": true,
+   "image": "assets/uploads/hero-placeholder-1920x864.webp",
+   "imageClass": "attachment-w1920 size-w1920",
+   "eyebrow": "Hero Medium",
+   "title": "Tap into the Value of your Home",
+   "body": "Your possibilities are endless with a 12-month Personal Loan at <span class=\"rate-inline\" data-rate-field=\"rate_apy\" data-rate-id=\"6aee26d087bd5\">0.10%</span> APR*.",
+   "buttons": [
+    {
+     "label": "Primary CTA",
+     "href": "#",
+     "variant": "primary"
+    }
+   ],
+   "noImage": false,
+   "bg": "surface",
+   "spacing": {
+    "section": {
+     "pt": false,
+     "pb": false,
+     "mt": false,
+     "mb": false,
+     "bg": false
+    },
+    "layouts": {
+     "hero": {
+      "pt": "none",
+      "pb": "none",
+      "mt": "none",
+      "mb": "none",
+      "bg": "surface"
+     }
+    }
+   }
+  }
+ },
+ "3": {
+  "type": "hero",
+  "props": {
+   "size": "small",
+   "boxed": false,
+   "tone": "light",
+   "reverse": false,
+   "image": "assets/uploads/hero-large-1920x860-1.webp",
+   "imageClass": "attachment-full size-full",
+   "eyebrow": "Hero Small",
+   "title": "Example headline.",
+   "body": null,
+   "buttons": [
+    {
+     "label": "Check out our Rates",
+     "href": "#",
+     "variant": "primary-white"
+    }
+   ],
+   "noImage": false,
+   "bg": "surface",
+   "bgColor": "accent",
+   "spacing": {
+    "section": {
+     "pt": "none",
+     "pb": "none",
+     "mt": "none",
+     "mb": "none",
+     "bg": "none"
+    },
+    "layouts": {
+     "hero": {
+      "pt": "none",
+      "pb": "none",
+      "mt": "none",
+      "mb": "none",
+      "bg": "surface",
+      "style": "background-color: var(--color-accent);"
+     }
+    }
+   }
+  }
+ },
+ "4": {
+  "type": "hero",
+  "props": {
+   "size": "small",
+   "boxed": false,
+   "tone": "light",
+   "reverse": false,
+   "image": "assets/uploads/hero-placeholder-1920x864.webp",
+   "imageClass": "attachment-w1920 size-w1920",
+   "eyebrow": "Hero Small",
+   "title": "Example headline.",
+   "body": null,
+   "buttons": [
+    {
+     "label": "Check out our Rates",
+     "href": "#",
+     "variant": "primary-white"
+    }
+   ],
+   "noImage": true,
+   "bg": "none",
+   "bgColor": "tertiary",
+   "spacing": {
+    "section": {
+     "pt": "none",
+     "pb": "none",
+     "mt": "none",
+     "mb": "none",
+     "bg": "none"
+    },
+    "layouts": {
+     "hero": {
+      "pt": "none",
+      "pb": "none",
+      "mt": "none",
+      "mb": "none",
+      "bg": "none",
+      "style": "background-color: var(--color-tertiary);"
+     }
+    }
+   }
+  }
+ },
+ "5": {
+  "type": "hero",
+  "props": {
+   "size": "large",
+   "boxed": true,
+   "tone": "light",
+   "reverse": true,
+   "image": "assets/uploads/hero-boxes-large-01.webp",
+   "imageClass": null,
+   "eyebrow": "Hero Large – Boxed",
+   "title": "Tap into the Value of Your Home",
+   "body": "Your possibilities are endless with a 12-month Personal Loan at 8.99% APR*.",
+   "buttons": [
+    {
+     "label": "Apply Today",
+     "href": "#",
+     "variant": "primary-white"
+    },
+    {
+     "label": "Speedbump Test",
+     "href": "https://google.com",
+     "variant": "secondary-white"
+    }
+   ],
+   "noImage": false,
+   "bg": "dark",
+   "id": "customID",
+   "spacing": {
+    "section": {
+     "pt": 50,
+     "pb": 50,
+     "mt": "none",
+     "mb": "none",
+     "bg": "dark",
+     "id": "customID"
+    },
+    "layouts": {
+     "hero": {
+      "pt": "none",
+      "pb": "none",
+      "mt": "none",
+      "mb": "none",
+      "bg": "none",
+      "style": "background-position: center;background-size: cover;background-repeat: no-repeat;"
+     }
+    }
+   }
+  }
+ },
+ "6": {
+  "type": "hero",
+  "props": {
+   "size": "small",
+   "boxed": true,
+   "tone": "dark",
+   "reverse": false,
+   "image": "assets/uploads/hero-boxes-04.webp",
+   "imageClass": null,
+   "eyebrow": "Hero Medium – Boxed",
+   "title": "Tap into the Value of Your Home",
+   "body": "Your possibilities are endless with a 12-month Personal Loan at 8.99% APR*.",
+   "buttons": [
+    {
+     "label": "Apply Today",
+     "href": "#",
+     "variant": "primary"
+    },
+    {
+     "label": "Speedbump Test",
+     "href": "https://google.com",
+     "variant": "secondary"
+    }
+   ],
+   "noImage": false,
+   "bg": "tint",
+   "spacing": {
+    "section": {
+     "pt": 50,
+     "pb": 50,
+     "mt": "none",
+     "mb": "none",
+     "bg": "tint"
+    },
+    "layouts": {
+     "hero": {
+      "pt": "none",
+      "pb": "none",
+      "mt": "none",
+      "mb": "none",
+      "bg": "none",
+      "style": "background-position: center;background-size: cover;background-repeat: no-repeat;"
+     }
+    }
+   }
+  }
+ },
+ "7": {
+  "type": "hero",
+  "props": {
+   "size": "small",
+   "boxed": true,
+   "tone": "light",
+   "reverse": true,
+   "image": "assets/uploads/hero-boxes-small-03.webp",
+   "imageClass": null,
+   "eyebrow": "Hero Small – Boxed",
+   "title": "Checking Accounts",
+   "body": "Your possibilities are endless with a 12-month Personal Loan at 8.99% APR*.",
+   "buttons": [],
+   "noImage": false,
+   "bg": "tertiary",
+   "spacing": {
+    "section": {
+     "pt": 50,
+     "pb": 50,
+     "mt": "none",
+     "mb": "none",
+     "bg": "tertiary"
+    },
+    "layouts": {
+     "hero": {
+      "pt": "none",
+      "pb": "none",
+      "mt": "none",
+      "mb": "none",
+      "bg": "none",
+      "style": "background-position: center;background-size: cover;background-repeat: no-repeat;"
+     }
+    }
+   }
+  }
+ },
+ "8": {
+  "type": "breadcrumbs",
+  "props": {
+   "crumbs": [
+    {
+     "label": "Home",
+     "href": "https://finone.finalytics.ai/"
+    },
+    {
+     "label": "ACF Custom Blocks",
+     "href": "#"
+    }
+   ],
+   "spacing": {
+    "section": {
+     "pt": "none",
+     "pb": "none",
+     "mt": "none",
+     "mb": "none",
+     "bg": "none"
+    },
+    "layouts": {}
+   }
+  }
+ },
+ "9": {
+  "type": "anchorBar",
+  "props": {
+   "links": [
+    {
+     "label": "Anchor One",
+     "href": "#anchorOne"
+    },
+    {
+     "label": "Anchor Two",
+     "href": "#anchorTwo"
+    },
+    {
+     "label": "Anchor Three",
+     "href": "#anchorThree"
+    },
+    {
+     "label": "Anchor Four",
+     "href": "#anchorFour"
+    },
+    {
+     "label": "Anchor Five",
+     "href": "#anchorFive"
+    }
+   ],
+   "spacing": {
+    "section": {
+     "pt": "none",
+     "pb": "none",
+     "mt": "none",
+     "mb": "none",
+     "bg": "none"
+    },
+    "layouts": {
+     "anchor-bar": {
+      "pt": 50,
+      "pb": 50,
+      "mt": "none",
+      "mb": "none",
+      "bg": "none"
+     }
+    }
+   }
+  }
+ },
+ "10": {
+  "type": "certificateCalculator",
+  "props": {
+   "spacing": {
+    "section": {
+     "pt": "none",
+     "pb": "none",
+     "mt": "none",
+     "mb": "none",
+     "bg": "none"
+    },
+    "layouts": {
+     "content-block": {
+      "pt": 100,
+      "pb": 100,
+      "mt": "none",
+      "mb": "none",
+      "bg": "none"
+     }
+    }
+   }
+  }
+ },
+ "11": {
+  "type": "rateCards",
+  "props": {
+   "pt": 50,
+   "pb": 50,
+   "tiles": [
+    {
+     "icon": "assets/uploads/icon-checking.webp",
+     "title": "Checking",
+     "cta": {
+      "label": "Explore checking",
+      "href": "#"
+     },
+     "text": "Everyday banking with convenient access to your money."
+    },
+    {
+     "icon": "assets/uploads/icon-house.webp",
+     "title": "Home Loans",
+     "cta": {
+      "label": "Current rates",
+      "href": "#"
+     },
+     "text": "Home Loans Financing and guidance for your path to homeownership."
+    },
+    {
+     "icon": "assets/uploads/icon-certificate.webp",
+     "title": "Certificates",
+     "cta": {
+      "label": "Open today",
+      "href": "#"
+     },
+     "href": "/product/savings-certificates",
+     "rate": {
+      "lead": "24 months",
+      "value": "4.20",
+      "unit": "%",
+      "label": "APY"
+     }
+    },
+    {
+     "icon": "assets/uploads/icon-car.webp",
+     "title": "Auto Loans",
+     "cta": {
+      "label": "Get started",
+      "href": "#"
+     },
+     "href": "/product/auto-loans",
+     "rate": {
+      "lead": "Rates as low as",
+      "value": "4.47",
+      "unit": "%",
+      "label": "APR"
+     }
+    }
+   ],
+   "buttons": [
+    {
+     "label": "See All Rates",
+     "href": "#",
+     "variant": "primary"
+    }
+   ],
+   "spacing": {
+    "section": {
+     "pt": 50,
+     "pb": 50,
+     "mt": "none",
+     "mb": "none",
+     "bg": "none"
+    },
+    "layouts": {
+     "rate-cards": {
+      "pt": "none",
+      "pb": 50,
+      "mt": "none",
+      "mb": "none",
+      "bg": "none"
+     },
+     "buttons-group": {
+      "pt": "none",
+      "pb": "none",
+      "mt": "none",
+      "mb": "none",
+      "bg": "none"
+     }
+    }
+   }
+  }
+ },
+ "12": {
+  "type": "rateTable",
+  "props": {
+   "bg": "surface",
+   "pt": 50,
+   "pb": 50,
+   "title": "Savings Rates",
+   "body": "FinOne may update the Annual Percentage Yield (APY), Annual Percentage Rate (APR), Interest Rate, Tiers, and Terms at any time without notice.",
+   "name": "regular_savings",
+   "columns": [
+    "Account",
+    "Minimum Balance to Earn Dividends",
+    "APY*"
+   ],
+   "rows": [
+    [
+     "Primary Share Savings",
+     "$5",
+     "0.10%"
+    ],
+    [
+     "MoneyWise Primary Share",
+     "$5",
+     "3.00%"
+    ],
+    [
+     "Traditional and Roth IRA Savings",
+     "$0",
+     "1.00%"
+    ]
+   ],
+   "learn": {
+    "label": "Learn more about Savings",
+    "href": "#"
+   },
+   "open": {
+    "label": "Open an Account",
+    "href": "#"
+   },
+   "spacing": {
+    "section": {
+     "pt": 50,
+     "pb": 50,
+     "mt": "none",
+     "mb": "none",
+     "bg": "surface"
+    },
+    "layouts": {
+     "rates": {
+      "pt": "none",
+      "pb": "none",
+      "mt": "none",
+      "mb": "none",
+      "bg": "none"
+     }
+    },
+    "intro": {
+     "pt": false,
+     "pb": 50,
+     "mt": "none",
+     "mb": "none",
+     "bg": "none"
+    }
+   }
+  }
+ },
+ "13": {
+  "type": "rateTable",
+  "props": {
+   "bg": "none",
+   "pt": 50,
+   "pb": 50,
+   "title": "Checking Rates",
+   "body": "FinOne may update the Annual Percentage Yield (APY), Annual Percentage Rate (APR), Interest Rate, Tiers, and Terms at any time without notice.",
+   "name": "regular_checking",
+   "columns": [
+    "Account",
+    "Minimum Balance to Earn Dividends",
+    "APY*"
+   ],
+   "rows": [
+    [
+     "Advantage Checking",
+     "$0.00-$20,000",
+     "1.00%"
+    ],
+    [
+     "Basic Checking",
+     "N/A",
+     "0.00%"
+    ]
+   ],
+   "learn": {
+    "label": "Learn more about Checking",
+    "href": "#"
+   },
+   "open": {
+    "label": "Open an Account",
+    "href": "#"
+   },
+   "spacing": {
+    "section": {
+     "pt": 50,
+     "pb": 50,
+     "mt": "none",
+     "mb": "none",
+     "bg": "none"
+    },
+    "layouts": {
+     "rates": {
+      "pt": "none",
+      "pb": "none",
+      "mt": "none",
+      "mb": "none",
+      "bg": "none"
+     }
+    },
+    "intro": {
+     "pt": false,
+     "pb": 50,
+     "mt": "none",
+     "mb": "none",
+     "bg": "none"
+    }
+   }
+  }
+ },
+ "14": {
+  "type": "quicklinks",
+  "props": {
+   "pt": 100,
+   "pb": 100,
+   "bg": "tint",
+   "eyebrow": "Quicklinks",
+   "title": "Why we’re the best",
+   "items": [
+    {
+     "icon": "assets/uploads/icon-graph.svg",
+     "title": "Better Loans Rates",
+     "href": "#"
+    },
+    {
+     "icon": "assets/uploads/icon-calculators.svg",
+     "title": "Calculate Your Savings",
+     "href": "#"
+    },
+    {
+     "icon": "assets/uploads/icon-house.svg",
+     "title": "Mortgage Services",
+     "href": "#"
+    },
+    {
+     "icon": "assets/uploads/icon-calculators.svg",
+     "title": "Calculate Your Savings",
+     "href": "#"
+    },
+    {
+     "icon": "assets/uploads/icon-house.svg",
+     "title": "Mortgage Services",
+     "href": "#"
+    }
+   ],
+   "link": true,
+   "descriptions": false,
+   "spacing": {
+    "section": {
+     "pt": 100,
+     "pb": 100,
+     "mt": "none",
+     "mb": "none",
+     "bg": "tint"
+    },
+    "layouts": {
+     "quicklinks": {
+      "pt": "none",
+      "pb": "none",
+      "mt": "none",
+      "mb": "none",
+      "bg": "none"
+     }
+    },
+    "intro": {
+     "pt": "none",
+     "pb": 50,
+     "mt": "none",
+     "mb": "none",
+     "bg": "none"
+    }
+   }
+  }
+ },
+ "15": {
+  "type": "quicklinks",
+  "props": {
+   "pt": 100,
+   "pb": 100,
+   "eyebrow": "Quicklinks",
+   "title": "Why we’re the best",
+   "items": [
+    {
+     "icon": "assets/uploads/icon-graph.svg",
+     "title": "Better Loans Rates",
+     "text": "Dolore sint ea laboris eu sint duis nostrud harmud nunc ea dolor sint suscipit eros ea.",
+     "href": "#"
+    },
+    {
+     "icon": "assets/uploads/icon-calculators.svg",
+     "title": "Calculate Your Savings",
+     "text": "Consequat consectetur ultricies ut ex ullamco voluptate eros tempuribud quis.",
+     "href": "#"
+    },
+    {
+     "icon": "assets/uploads/icon-graph.svg",
+     "title": "Mortgage Services",
+     "text": "Sit ultricies ex, dolor quis in amet voluptate voluptate magna ex.",
+     "href": "#"
+    },
+    {
+     "icon": "assets/uploads/icon-house.svg",
+     "title": "Mortgage Services",
+     "text": "Consectetur dignissim pariatur, ex nulla esse laboris dolore, commodo ex aliquip ullamco quis amet exercitation ea elit.",
+     "href": "#"
+    }
+   ],
+   "link": true,
+   "descriptions": true,
+   "spacing": {
+    "section": {
+     "pt": 100,
+     "pb": 100,
+     "mt": "none",
+     "mb": "none",
+     "bg": "none"
+    },
+    "layouts": {
+     "quicklinks": {
+      "pt": "none",
+      "pb": "none",
+      "mt": "none",
+      "mb": "none",
+      "bg": "none"
+     }
+    },
+    "intro": {
+     "pt": "none",
+     "pb": 50,
+     "mt": "none",
+     "mb": "none",
+     "bg": "none"
+    }
+   }
+  }
+ },
+ "16": {
+  "type": "quicklinks",
+  "props": {
+   "pt": 100,
+   "pb": 100,
+   "bg": "highlight",
+   "eyebrow": "Quicklinks",
+   "title": "Why we’re the best",
+   "items": [
+    {
+     "icon": "assets/uploads/icon-graph.svg",
+     "title": "Better Loans Rates",
+     "text": "Dolore sint ea laboris eu sint duis nostrud harmud nunc ea dolor sint suscipit eros ea.",
+     "href": "#"
+    },
+    {
+     "icon": "assets/uploads/icon-calculators.svg",
+     "title": "Calculate Your Savings",
+     "text": "Consequat consectetur ultricies ut ex ullamco voluptate eros tempuribud quis.",
+     "href": "#"
+    }
+   ],
+   "link": true,
+   "descriptions": true,
+   "spacing": {
+    "section": {
+     "pt": 100,
+     "pb": 100,
+     "mt": "none",
+     "mb": "none",
+     "bg": "highlight"
+    },
+    "layouts": {
+     "quicklinks": {
+      "pt": "none",
+      "pb": "none",
+      "mt": "none",
+      "mb": "none",
+      "bg": "none"
+     }
+    },
+    "intro": {
+     "pt": "none",
+     "pb": 50,
+     "mt": "none",
+     "mb": "none",
+     "bg": "none"
+    }
+   }
+  }
+ },
+ "17": {
+  "type": "quicklinks",
+  "props": {
+   "pt": 100,
+   "pb": 100,
+   "bg": "surface",
+   "eyebrow": "Quicklinks – No Link Option",
+   "title": "Why we’re the best",
+   "items": [
+    {
+     "icon": "assets/uploads/icon-house.svg",
+     "title": "Our Community Outreach",
+     "text": "Dolore sint ea laboris eu sint duis nostrud harmud nunc ea dolor sint suscipit eros ea."
+    },
+    {
+     "icon": "assets/uploads/icon-graph.svg",
+     "title": "Premium Checking Accounts",
+     "text": "Ut fugiat harmud ex velit ullamco, amet fugiat, ultricies sit sunt eros esse eu adipiscing providerent."
+    },
+    {
+     "icon": "assets/uploads/icon-calculators.svg",
+     "title": "Best Savings Options",
+     "text": "Consequat consectetur ultricies ut ex ullamco voluptate eros tempuribud quis."
+    }
+   ],
+   "link": false,
+   "descriptions": true,
+   "spacing": {
+    "section": {
+     "pt": 100,
+     "pb": 100,
+     "mt": "none",
+     "mb": "none",
+     "bg": "surface"
+    },
+    "layouts": {
+     "quicklinks": {
+      "pt": "none",
+      "pb": "none",
+      "mt": "none",
+      "mb": "none",
+      "bg": "none"
+     }
+    },
+    "intro": {
+     "pt": "none",
+     "pb": 50,
+     "mt": "none",
+     "mb": "none",
+     "bg": "none"
+    }
+   }
+  }
+ },
+ "18": {
+  "type": "tabs",
+  "props": {
+   "pt": "none",
+   "pb": 100,
+   "panels": [
+    {
+     "label": "Promo",
+     "target": "tab-0-60ae6f8c4ed30a026acaa713f7ec3d49",
+     "block": {
+      "type": "promo",
+      "props": {
+       "variant": "split",
+       "reverse": false,
+       "bg": "none",
+       "sectionBg": "none",
+       "secSp": {},
+       "logo": null,
+       "eyebrow": "Nested Promo",
+       "title": "Nested Promo Title",
+       "body": "Tempuribud pulvinar suscipit dignissim quis suscipit esse doming nostrud nulla sint fugiat fugiat fugiat nunc sunt eros.",
+       "buttons": [],
+       "image": "assets/uploads/promo-720x560-1.webp",
+       "imageClass": null,
+       "nested": true
+      }
+     }
+    },
+    {
+     "label": "Products",
+     "target": "tab-1-6b6b153dd00bca722fe1fbe012662201",
+     "block": {
+      "type": "productCards",
+      "props": {
+       "noBorder": false,
+       "cards": [
+        {
+         "title": "Product",
+         "body": "Sit providerent quis consequat nisi ullamco ultricies laboris consequat velaliquam providerent, ultricies velit doming nunc.",
+         "icon": "assets/uploads/icon-house.svg",
+         "eyebrow": "Checking",
+         "link": {
+          "label": "Learn More",
+          "href": "https://finone.finalytics.ai/product",
+          "aria": "Product ADA title"
+         }
+        },
+        {
+         "title": "Product Page Sample",
+         "body": "If you’re after <a href=\"#\">maximum</a> reward points for every dollar spent and no annual fee, then you’ve come to the right place.",
+         "icon": "assets/uploads/icon-graph.svg",
+         "link": {
+          "label": "Get Product",
+          "href": "https://finone.finalytics.ai/product-page-sample",
+          "aria": "Card ADA title"
+         }
+        },
+        {
+         "title": "Visa Credit Card",
+         "body": "Adipiscing elit voluptate, nisi quis commodo esse duis sit sit, in amet elit quis quis dolor.",
+         "icon": "assets/uploads/icon-graph.svg",
+         "eyebrow": "Credit Cards",
+         "link": {
+          "label": "Product Link",
+          "href": "https://finone.finalytics.ai/visa-credit-card",
+          "aria": "Product ADA title"
+         }
+        }
+       ],
+       "nested": true
+      }
+     }
+    },
+    {
+     "label": "Feature",
+     "target": "tab-2-0dd115a580129d6d00b26f1f7c29994a",
+     "block": {
+      "type": "featureGrid",
+      "props": {
+       "boxed": true,
+       "border": false,
+       "layout": "grid",
+       "main": {
+        "image": null,
+        "eyebrow": "Feature Card Main",
+        "title": "Aliquip Fugiat Velaliquam Nostrud Suscipit",
+        "body": "Magna fugiat quis consequat ut, doming dolor nostrud laboris magna quis adipiscing sed dolore pulvinar ut ex commodo.",
+        "button": {
+         "label": "Call to Action",
+         "href": "#",
+         "variant": "secondary-white"
+        }
+       },
+       "items": [
+        {
+         "icon": "assets/uploads/icon-graph.svg",
+         "title": "Feature Grid Item",
+         "text": "Nulla ex pariatur ut dolor exercitation esse velaliquam laboris tempor sit dolor eros velit.",
+         "link": {
+          "label": "Learn More",
+          "href": "#",
+          "aria": ""
+         }
+        },
+        {
+         "icon": "assets/uploads/icon-house.svg",
+         "title": "Feature Grid Item",
+         "text": "Amet ultricies amet eu velit nisi nulla quis ea sint sit in voluptate laboris pulvinar.",
+         "link": {
+          "label": "Learn More",
+          "href": "#",
+          "aria": ""
+         }
+        },
+        {
+         "icon": "assets/uploads/icon-calculators.svg",
+         "title": "Feature Grid Item",
+         "text": "Ut nunc harmud commodo aliquip adipiscing urna nunc sed.",
+         "link": {
+          "label": "Learn More",
+          "href": "#",
+          "aria": ""
+         }
+        },
+        {
+         "icon": "assets/uploads/icon-graph.svg",
+         "title": "Feature Grid Item",
+         "text": "Nulla ex pariatur ut dolor exercitation esse velaliquam laboris tempor sit dolor eros velit.",
+         "link": {
+          "label": "Learn More",
+          "href": "#",
+          "aria": ""
+         }
+        }
+       ],
+       "nested": true
+      }
+     }
+    }
+   ],
+   "id": "tabs-1ce90c3bea52224c63b1348d4acac07f",
+   "spacing": {
+    "section": {
+     "pt": "none",
+     "pb": 100,
+     "mt": "none",
+     "mb": "none",
+     "bg": "none"
+    },
+    "layouts": {
+     "tabs": {
+      "pt": 75,
+      "pb": "none",
+      "mt": "none",
+      "mb": "none",
+      "bg": "none"
+     },
+     "promo": {
+      "pt": false,
+      "pb": false,
+      "mt": false,
+      "mb": false,
+      "bg": false
+     },
+     "cards": {
+      "pt": false,
+      "pb": false,
+      "mt": false,
+      "mb": false,
+      "bg": false
+     },
+     "feature-grid": {
+      "pt": false,
+      "pb": false,
+      "mt": false,
+      "mb": false,
+      "bg": false
+     }
+    }
+   }
+  }
+ },
+ "19": {
+  "type": "featureGrid",
+  "props": {
+   "pt": 75,
+   "pb": 75,
+   "bg": "surface",
+   "boxed": false,
+   "border": true,
+   "layout": "grid",
+   "main": {
+    "image": null,
+    "eyebrow": "Feature Card Main",
+    "title": "Aliquip Fugiat Velaliquam Nostrud Suscipit",
+    "body": "Magna fugiat quis consequat ut, doming dolor nostrud laboris magna quis adipiscing sed dolore pulvinar ut ex commodo.",
+    "button": {
+     "label": "Call to Action",
+     "href": "#",
+     "variant": "primary"
+    }
+   },
+   "items": [
+    {
+     "icon": "assets/uploads/icon-graph.svg",
+     "title": "Feature Grid Item",
+     "text": "Nulla ex pariatur ut dolor exercitation esse velaliquam laboris tempor sit dolor eros velit.",
+     "link": {
+      "label": "Learn More",
+      "href": "#",
+      "aria": "ADA compliant title"
+     }
+    },
+    {
+     "icon": "assets/uploads/icon-house.svg",
+     "title": "Feature Grid Item",
+     "text": "Amet ultricies amet eu velit nisi nulla quis ea sint sit in voluptate laboris pulvinar."
+    },
+    {
+     "icon": "assets/uploads/icon-calculators.svg",
+     "title": "Feature Grid Item",
+     "text": "Ut nunc harmud commodo aliquip adipiscing urna nunc sed.",
+     "link": {
+      "label": "Learn More",
+      "href": "#",
+      "aria": ""
+     }
+    },
+    {
+     "icon": "assets/uploads/icon-graph.svg",
+     "title": "Feature Grid Item",
+     "text": "Nulla ex pariatur ut dolor exercitation esse velaliquam laboris tempor sit dolor eros velit.",
+     "link": {
+      "label": "Learn More",
+      "href": "#",
+      "aria": ""
+     }
+    }
+   ],
+   "spacing": {
+    "section": {
+     "pt": 75,
+     "pb": 75,
+     "mt": "none",
+     "mb": "none",
+     "bg": "surface"
+    },
+    "layouts": {
+     "feature-grid": {
+      "pt": "none",
+      "pb": "none",
+      "mt": "none",
+      "mb": "none",
+      "bg": "none"
+     }
+    }
+   }
+  }
+ },
+ "20": {
+  "type": "featureGrid",
+  "props": {
+   "pt": 75,
+   "pb": 75,
+   "boxed": true,
+   "border": false,
+   "layout": "grid",
+   "main": {
+    "image": null,
+    "eyebrow": "Feature Card Main",
+    "title": "Aliquip Fugiat Velaliquam Nostrud Suscipit",
+    "body": "Magna fugiat quis consequat ut, doming dolor nostrud laboris magna quis adipiscing sed dolore pulvinar ut ex commodo.",
+    "button": {
+     "label": "Call to Action",
+     "href": "#",
+     "variant": "secondary-white"
+    }
+   },
+   "items": [
+    {
+     "icon": "assets/uploads/icon-graph.svg",
+     "title": "Feature Grid Item",
+     "text": "Nulla ex pariatur ut dolor exercitation esse velaliquam laboris tempor sit dolor eros velit.",
+     "link": {
+      "label": "Learn More",
+      "href": "#",
+      "aria": ""
+     }
+    },
+    {
+     "icon": "assets/uploads/icon-house.svg",
+     "title": "Feature Grid Item",
+     "text": "Amet ultricies amet eu velit nisi nulla quis ea sint sit in voluptate laboris pulvinar.",
+     "link": {
+      "label": "Learn More",
+      "href": "#",
+      "aria": ""
+     }
+    },
+    {
+     "icon": "assets/uploads/icon-calculators.svg",
+     "title": "Feature Grid Item",
+     "text": "Ut nunc harmud commodo aliquip adipiscing urna nunc sed.",
+     "link": {
+      "label": "Learn More",
+      "href": "#",
+      "aria": ""
+     }
+    },
+    {
+     "icon": "assets/uploads/icon-graph.svg",
+     "title": "Feature Grid Item",
+     "text": "Nulla ex pariatur ut dolor exercitation esse velaliquam laboris tempor sit dolor eros velit.",
+     "link": {
+      "label": "Learn More",
+      "href": "#",
+      "aria": ""
+     }
+    }
+   ],
+   "spacing": {
+    "section": {
+     "pt": 75,
+     "pb": 75,
+     "mt": "none",
+     "mb": "none",
+     "bg": "none"
+    },
+    "layouts": {
+     "feature-grid": {
+      "pt": "none",
+      "pb": "none",
+      "mt": "none",
+      "mb": "none",
+      "bg": "none"
+     }
+    }
+   }
+  }
+ },
+ "21": {
+  "type": "featureGrid",
+  "props": {
+   "pt": 75,
+   "pb": 75,
+   "bg": "surface",
+   "boxed": false,
+   "border": true,
+   "layout": "vertical",
+   "main": {
+    "image": "assets/uploads/card-family-hiking-480x240-1.webp",
+    "eyebrow": "Feature Card Main",
+    "title": "Aliquip Fugiat Velaliquam Nostrud Suscipit",
+    "body": "Magna fugiat quis consequat ut, doming dolor nostrud laboris magna quis adipiscing sed dolore pulvinar ut ex commodo.",
+    "button": {
+     "label": "Call to Action",
+     "href": "#",
+     "variant": "primary"
+    }
+   },
+   "items": [
+    {
+     "icon": "assets/uploads/icon-graph.svg",
+     "title": "Feature Grid Item",
+     "text": "Nulla ex pariatur ut dolor exercitation esse velaliquam laboris tempor sit dolor eros velit.",
+     "link": {
+      "label": "Learn More",
+      "href": "#",
+      "aria": "ADA compliant title"
+     }
+    },
+    {
+     "icon": "assets/uploads/icon-house.svg",
+     "title": "Feature Grid Item",
+     "text": "Amet ultricies amet eu velit nisi nulla quis ea sint sit in voluptate laboris pulvinar."
+    },
+    {
+     "icon": "assets/uploads/icon-house.svg",
+     "title": "Feature Grid Item",
+     "text": "Amet ultricies amet eu velit nisi nulla quis ea sint sit in voluptate laboris pulvinar."
+    }
+   ],
+   "spacing": {
+    "section": {
+     "pt": 75,
+     "pb": 75,
+     "mt": "none",
+     "mb": "none",
+     "bg": "surface"
+    },
+    "layouts": {
+     "feature-grid": {
+      "pt": "none",
+      "pb": "none",
+      "mt": "none",
+      "mb": "none",
+      "bg": "none"
+     }
+    }
+   }
+  }
+ },
+ "22": {
+  "type": "actionCards",
+  "props": {
+   "pt": 100,
+   "pb": 100,
+   "eyebrow": "Action Cards",
+   "title": "Open a checking account that checks all your boxes",
+   "body": "You know what you want in a checking account – and it’s not a one-size-fits-all answer. That’s why we give you plenty of options at FinOne Financial Credit Union.",
+   "cards": [
+    {
+     "eyebrow": "Our Most Popular Account",
+     "title": "Everyday Checking",
+     "body": "This account provies all the tools you need to manage money – without slowing you down.",
+     "buttons": [
+      {
+       "label": "Learn More",
+       "href": "#",
+       "variant": "secondary"
+      },
+      {
+       "label": "Open an Account",
+       "href": "#",
+       "variant": "primary"
+      }
+     ]
+    },
+    {
+     "eyebrow": "Keep a Larger Balance",
+     "title": "Interest Checking",
+     "body": "Put that money to work earning interest in this account.",
+     "buttons": [
+      {
+       "label": "Learn More",
+       "href": "#",
+       "variant": "secondary"
+      },
+      {
+       "label": "Open an Account",
+       "href": "#",
+       "variant": "primary"
+      }
+     ]
+    }
+   ],
+   "spacing": {
+    "section": {
+     "pt": 100,
+     "pb": 100,
+     "mt": "none",
+     "mb": "none",
+     "bg": "none"
+    },
+    "layouts": {
+     "cards": {
+      "pt": false,
+      "pb": "none",
+      "mt": "none",
+      "mb": "none",
+      "bg": false
+     }
+    },
+    "intro": {
+     "pt": "none",
+     "pb": 50,
+     "mt": "none",
+     "mb": "none",
+     "bg": "none"
+    }
+   }
+  }
+ },
+ "23": {
+  "type": "promoCards",
+  "props": {
+   "pt": 75,
+   "pb": 75,
+   "bg": "surface",
+   "title": "Promo Cards",
+   "body": "Quis sint sint aliquip, providerent suscipit ex velit exercitation urna consectetur quis velit pulvinar nostrud sint.",
+   "cards": [
+    {
+     "eyebrow": "Mobile App",
+     "title": "Credit Union Banking Everywhere",
+     "body": "Banking anywhere you are is easy with our Mobile App.",
+     "button": {
+      "label": "Download the App",
+      "href": "#",
+      "variant": "primary"
+     },
+     "image": "assets/uploads/promo-card-product-570x300-1.webp"
+    },
+    {
+     "eyebrow": "Youth Accounts",
+     "title": "Smart Start Youth Accounts",
+     "body": "Start your child on a journey toward financial literacy. We make saving fun and easy",
+     "button": {
+      "label": "Get More Info",
+      "href": "#",
+      "variant": "primary"
+     },
+     "image": "assets/uploads/smart-start-product-card.webp"
+    }
+   ],
+   "spacing": {
+    "section": {
+     "pt": 75,
+     "pb": 75,
+     "mt": "none",
+     "mb": "none",
+     "bg": "surface"
+    },
+    "layouts": {
+     "promo-cards": {
+      "pt": "none",
+      "pb": "none",
+      "mt": "none",
+      "mb": "none",
+      "bg": "none"
+     }
+    },
+    "intro": {
+     "pt": "none",
+     "pb": 50,
+     "mt": "none",
+     "mb": "none",
+     "bg": "none"
+    }
+   }
+  }
+ },
+ "24": {
+  "type": "productCards",
+  "props": {
+   "pt": 100,
+   "pb": 100,
+   "bg": "accent",
+   "eyebrow": "Product Cards Selection",
+   "title": "You may also be interested in:",
+   "noBorder": true,
+   "cards": [
+    {
+     "title": "Product Page Sample",
+     "body": "If you’re after <a href=\"#\">maximum</a> reward points for every dollar spent and no annual fee, then you’ve come to the right place.",
+     "icon": "assets/uploads/icon-graph.svg",
+     "link": {
+      "label": "Get Product",
+      "href": "https://finone.finalytics.ai/product-page-sample",
+      "aria": "Card ADA title"
+     }
+    },
+    {
+     "title": "Visa Credit Card",
+     "body": "Adipiscing elit voluptate, nisi quis commodo esse duis sit sit, in amet elit quis quis dolor.",
+     "icon": "assets/uploads/icon-graph.svg",
+     "eyebrow": "Credit Cards",
+     "link": {
+      "label": "Product Link",
+      "href": "https://finone.finalytics.ai/visa-credit-card",
+      "aria": "Product ADA title"
+     }
+    },
+    {
+     "title": "Product",
+     "body": "Sit providerent quis consequat nisi ullamco ultricies laboris consequat velaliquam providerent, ultricies velit doming nunc.",
+     "icon": "assets/uploads/icon-house.svg",
+     "eyebrow": "Checking",
+     "link": {
+      "label": "Learn More",
+      "href": "https://finone.finalytics.ai/product",
+      "aria": "Product ADA title"
+     }
+    }
+   ],
+   "spacing": {
+    "section": {
+     "pt": 100,
+     "pb": 100,
+     "mt": "none",
+     "mb": "none",
+     "bg": "accent",
+     "id": "anchorOne"
+    },
+    "layouts": {
+     "cards": {
+      "pt": "none",
+      "pb": "none",
+      "mt": "none",
+      "mb": "none",
+      "bg": "none"
+     }
+    },
+    "intro": {
+     "pt": "none",
+     "pb": 50,
+     "mt": "none",
+     "mb": "none",
+     "bg": "none"
+    }
+   }
+  }
+ },
+ "25": {
+  "type": "introSection",
+  "props": {
+   "eyebrow": "Intro Small",
+   "title": "Lorem ipsum dolor etiam ex erat consequat.",
+   "body": "Donec ultrices consectetur dui non cursus. Duis lorem mauris, scelerisque nec sem id, blandit sodales urna. Aliquam nec erat in leo luctus placerat. Etiam ex erat, consequat quis mauris et, dapibus congue mi.",
+   "width": 8,
+   "icon": "assets/uploads/icon-house.svg",
+   "buttons": [
+    {
+     "label": "Primary Dark",
+     "href": "#",
+     "variant": "primary-dark"
+    },
+    {
+     "label": "Secondary Dark",
+     "href": "#",
+     "variant": "secondary-white"
+    },
+    {
+     "label": "Text Dark CTA",
+     "href": "#",
+     "variant": "text-dark"
+    },
+    {
+     "label": "Text Light CTA",
+     "href": "#",
+     "variant": "text-light"
+    }
+   ],
+   "boxed": false,
+   "align": "center",
+   "bg": "secondary",
+   "pt": 100,
+   "pb": 100,
+   "mt": "none",
+   "mb": "none",
+   "secBg": "none",
+   "secSp": {
+    "pt": "none",
+    "pb": "none"
+   },
+   "spacing": {
+    "section": {
+     "pt": "none",
+     "pb": "none",
+     "mt": "none",
+     "mb": "none",
+     "bg": "none"
+    },
+    "layouts": {},
+    "intro": {
+     "pt": 100,
+     "pb": 100,
+     "mt": "none",
+     "mb": "none",
+     "bg": "secondary"
+    }
+   }
+  }
+ },
+ "26": {
+  "type": "introSection",
+  "props": {
+   "eyebrow": "Intro Medium",
+   "title": "Lorem ipsum dolor etiam ex erat consequat.",
+   "body": "Donec ultrices consectetur dui non cursus. Duis lorem mauris, scelerisque nec sem id, blandit sodales urna. Aliquam nec erat in leo luctus placerat. Etiam ex erat, consequat quis mauris et, dapibus congue mi.",
+   "width": 10,
+   "icon": "assets/uploads/icon-graph.svg",
+   "buttons": [
+    {
+     "label": "Primary CTA",
+     "href": "#",
+     "variant": "primary",
+     "aria": "Aria label for the button"
+    },
+    {
+     "label": "Secondary CTA",
+     "href": "#",
+     "variant": "secondary"
+    },
+    {
+     "label": "Tertiary CTA",
+     "href": "#",
+     "variant": "tertiary"
+    }
+   ],
+   "boxed": false,
+   "align": "center",
+   "bg": "none",
+   "pt": 100,
+   "pb": 50,
+   "mt": "none",
+   "mb": "none",
+   "secBg": "surface",
+   "secSp": {
+    "pt": "none",
+    "pb": "none"
+   },
+   "spacing": {
+    "section": {
+     "pt": "none",
+     "pb": "none",
+     "mt": "none",
+     "mb": "none",
+     "bg": "surface"
+    },
+    "layouts": {},
+    "intro": {
+     "pt": 100,
+     "pb": 50,
+     "mt": "none",
+     "mb": "none",
+     "bg": "none"
+    }
+   }
+  }
+ },
+ "27": {
+  "type": "introSection",
+  "props": {
+   "eyebrow": "Intro Large",
+   "title": "Lorem ipsum dolor etiam ex erat consequat.",
+   "body": "Donec ultrices consectetur dui non cursus. Duis lorem mauris, scelerisque nec sem id, blandit sodales urna. Aliquam nec erat in leo luctus placerat. Etiam ex erat, consequat quis mauris et, dapibus congue mi.",
+   "width": 12,
+   "boxed": false,
+   "align": "center",
+   "tone": "light",
+   "bg": "surface",
+   "pt": 50,
+   "pb": 100,
+   "mt": "none",
+   "mb": "none",
+   "secBg": "none",
+   "secSp": {
+    "pt": "none",
+    "pb": "none"
+   },
+   "style": "background-color: var(--color-accent);",
+   "spacing": {
+    "section": {
+     "pt": "none",
+     "pb": "none",
+     "mt": "none",
+     "mb": "none",
+     "bg": "none"
+    },
+    "layouts": {},
+    "intro": {
+     "pt": 50,
+     "pb": 100,
+     "mt": "none",
+     "mb": "none",
+     "bg": "surface",
+     "style": "background-color: var(--color-accent);"
+    }
+   }
+  }
+ },
+ "28": {
+  "type": "introSection",
+  "props": {
+   "eyebrow": "Intro Boxed",
+   "title": "Lorem ipsum dolor etiam ex erat consequat.",
+   "body": "Donec ultrices consectetur dui non cursus. Duis lorem mauris, scelerisque nec sem id, blandit sodales urna. Aliquam nec erat in leo luctus placerat. Etiam ex erat, consequat quis mauris et, dapibus congue mi.",
+   "width": 10,
+   "buttons": [
+    {
+     "label": "Call To Action",
+     "href": "#",
+     "variant": "primary-white"
+    }
+   ],
+   "boxed": true,
+   "boxedStyle": "background-color: var(--color-dark);",
+   "align": "center",
+   "tone": "light",
+   "bg": "none",
+   "pt": 100,
+   "pb": 50,
+   "mt": "none",
+   "mb": "none",
+   "secBg": "none",
+   "secSp": {
+    "pt": "none",
+    "pb": "none"
+   },
+   "spacing": {
+    "section": {
+     "pt": "none",
+     "pb": "none",
+     "mt": "none",
+     "mb": "none",
+     "bg": "none"
+    },
+    "layouts": {},
+    "intro": {
+     "pt": 100,
+     "pb": 50,
+     "mt": "none",
+     "mb": "none",
+     "bg": "none"
+    }
+   }
+  }
+ },
+ "29": {
+  "type": "introSection",
+  "props": {
+   "eyebrow": "Intro Boxed w/ Background",
+   "title": "Lorem ipsum dolor etiam ex erat consequat.",
+   "body": "Donec ultrices consectetur dui non cursus. Duis lorem mauris, scelerisque nec sem id, blandit sodales urna. Aliquam nec erat in leo luctus placerat. Etiam ex erat, consequat quis mauris et, dapibus congue mi.",
+   "width": 10,
+   "buttons": [
+    {
+     "label": "Call To Action",
+     "href": "#",
+     "variant": "primary-white"
+    }
+   ],
+   "boxed": true,
+   "boxedStyle": "background-image: url(assets/uploads/tiago-wolf-W4CTDtL2LQo-unsplash-scaled-1.webp);background-position: center;background-size: cover;background-repeat: no-repeat;",
+   "align": "center",
+   "tone": "light",
+   "bg": "none",
+   "pt": "none",
+   "pb": 50,
+   "mt": "none",
+   "mb": "none",
+   "secBg": "none",
+   "secSp": {
+    "pt": "none",
+    "pb": "none"
+   },
+   "spacing": {
+    "section": {
+     "pt": "none",
+     "pb": "none",
+     "mt": "none",
+     "mb": "none",
+     "bg": "none"
+    },
+    "layouts": {},
+    "intro": {
+     "pt": "none",
+     "pb": 50,
+     "mt": "none",
+     "mb": "none",
+     "bg": "none"
+    }
+   }
+  }
+ },
+ "30": {
+  "type": "introSection",
+  "props": {
+   "eyebrow": "Intro Boxed w/ Border",
+   "title": "Lorem ipsum dolor etiam ex erat consequat.",
+   "body": "Donec ultrices consectetur dui non cursus. Duis lorem mauris, scelerisque nec sem id, blandit sodales urna. Aliquam nec erat in leo luctus placerat. Etiam ex erat, consequat quis mauris et, dapibus congue mi.",
+   "width": 10,
+   "buttons": [
+    {
+     "label": "Call To Action",
+     "href": "#",
+     "variant": "primary"
+    }
+   ],
+   "boxed": true,
+   "boxedStyle": "border: 2px solid var(--color-accent);",
+   "align": "center",
+   "bg": "none",
+   "pt": "none",
+   "pb": 50,
+   "mt": "none",
+   "mb": "none",
+   "secBg": "none",
+   "secSp": {
+    "pt": "none",
+    "pb": "none"
+   },
+   "spacing": {
+    "section": {
+     "pt": "none",
+     "pb": "none",
+     "mt": "none",
+     "mb": "none",
+     "bg": "none"
+    },
+    "layouts": {},
+    "intro": {
+     "pt": "none",
+     "pb": 50,
+     "mt": "none",
+     "mb": "none",
+     "bg": "none"
+    }
+   }
+  }
+ },
+ "31": {
+  "type": "promo",
+  "props": {
+   "variant": "product",
+   "reverse": false,
+   "bg": "none",
+   "sectionBg": "white",
+   "secSp": {
+    "pt": "none",
+    "pb": "none"
+   },
+   "pt": 75,
+   "pb": 75,
+   "mt": "none",
+   "mb": "none",
+   "logo": null,
+   "eyebrow": "Promo – Product Focused",
+   "title": "Dolor Doming Elit Esse Velit Eros Ultricies",
+   "body": "In nulla aliquip, voluptate ut ea adipiscing nostrud dignissim consequat, pariatur duis ut urna doming doming pariatur aliquip providerent sint nunc.",
+   "buttons": [
+    {
+     "label": "Call To Action",
+     "href": "#",
+     "variant": "tertiary"
+    }
+   ],
+   "image": "assets/uploads/promo-product-600x600-1.png",
+   "imageClass": null,
+   "spacing": {
+    "section": {
+     "pt": "none",
+     "pb": "none",
+     "mt": "none",
+     "mb": "none",
+     "bg": "white"
+    },
+    "layouts": {
+     "promo": {
+      "pt": 75,
+      "pb": 75,
+      "mt": "none",
+      "mb": "none",
+      "bg": "none"
+     }
+    }
+   }
+  }
+ },
+ "32": {
+  "type": "promo",
+  "props": {
+   "variant": "product",
+   "reverse": true,
+   "bg": "surface",
+   "sectionBg": "none",
+   "secSp": {
+    "pt": "none",
+    "pb": "none"
+   },
+   "pt": 75,
+   "pb": 75,
+   "mt": "none",
+   "mb": "none",
+   "logo": null,
+   "eyebrow": "Promo – Product Focused",
+   "title": "Dolor Doming Elit Esse Velit Eros Ultricies",
+   "body": "In nulla aliquip, voluptate ut ea adipiscing nostrud dignissim consequat, pariatur duis ut urna doming doming pariatur aliquip providerent sint nunc.",
+   "buttons": [
+    {
+     "label": "Call To Action",
+     "href": "#",
+     "variant": "tertiary"
+    }
+   ],
+   "image": "assets/uploads/promo-product-600x600-1.png",
+   "imageClass": null,
+   "spacing": {
+    "section": {
+     "pt": "none",
+     "pb": "none",
+     "mt": "none",
+     "mb": "none",
+     "bg": "none"
+    },
+    "layouts": {
+     "promo": {
+      "pt": 75,
+      "pb": 75,
+      "mt": "none",
+      "mb": "none",
+      "bg": "surface"
+     }
+    }
+   }
+  }
+ },
+ "33": {
+  "type": "promo",
+  "props": {
+   "variant": "split",
+   "reverse": false,
+   "bg": "none",
+   "sectionBg": "none",
+   "secSp": {
+    "pt": "none",
+    "pb": "none"
+   },
+   "pt": 50,
+   "pb": 50,
+   "mt": "none",
+   "mb": "none",
+   "logo": "assets/uploads/icon-house.svg",
+   "eyebrow": "Promo Split",
+   "title": "First featurette heading. It’ll blow your mind.",
+   "body": "Some great placeholder content for the first featurette here. Imagine some exciting prose here.",
+   "buttons": [
+    {
+     "label": "Learn More",
+     "href": "#",
+     "variant": "primary"
+    }
+   ],
+   "image": "assets/uploads/promo-720x560-1.webp",
+   "imageClass": null,
+   "spacing": {
+    "section": {
+     "pt": "none",
+     "pb": "none",
+     "mt": "none",
+     "mb": "none",
+     "bg": "none"
+    },
+    "layouts": {
+     "promo": {
+      "pt": 50,
+      "pb": 50,
+      "mt": "none",
+      "mb": "none",
+      "bg": "none"
+     }
+    }
+   }
+  }
+ },
+ "34": {
+  "type": "promo",
+  "props": {
+   "variant": "split",
+   "reverse": true,
+   "bg": "none",
+   "sectionBg": "none",
+   "secSp": {
+    "pt": "none",
+    "pb": "none"
+   },
+   "pt": 50,
+   "pb": 50,
+   "mt": "none",
+   "mb": "none",
+   "logo": null,
+   "eyebrow": "Promo Split – Reverse",
+   "title": "First featurette heading. It’ll blow your mind.",
+   "body": "Some great placeholder content for the first featurette here. Imagine some exciting prose here.",
+   "buttons": [
+    {
+     "label": "Learn More",
+     "href": "#",
+     "variant": "primary"
+    }
+   ],
+   "image": "assets/uploads/promo-720x560-1.webp",
+   "imageClass": null,
+   "spacing": {
+    "section": {
+     "pt": "none",
+     "pb": "none",
+     "mt": "none",
+     "mb": "none",
+     "bg": "none"
+    },
+    "layouts": {
+     "promo": {
+      "pt": 50,
+      "pb": 50,
+      "mt": "none",
+      "mb": "none",
+      "bg": "none"
+     }
+    }
+   }
+  }
+ },
+ "35": {
+  "type": "promo",
+  "props": {
+   "variant": "offset",
+   "reverse": false,
+   "bg": "surface",
+   "sectionBg": "none",
+   "secSp": {
+    "pt": "none",
+    "pb": "none"
+   },
+   "pt": 50,
+   "pb": 50,
+   "mt": "none",
+   "mb": "none",
+   "logo": "assets/uploads/icon-calculators.svg",
+   "eyebrow": "Promo Offset",
+   "title": "First featurette heading. It’ll blow your mind.",
+   "body": "Some great placeholder content for the first featurette here. Imagine some exciting prose here.",
+   "buttons": [
+    {
+     "label": "Learn More",
+     "href": "#",
+     "variant": "primary"
+    }
+   ],
+   "image": "assets/uploads/promo-720x560-2.webp",
+   "imageClass": null,
+   "spacing": {
+    "section": {
+     "pt": "none",
+     "pb": "none",
+     "mt": "none",
+     "mb": "none",
+     "bg": "none"
+    },
+    "layouts": {
+     "promo": {
+      "pt": 50,
+      "pb": 50,
+      "mt": "none",
+      "mb": "none",
+      "bg": "surface"
+     }
+    }
+   }
+  }
+ },
+ "36": {
+  "type": "promo",
+  "props": {
+   "variant": "offset",
+   "reverse": true,
+   "bg": "surface",
+   "sectionBg": "none",
+   "secSp": {
+    "pt": "none",
+    "pb": "none"
+   },
+   "pt": 50,
+   "pb": 50,
+   "mt": "none",
+   "mb": "none",
+   "logo": null,
+   "eyebrow": "Promo Offset – Reverse",
+   "title": "First featurette heading. It’ll blow your mind.",
+   "body": "Some great placeholder content for the first featurette here. Imagine some exciting prose here.",
+   "buttons": [
+    {
+     "label": "Learn More",
+     "href": "#",
+     "variant": "primary"
+    }
+   ],
+   "image": "assets/uploads/promo-720x560-2.webp",
+   "imageClass": null,
+   "spacing": {
+    "section": {
+     "pt": "none",
+     "pb": "none",
+     "mt": "none",
+     "mb": "none",
+     "bg": "none"
+    },
+    "layouts": {
+     "promo": {
+      "pt": 50,
+      "pb": 50,
+      "mt": "none",
+      "mb": "none",
+      "bg": "surface"
+     }
+    }
+   }
+  }
+ },
+ "37": {
+  "type": "promo",
+  "props": {
+   "variant": "full",
+   "reverse": false,
+   "bg": "none",
+   "sectionBg": "none",
+   "secSp": {
+    "pt": "none",
+    "pb": "none"
+   },
+   "pt": 75,
+   "pb": 75,
+   "mt": "none",
+   "mb": "none",
+   "logo": "assets/uploads/icon-house.svg",
+   "eyebrow": "Promo Full",
+   "title": "First featurette heading. It’ll blow your mind.",
+   "body": "Some great placeholder content for the first featurette here. Imagine some exciting prose here.",
+   "buttons": [
+    {
+     "label": "Learn More",
+     "href": "#",
+     "variant": "primary"
+    }
+   ],
+   "image": "assets/uploads/promo-full-1920x1080-1.webp",
+   "imageClass": "attachment-full size-full",
+   "spacing": {
+    "section": {
+     "pt": "none",
+     "pb": "none",
+     "mt": "none",
+     "mb": "none",
+     "bg": "none"
+    },
+    "layouts": {
+     "promo": {
+      "pt": 75,
+      "pb": 75,
+      "mt": "none",
+      "mb": "none",
+      "bg": "none"
+     }
+    }
+   }
+  }
+ },
+ "38": {
+  "type": "promo",
+  "props": {
+   "variant": "full",
+   "reverse": true,
+   "bg": "none",
+   "sectionBg": "none",
+   "secSp": {
+    "pt": "none",
+    "pb": "none"
+   },
+   "pt": 75,
+   "pb": 75,
+   "mt": "none",
+   "mb": "none",
+   "logo": "assets/uploads/icon-house.svg",
+   "eyebrow": "Promo Full",
+   "title": "First featurette heading. It’ll blow your mind.",
+   "body": "Some great placeholder content for the first featurette here. Imagine some exciting prose here.",
+   "buttons": [
+    {
+     "label": "Learn More",
+     "href": "#",
+     "variant": "primary"
+    }
+   ],
+   "image": "assets/uploads/promo-full-1920x1080-1.webp",
+   "imageClass": "attachment-full size-full",
+   "spacing": {
+    "section": {
+     "pt": "none",
+     "pb": "none",
+     "mt": "none",
+     "mb": "none",
+     "bg": "none"
+    },
+    "layouts": {
+     "promo": {
+      "pt": 75,
+      "pb": 75,
+      "mt": "none",
+      "mb": "none",
+      "bg": "none"
+     }
+    }
+   }
+  }
+ },
+ "39": {
+  "type": "banner",
+  "props": {
+   "variant": "boxed",
+   "pt": 100,
+   "pb": "none",
+   "bg": "surface",
+   "video": "assets/uploads/spotlight_home_bop.mp4",
+   "poster": "assets/uploads/video-bg-image.webp",
+   "logo": "assets/uploads/icon-house.svg",
+   "eyebrow": "Banner Boxed",
+   "title": "Lorem ipsum dolor etiam ex erat consequat.",
+   "body": "Donec ultrices consectetur dui non cursus. Duis lorem mauris, scelerisque nec sem id, blandit sodales urna. Aliquam nec erat in leo luctus placerat. Etiam ex erat, consequat quis mauris et, dapibus congue mi.",
+   "buttons": [
+    {
+     "label": "Call to Action",
+     "href": "#",
+     "variant": "primary-white"
+    }
+   ],
+   "id": "anchorTwo",
+   "spacing": {
+    "section": {
+     "pt": 100,
+     "pb": "none",
+     "mt": "none",
+     "mb": "none",
+     "bg": "surface",
+     "id": "anchorTwo"
+    },
+    "layouts": {
+     "banner": {
+      "pt": "none",
+      "pb": 100,
+      "mt": "none",
+      "mb": "none",
+      "bg": "none"
+     }
+    }
+   }
+  }
+ },
+ "40": {
+  "type": "banner",
+  "props": {
+   "variant": "full",
+   "pt": "none",
+   "pb": "none",
+   "video": "assets/uploads/spotlight_home_bop.mp4",
+   "poster": "assets/uploads/video-bg-image.webp",
+   "logo": "assets/uploads/icon-house.svg",
+   "eyebrow": "Banner Full",
+   "title": "Lorem ipsum dolor etiam ex erat consequat.",
+   "body": "Donec ultrices consectetur dui non cursus. Duis lorem mauris, scelerisque nec sem id, blandit sodales urna. Aliquam nec erat in leo luctus placerat. Etiam ex erat, consequat quis mauris et, dapibus congue mi.",
+   "buttons": [
+    {
+     "label": "Call to Action",
+     "href": "#",
+     "variant": "primary-white"
+    }
+   ],
+   "id": null,
+   "spacing": {
+    "section": {
+     "pt": "none",
+     "pb": "none",
+     "mt": "none",
+     "mb": "none",
+     "bg": "none"
+    },
+    "layouts": {
+     "banner": {
+      "pt": "none",
+      "pb": "none",
+      "mt": "none",
+      "mb": "none",
+      "bg": "none"
+     }
+    }
+   }
+  }
+ },
+ "41": {
+  "type": "compareTable",
+  "props": {
+   "pt": 75,
+   "pb": 75,
+   "bg": "surface",
+   "eyebrow": "Comparison Table",
+   "title": "Compare Checking Accounts",
+   "body": "You use your checking account just about every day, so we offer options that simplify money management and work for your lifestyle.",
+   "columns": [
+    {
+     "name": "Advantage",
+     "sub": "Checking",
+     "blurb": "Our premium account with extra protections and rewards.",
+     "button": {
+      "label": "Open an Account",
+      "href": "#"
+     }
+    },
+    {
+     "name": "Basic",
+     "sub": "Checking",
+     "blurb": "Our premium account with extra protections and rewards.",
+     "button": {
+      "label": "Open an Account",
+      "href": "#"
+     }
+    },
+    {
+     "name": "MyChecking",
+     "sub": "Checking",
+     "blurb": "Our premium account with extra protections and rewards.",
+     "button": {
+      "label": "Open an Account",
+      "href": "#"
+     }
+    }
+   ],
+   "taglines": [
+    "Earn dividends and get great perks",
+    "A simple, no-frills account",
+    "For students and members 25 and under"
+   ],
+   "rows": [
+    {
+     "label": "Monthly Fee",
+     "cells": [
+      "No fee w/ eStatement enrollment 1",
+      "$6.95/month",
+      "$6.95/month"
+     ]
+    },
+    {
+     "label": "Minimum Balance Requirement",
+     "cells": [
+      "$0",
+      "$0",
+      "$0"
+     ]
+    },
+    {
+     "label": "Health Discounts",
+     "cells": [
+      {
+       "check": true
+      },
+      {
+       "check": true
+      },
+      ""
+     ]
+    }
+   ],
+   "check": "assets/uploads/icon-checkmark.svg",
+   "spacing": {
+    "section": {
+     "pt": 75,
+     "pb": 75,
+     "mt": "none",
+     "mb": "none",
+     "bg": "surface"
+    },
+    "layouts": {
+     "compare-table-block": {
+      "pt": false,
+      "pb": "none",
+      "mt": "none",
+      "mb": "none",
+      "bg": "none"
+     }
+    },
+    "intro": {
+     "pt": "none",
+     "pb": 50,
+     "mt": "none",
+     "mb": "none",
+     "bg": "none"
+    }
+   }
+  }
+ },
+ "42": {
+  "type": "steps",
+  "props": {
+   "variant": "number",
+   "bg": "none",
+   "eyebrow": "Number Based",
+   "title": "Steps Block",
+   "body": "Donec ultrices consectetur dui non cursus. Duis lorem mauris, scelerisque nec sem id, blandit sodales urna. Aliquam nec erat in leo luctus placerat. Etiam ex erat, consequat quis mauris et, dapibus congue mi.",
+   "steps": [
+    {
+     "title": "Step 1",
+     "body": "Paragraph of text beneath the heading to explain the heading."
+    },
+    {
+     "title": "Step 2",
+     "body": "Paragraph of text beneath the heading to explain the heading."
+    },
+    {
+     "title": "Step 3",
+     "body": "Paragraph of text beneath the heading to explain the heading."
+    },
+    {
+     "title": "Step 4",
+     "body": "Paragraph of text beneath the heading to explain the heading."
+    }
+   ],
+   "pb": 100,
+   "spacing": {
+    "section": {
+     "pt": "none",
+     "pb": "none",
+     "mt": "none",
+     "mb": "none",
+     "bg": "none",
+     "style": "background-position: center;background-size: cover;background-repeat: no-repeat;"
+    },
+    "layouts": {
+     "steps": {
+      "pt": "none",
+      "pb": 100,
+      "mt": "none",
+      "mb": "none",
+      "bg": "none"
+     }
+    },
+    "intro": {
+     "pt": 100,
+     "pb": 50,
+     "mt": "none",
+     "mb": 25,
+     "bg": "none"
+    }
+   }
+  }
+ },
+ "43": {
+  "type": "steps",
+  "props": {
+   "variant": "icon",
+   "bg": "surface",
+   "eyebrow": "Icon Based",
+   "title": "Steps Block",
+   "body": "Donec ultrices consectetur dui non cursus. Duis lorem mauris, scelerisque nec sem id, blandit sodales urna. Aliquam nec erat in leo luctus placerat. Etiam ex erat, consequat quis mauris et, dapibus congue mi.",
+   "steps": [
+    {
+     "title": "Step 1",
+     "body": "Paragraph of text beneath the heading to explain the heading.",
+     "icon": "assets/uploads/icon-house.svg"
+    },
+    {
+     "title": "Step 2",
+     "body": "Paragraph of text beneath the heading to explain the heading.",
+     "icon": "assets/uploads/icon-graph.svg"
+    },
+    {
+     "title": "Step 3",
+     "body": "Paragraph of text beneath the heading to explain the heading.",
+     "icon": "assets/uploads/icon-calculators.svg"
+    },
+    {
+     "title": "Step 4",
+     "body": "Paragraph of text beneath the heading to explain the heading.",
+     "icon": "assets/uploads/icon-house.svg"
+    }
+   ],
+   "pb": 100,
+   "spacing": {
+    "section": {
+     "pt": "none",
+     "pb": "none",
+     "mt": "none",
+     "mb": "none",
+     "bg": "surface",
+     "style": "background-position: center;background-size: cover;background-repeat: no-repeat;"
+    },
+    "layouts": {
+     "steps": {
+      "pt": "none",
+      "pb": 100,
+      "mt": "none",
+      "mb": "none",
+      "bg": "none"
+     }
+    },
+    "intro": {
+     "pt": 100,
+     "pb": 50,
+     "mt": "none",
+     "mb": 25,
+     "bg": "none"
+    }
+   }
+  }
+ },
+ "44": {
+  "type": "steps",
+  "props": {
+   "variant": "image",
+   "bg": "none",
+   "eyebrow": "Image Based",
+   "title": "Steps Block",
+   "body": "Donec ultrices consectetur dui non cursus. Duis lorem mauris, scelerisque nec sem id, blandit sodales urna. Aliquam nec erat in leo luctus placerat. Etiam ex erat, consequat quis mauris et, dapibus congue mi.",
+   "steps": [
+    {
+     "title": "Step 1",
+     "body": "Paragraph of text beneath the heading to explain the heading.",
+     "image": "assets/uploads/cards04.webp"
+    },
+    {
+     "title": "Step 2",
+     "body": "Paragraph of text beneath the heading to explain the heading.",
+     "image": "assets/uploads/cards03.webp"
+    },
+    {
+     "title": "Step 3",
+     "body": "Paragraph of text beneath the heading to explain the heading.",
+     "image": "assets/uploads/cards02.webp"
+    }
+   ],
+   "pb": 100,
+   "spacing": {
+    "section": {
+     "pt": "none",
+     "pb": "none",
+     "mt": "none",
+     "mb": "none",
+     "bg": "none",
+     "style": "background-position: center;background-size: cover;background-repeat: no-repeat;"
+    },
+    "layouts": {
+     "steps": {
+      "pt": "none",
+      "pb": 100,
+      "mt": "none",
+      "mb": "none",
+      "bg": "none"
+     }
+    },
+    "intro": {
+     "pt": 100,
+     "pb": 50,
+     "mt": "none",
+     "mb": 25,
+     "bg": "none"
+    }
+   }
+  }
+ },
+ "45": {
+  "type": "logoGrid",
+  "props": {
+   "pt": 100,
+   "pb": 50,
+   "bg": "surface",
+   "eyebrow": "Logo / Awards Grid",
+   "title": "Trusted by business owners",
+   "logos": [
+    {
+     "src": "assets/uploads/sunmarrow-solar.svg",
+     "href": "#",
+     "label": "Visit the Sun Marrow website",
+     "host": "sunmarrow.com"
+    },
+    {
+     "src": "assets/uploads/quarry-studio.svg"
+    },
+    {
+     "src": "assets/uploads/harbor-and-pine.svg"
+    },
+    {
+     "src": "assets/uploads/kestrelway-freight.svg"
+    },
+    {
+     "src": "assets/uploads/loopwell.svg"
+    },
+    {
+     "src": "assets/uploads/hexbolt-fitness.svg"
+    },
+    {
+     "src": "assets/uploads/kestrelway-freight.svg"
+    },
+    {
+     "src": "assets/uploads/ashcombe-legal.svg"
+    },
+    {
+     "src": "assets/uploads/ottoline-bakery.svg"
+    },
+    {
+     "src": "assets/uploads/fernwood-dental.svg"
+    }
+   ],
+   "spacing": {
+    "section": {
+     "pt": 100,
+     "pb": 50,
+     "mt": "none",
+     "mb": "none",
+     "bg": "surface"
+    },
+    "layouts": {
+     "logo-grid": {
+      "pt": "none",
+      "pb": "none",
+      "mt": "none",
+      "mb": "none",
+      "bg": "none"
+     }
+    },
+    "intro": {
+     "pt": "none",
+     "pb": "none",
+     "mt": "none",
+     "mb": 25,
+     "bg": "none"
+    }
+   }
+  }
+ },
+ "46": {
+  "type": "quotes",
+  "props": {
+   "variant": "plain",
+   "pt": 50,
+   "pb": 50,
+   "bg": "accent",
+   "title": "What’s the Word",
+   "slides": [
+    {
+     "quote": "Two things are infinite: the universe and human stupidity; and I’m not sure about the universe.",
+     "by": "Albert Einstein"
+    },
+    {
+     "quote": "To be yourself in a world that is constantly trying to make you something else is the greatest accomplishment.",
+     "by": "Ralph Waldo Emerson"
+    },
+    {
+     "quote": "Be who you are and say what you feel, because those who mind don’t matter, and those who matter don’t mind.",
+     "by": "Bernard M. Baruch"
+    }
+   ],
+   "spacing": {
+    "section": {
+     "pt": 50,
+     "pb": 50,
+     "mt": "none",
+     "mb": "none",
+     "bg": "accent"
+    },
+    "layouts": {
+     "blockquote": {
+      "pt": "none",
+      "pb": "none",
+      "mt": "none",
+      "mb": "none",
+      "bg": "none"
+     }
+    },
+    "intro": {
+     "pt": "none",
+     "pb": 50,
+     "mt": "none",
+     "mb": "none",
+     "bg": "none"
+    }
+   }
+  }
+ },
+ "47": {
+  "type": "quotes",
+  "props": {
+   "variant": "boxed",
+   "pt": "none",
+   "pb": "none",
+   "slides": [
+    {
+     "quote": "Two things are infinite: the universe and human stupidity; and I’m not sure about the universe.",
+     "by": "Albert Einstein"
+    },
+    {
+     "quote": "To be yourself in a world that is constantly trying to make you something else is the greatest accomplishment.",
+     "by": "Ralph Waldo Emerson"
+    },
+    {
+     "quote": "Be who you are and say what you feel, because those who mind don’t matter, and those who matter don’t mind.",
+     "by": "Bernard M. Baruch"
+    }
+   ],
+   "spacing": {
+    "section": {
+     "pt": "none",
+     "pb": "none",
+     "mt": "none",
+     "mb": "none",
+     "bg": "none"
+    },
+    "layouts": {
+     "blockquote": {
+      "pt": 75,
+      "pb": 75,
+      "mt": "none",
+      "mb": "none",
+      "bg": "none"
+     }
+    }
+   }
+  }
+ },
+ "48": {
+  "type": "postCards",
+  "props": {
+   "pt": 100,
+   "pb": 100,
+   "bg": "surface",
+   "eyebrow": "Curated",
+   "title": "Latest Blog Posts",
+   "body": "Donec ultrices consectetur dui non cursus. Duis lorem mauris, scelerisque nec sem id, blandit sodales urna. Aliquam nec erat in leo luctus placerat. Etiam ex erat, consequat quis mauris et, dapibus congue mi.",
+   "tone": null,
+   "noBorder": false,
+   "posts": [
+    {
+     "image": "assets/uploads/card-mom-kids-480x240-1.webp",
+     "eyebrow": "Checking",
+     "title": "Banking that Fits Your Life",
+     "href": "https://finone.finalytics.ai/sample-article-four",
+     "excerpt": "From checking and savings to loans and digital banking, discover solutions designed around your goals.",
+     "cta": "Read more"
+    },
+    {
+     "image": "assets/uploads/card-sample-2-850x375-1.webp",
+     "eyebrow": "Checking",
+     "title": "Sample Article Three",
+     "href": "https://finone.finalytics.ai/sample-article-three",
+     "excerpt": "Velit harmud velaliquam pulvinar harmud magna nunc ultricies harmud in nulla.",
+     "cta": "Read more"
+    },
+    {
+     "image": "assets/uploads/card-children-in-school-480x240-1.webp",
+     "eyebrow": "Community",
+     "title": "Supporting Our Communities",
+     "href": "https://finone.finalytics.ai/sample-article",
+     "excerpt": "Learn how the Granite Credit Union Foundation invests in local schools, nonprofits, and community initiatives.",
+     "cta": "Read more"
+    }
+   ],
+   "buttons": [],
+   "spacing": {
+    "section": {
+     "pt": 100,
+     "pb": 100,
+     "mt": "none",
+     "mb": "none",
+     "bg": "surface",
+     "id": "anchorThree"
+    },
+    "layouts": {
+     "cards": {
+      "pt": "none",
+      "pb": "none",
+      "mt": "none",
+      "mb": "none",
+      "bg": "none"
+     }
+    },
+    "intro": {
+     "pt": "none",
+     "pb": 25,
+     "mt": "none",
+     "mb": "none",
+     "bg": "none"
+    }
+   }
+  }
+ },
+ "49": {
+  "type": "postCards",
+  "props": {
+   "pt": 100,
+   "pb": 100,
+   "bg": "tertiary",
+   "eyebrow": "Global News Pattern",
+   "title": "Latest Press Releases",
+   "tone": "light",
+   "noBorder": true,
+   "posts": [
+    {
+     "image": "assets/uploads/card-mom-kids-480x240-1.webp",
+     "eyebrow": "Checking",
+     "title": "Banking that Fits Your Life",
+     "href": "https://finone.finalytics.ai/sample-article-four",
+     "excerpt": "From checking and savings to loans and digital banking, discover solutions designed around your goals.",
+     "cta": "Read more"
+    },
+    {
+     "image": "assets/uploads/card-children-in-school-480x240-1.webp",
+     "eyebrow": "Community",
+     "title": "Supporting Our Communities",
+     "href": "https://finone.finalytics.ai/sample-article",
+     "excerpt": "Learn how the Granite Credit Union Foundation invests in local schools, nonprofits, and community initiatives.",
+     "cta": "Read more"
+    },
+    {
+     "image": "assets/uploads/card-couple-on-counch-480x240-1.webp",
+     "eyebrow": "Budgeting",
+     "title": "Financial Tips & Insights",
+     "href": "https://finone.finalytics.ai/1025-2-2",
+     "excerpt": "Explore practical advice, helpful resources, and financial guidance for every stage of life.",
+     "cta": "Read more"
+    }
+   ],
+   "buttons": [
+    {
+     "label": "See All",
+     "href": "#",
+     "variant": "primary-white"
+    }
+   ],
+   "spacing": {
+    "section": {
+     "pt": 100,
+     "pb": 100,
+     "mt": "none",
+     "mb": "none",
+     "bg": "tertiary"
+    },
+    "layouts": {
+     "cards": {
+      "pt": "none",
+      "pb": "none",
+      "mt": "none",
+      "mb": "none",
+      "bg": "none"
+     },
+     "buttons-group": {
+      "pt": 50,
+      "pb": "none",
+      "mt": "none",
+      "mb": "none",
+      "bg": "none"
+     }
+    },
+    "intro": {
+     "pt": "none",
+     "pb": 50,
+     "mt": "none",
+     "mb": "none",
+     "bg": "none"
+    }
+   }
+  }
+ },
+ "50": {
+  "type": "staticCards",
+  "props": {
+   "pt": "none",
+   "pb": "none",
+   "bg": "surface",
+   "eyebrow": "Static Cards",
+   "title": "Lorem ipsum dolor etiam ex erat consequat.",
+   "body": "Donec ultrices consectetur dui non cursus. Duis lorem mauris, scelerisque nec sem id, blandit sodales urna. Aliquam nec erat in leo luctus placerat. Etiam ex erat, consequat quis mauris et, dapibus congue mi.",
+   "cards": [
+    {
+     "type": "image",
+     "title": "Featured title",
+     "body": "Paragraph of text beneath the heading to explain the heading. We’ll add onto it with another sentence and probably just keep going until we run out of words.",
+     "image": "assets/uploads/card-sample-2-850x375-1.webp",
+     "button": {
+      "label": "Secondary CTA",
+      "href": "#",
+      "variant": "secondary"
+     }
+    },
+    {
+     "type": "icon",
+     "title": "Featured title",
+     "body": "Paragraph of text beneath the heading to explain the heading. We’ll add onto it with another sentence and probably just keep going until we run out of words.",
+     "icon": "assets/uploads/icon-graph.svg"
+    },
+    {
+     "type": "simple",
+     "title": "Featured title",
+     "body": "Paragraph of text beneath the heading to explain the heading. We’ll add onto it with another sentence and probably just keep going until we run out of words.",
+     "button": {
+      "label": "Primary Button",
+      "href": "#",
+      "variant": "primary"
+     }
+    }
+   ],
+   "buttons": [
+    {
+     "label": "Primary Button",
+     "href": "#",
+     "variant": "primary"
+    },
+    {
+     "label": "Secondary Button",
+     "href": "#",
+     "variant": "secondary"
+    }
+   ],
+   "spacing": {
+    "section": {
+     "pt": "none",
+     "pb": "none",
+     "mt": "none",
+     "mb": "none",
+     "bg": "surface"
+    },
+    "layouts": {
+     "cards": {
+      "pt": "none",
+      "pb": "none",
+      "mt": "none",
+      "mb": "none",
+      "bg": false
+     },
+     "buttons-group": {
+      "pt": 25,
+      "pb": 100,
+      "mt": "none",
+      "mb": "none",
+      "bg": "none"
+     }
+    },
+    "intro": {
+     "pt": 100,
+     "pb": 25,
+     "mt": "none",
+     "mb": "none",
+     "bg": "none",
+     "id": "introID"
+    }
+   }
+  }
+ },
+ "51": {
+  "type": "staticCards",
+  "props": {
+   "pt": "none",
+   "pb": "none",
+   "eyebrow": "Static Cards",
+   "title": "Lorem ipsum dolor etiam ex erat consequat.",
+   "body": "Donec ultrices consectetur dui non cursus. Duis lorem mauris, scelerisque nec sem id, blandit sodales urna. Aliquam nec erat in leo luctus placerat. Etiam ex erat, consequat quis mauris et, dapibus congue mi.",
+   "cards": [
+    {
+     "type": "image",
+     "title": "Featured title",
+     "body": "Paragraph of text beneath the heading to explain the heading. We’ll add onto it with another sentence and probably just keep going until we run out of words.",
+     "image": "assets/uploads/card-sample-850x375-1.webp"
+    },
+    {
+     "type": "icon",
+     "title": "Featured title",
+     "body": "Paragraph of text beneath the heading to explain the heading. We’ll add onto it with another sentence and probably just keep going until we run out of words.",
+     "icon": "assets/uploads/icon-calculators.svg"
+    }
+   ],
+   "buttons": [
+    {
+     "label": "Primary Button",
+     "href": "#",
+     "variant": "primary"
+    },
+    {
+     "label": "Secondary Button",
+     "href": "#",
+     "variant": "secondary"
+    }
+   ],
+   "spacing": {
+    "section": {
+     "pt": "none",
+     "pb": "none",
+     "mt": "none",
+     "mb": "none",
+     "bg": "none"
+    },
+    "layouts": {
+     "cards": {
+      "pt": "none",
+      "pb": "none",
+      "mt": "none",
+      "mb": "none",
+      "bg": false
+     },
+     "buttons-group": {
+      "pt": 25,
+      "pb": 50,
+      "mt": "none",
+      "mb": "none",
+      "bg": "none"
+     }
+    },
+    "intro": {
+     "pt": 100,
+     "pb": 25,
+     "mt": "none",
+     "mb": "none",
+     "bg": "none",
+     "id": "introID"
+    }
+   }
+  }
+ },
+ "52": {
+  "type": "staticCards",
+  "props": {
+   "pt": "none",
+   "pb": "none",
+   "eyebrow": "Static Cards",
+   "title": "Lorem ipsum dolor etiam ex erat consequat.",
+   "body": "Donec ultrices consectetur dui non cursus. Duis lorem mauris, scelerisque nec sem id, blandit sodales urna. Aliquam nec erat in leo luctus placerat. Etiam ex erat, consequat quis mauris et, dapibus congue mi.",
+   "cards": [
+    {
+     "type": "image",
+     "title": "Featured title",
+     "body": "Paragraph of text beneath the heading to explain the heading. We’ll add onto it with another sentence and probably just keep going until we run out of words.",
+     "image": "assets/uploads/cards04.webp"
+    },
+    {
+     "type": "image",
+     "title": "Featured title",
+     "body": "Paragraph of text beneath the heading to explain the heading. We’ll add onto it with another sentence and probably just keep going until we run out of words.",
+     "image": "assets/uploads/card-sample-2-850x375-1.webp"
+    },
+    {
+     "type": "image",
+     "title": "Featured title",
+     "body": "Paragraph of text beneath the heading to explain the heading. We’ll add onto it with another sentence and probably just keep going until we run out of words.",
+     "image": "assets/uploads/card-sample-850x375-1.webp"
+    },
+    {
+     "type": "icon",
+     "title": "Featured title",
+     "body": "Paragraph of text beneath the heading to explain the heading. We’ll add onto it with another sentence and probably just keep going until we run out of words.",
+     "icon": "assets/uploads/icon-house.svg"
+    },
+    {
+     "type": "icon",
+     "title": "Featured title",
+     "body": "Paragraph of text beneath the heading to explain the heading. We’ll add onto it with another sentence and probably just keep going until we run out of words.",
+     "icon": "assets/uploads/icon-graph.svg"
+    },
+    {
+     "type": "icon",
+     "title": "Featured title",
+     "body": "Paragraph of text beneath the heading to explain the heading. We’ll add onto it with another sentence and probably just keep going until we run out of words.",
+     "icon": "assets/uploads/icon-calculators.svg"
+    }
+   ],
+   "buttons": [
+    {
+     "label": "Primary Button",
+     "href": "#",
+     "variant": "primary"
+    },
+    {
+     "label": "Secondary Button",
+     "href": "#",
+     "variant": "secondary"
+    }
+   ],
+   "spacing": {
+    "section": {
+     "pt": "none",
+     "pb": "none",
+     "mt": "none",
+     "mb": "none",
+     "bg": "none"
+    },
+    "layouts": {
+     "cards": {
+      "pt": "none",
+      "pb": "none",
+      "mt": "none",
+      "mb": "none",
+      "bg": false
+     },
+     "buttons-group": {
+      "pt": 25,
+      "pb": 100,
+      "mt": "none",
+      "mb": "none",
+      "bg": "none"
+     }
+    },
+    "intro": {
+     "pt": 100,
+     "pb": 50,
+     "mt": "none",
+     "mb": "none",
+     "bg": "none",
+     "id": "introID"
+    }
+   }
+  }
+ },
+ "53": {
+  "type": "mixMatch",
+  "props": {
+   "pt": "none",
+   "pb": "none",
+   "bg": "none",
+   "sectionStyle": "background-color: rgb(75,86,168);",
+   "eyebrow": "Mix-and-Match",
+   "title": "Pages and Posts",
+   "body": "Getting individual posts/pages and setting up results as cards.",
+   "items": [
+    {
+     "image": "assets/uploads/card-couple-on-counch-480x240-1.webp",
+     "title": "Financial Tips & Insights",
+     "body": "Explore practical advice, helpful resources, and financial guidance for every stage of life.",
+     "href": "https://finone.finalytics.ai/1025-2-2",
+     "aria": null,
+     "cta": "Financial Tips & Insights"
+    },
+    {
+     "image": "assets/uploads/card-sample-2-850x375-1.webp",
+     "title": "Home",
+     "body": "",
+     "href": "https://finone.finalytics.ai/",
+     "aria": "ADA descriptive text for link",
+     "cta": "Learn More"
+    },
+    {
+     "image": "assets/uploads/card-mom-kids-480x240-1.webp",
+     "title": "Banking that Fits Your Life",
+     "body": "From checking and savings to loans and digital banking, discover solutions designed around your goals.",
+     "href": "https://finone.finalytics.ai/sample-article-four",
+     "aria": null,
+     "cta": "Banking that Fits Your Life"
+    }
+   ],
+   "buttons": [
+    {
+     "label": "Learn more",
+     "href": "#",
+     "variant": "primary-white"
+    }
+   ],
+   "spacing": {
+    "section": {
+     "pt": "none",
+     "pb": "none",
+     "mt": "none",
+     "mb": "none",
+     "bg": "none",
+     "style": "background-color: var(--color-tertiary);"
+    },
+    "layouts": {
+     "get-post": {
+      "pt": 50,
+      "pb": 25,
+      "mt": "none",
+      "mb": "none",
+      "bg": "none"
+     },
+     "buttons-group": {
+      "pt": "none",
+      "pb": 100,
+      "mt": "none",
+      "mb": "none",
+      "bg": "none"
+     }
+    },
+    "intro": {
+     "pt": 100,
+     "pb": "none",
+     "mt": "none",
+     "mb": "none",
+     "bg": "none"
+    }
+   }
+  }
+ },
+ "54": {
+  "type": "faq",
+  "props": {
+   "eyebrow": "FAQs Pattern",
+   "title": "Frequently Asked Questions",
+   "body": "Donec ultrices consectetur dui non cursus. Duis lorem mauris, scelerisque nec sem id, blandit sodales urna. Aliquam nec erat in leo luctus placerat. Etiam ex erat, consequat quis mauris et, dapibus congue mi.",
+   "items": [
+    {
+     "q": "How can I access older documents and transaction information that are no longer available in the Mortgage Center?",
+     "a": "In the <a href=\"https://trustonefinancial.estatusconnect.com/#/home/login\">Mortgage Center,</a> you can view your last 24 transactions and your last 12 loan documents. If you need anything older, call us at (763) 595-4010, option 3 and we’ll be happy to help."
+    },
+    {
+     "q": "How do I enroll in the Mortgage Center?",
+     "a": "To enroll in the <a href=\"https://trustonefinancial.estatusconnect.com/#/home/login\">Mortgage Center,</a> you will need the following information: <ul> <li>Mortgage loan number</li> <li>Social Security number</li> <li>Email address</li> </ul> You can access the Mortgage Center from the homepage of Digital Banking, but it is a separate system. You will create a separate username, password and security questions when you enroll in the Mortgage Center."
+    },
+    {
+     "q": "How do I update my homeowner’s insurance?",
+     "a": "If you change your homeowner’s insurance policy: <ol> <li>After you obtain your new homeowner’s insurance policy, cancel your previous homeowner’s insurance coverage.</li> <li>Your new insurance policy should include your loan number and the information below: TruStone Financial Credit Union Control #3200, as Lienholder/Loss Payee PO Box 2760 Sioux City, IA 51106</li> <li>If TruStone Financial has paid an insurance premium on your behalf to the previous carrier within the past 12 months, then pay the new premium out of pocket and keep any refund you receive from your previous carrier. The refund doesn’t need to be deposited into your escrow account at TruStone Financial unless you want us to make premium payments to your new insurance company.</li> <li>If you would like TruStone Financial to make the new premium payment to the new insurance company: <ol> <li>Contact us and let us know.</li> <li>If you receive a refund from your previous insurance carrier, send a check payable to TruStone Financial Credit Union for the refund amount and we’ll deposit it in your escrow account.</li> </ol> </li> <li>We will include any adjustments to your escrow account related to the cost of your homeowner’s insurance in your next Annual Escrow Analysis, which is scheduled each May.</li> </ol>"
+    }
+   ],
+   "spacing": {
+    "section": {
+     "pt": false,
+     "pb": false,
+     "mt": false,
+     "mb": false,
+     "bg": false
+    },
+    "layouts": {
+     "faqs": {
+      "pt": "none",
+      "pb": 100,
+      "mt": "none",
+      "mb": "none",
+      "bg": "none"
+     }
+    },
+    "intro": {
+     "pt": 100,
+     "pb": 50,
+     "mt": "none",
+     "mb": "none",
+     "bg": "none"
+    }
+   }
+  }
+ },
+ "55": {
+  "type": "richText",
+  "props": {
+   "html": "<h2>Open Content Block. All Rich Text.</h2> <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat impedit sequi quidem unde possimus illum pariatur debitis, molestiae, assumenda quibusdam numquam, non magnam distinctio excepturi perspiciatis ipsam iure officiis nam?</p> <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat ut repellat voluptatum omnis totam voluptatem accusamus commodi molestias dignissimos rem eveniet doloribus eum, officia nesciunt quasi aliquam quo, debitis cumque!</p> <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat ut repellat voluptatum omnis totam voluptatem accusamus commodi molestias dignissimos rem eveniet doloribus eum, officia nesciunt quasi aliquam quo, debitis cumque!</p>",
+   "pt": 50,
+   "pb": 100,
+   "mt": "none",
+   "mb": "none",
+   "width": 11,
+   "spacing": {
+    "section": {
+     "pt": "none",
+     "pb": "none",
+     "mt": "none",
+     "mb": "none",
+     "bg": "none"
+    },
+    "layouts": {
+     "content-block": {
+      "pt": 50,
+      "pb": 100,
+      "mt": "none",
+      "mb": "none",
+      "bg": "none"
+     }
+    }
+   }
+  }
+ },
+ "56": {
+  "type": "flexibleColumns",
+  "props": {
+   "pt": 100,
+   "pb": 50,
+   "bg": "surface",
+   "eyebrow": "Select between 1 thru 4 columns WYSIWYG",
+   "title": "Flexible Columns",
+   "body": "Donec ultrices consectetur dui non cursus. Duis lorem mauris, scelerisque nec sem id, blandit sodales urna. Aliquam nec erat in leo luctus placerat. Etiam ex erat, consequat quis mauris et, dapibus congue mi.",
+   "columns": [
+    "<p>Consequat urna velit nisi pariatur doming ex harmud sit ex nulla commodo ea dolore sed velaliquam aliquip nostrud, pulvinar consequat sunt.</p>",
+    "<p>Harmud Ea Laboris Ea Ullamco Nostrud Aliquip NisiuC ommodo dolore magna tempuribud, urna elit aliquip in eu urna pulvinar elit ut. Pulvinar sunt consectetur doming sed velaliquam ut eros quis, nunc nulla dolor amet nulla adipiscing sit consectetur dignissim harmud.</p>",
+    "<p>Aliquip esse ut ut exercitation aliquip eu urna elit, laboris magna quis quis providerent, magna ea elit nisi providerent ea esse dolor pulvinar sint.</p>",
+    "<p>Eu exercitation laboris exercitation voluptate pariatur dolor sit velaliquam sit providerent in aliquip fugiat dignissim ut commodo magna.</p>"
+   ],
+   "spacing": {
+    "section": {
+     "pt": 100,
+     "pb": 50,
+     "mt": "none",
+     "mb": "none",
+     "bg": "surface"
+    },
+    "layouts": {
+     "flexible-columns": {
+      "pt": "none",
+      "pb": "none",
+      "mt": "none",
+      "mb": "none",
+      "bg": "none"
+     },
+     "disclosures": {
+      "pt": 50,
+      "pb": 50,
+      "mt": "none",
+      "mb": "none",
+      "bg": "none"
+     }
+    },
+    "intro": {
+     "pt": "none",
+     "pb": 50,
+     "mt": "none",
+     "mb": "none",
+     "bg": "none"
+    }
+   }
+  }
+ },
+ "57": {
+  "type": "disclosures",
+  "props": {
+   "html": "<p>APY = Annual Percentage Yield. A penalty may be imposed for early withdrawal, and fees may reduce earnings. Membership ($5) is required. Terms and conditions apply.u003c/liu003ern tu003cliu003eCredit Monitoring and Score are for informational and educational purposes only. There are various types of credit scores, and TruStone may use a different type of credit score to make lending decisions.u003c/liu003ernu003c/olu003ernParagraph of text beneath the heading to explain the heading. We’ll add onto it with another sentence and probably just keep going until we run out of words. Donec ultrices consectetur dui non cursus. Duis lorem mauris, scelerisque nec sem id, blandit sodales urna. Aliquam nec erat in leo luctus placerat. Etiam ex erat, consequat quis mauris et, dapibus congue mi.</p>",
+   "spacing": {
+    "section": {
+     "pt": "none",
+     "pb": "none",
+     "mt": "none",
+     "mb": "none",
+     "bg": "none"
+    },
+    "layouts": {
+     "disclosures": {
+      "pt": 50,
+      "pb": 50,
+      "mt": "none",
+      "mb": "none",
+      "bg": "none"
+     }
+    }
+   }
+  }
+ }
+}

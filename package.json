@@ -1,0 +1,10 @@
+{
+  "name": "finone-blocks",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:css": "python3 tools/build_css.py",
+    "build:demo": "python3 tools/extract_demo.py",
+    "build": "npm run build:css && npm run build:demo && node tools/build_kitchen_sink.mjs"
+  }
+}

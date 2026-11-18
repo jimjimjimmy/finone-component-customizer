@@ -1,0 +1,7 @@
+/* wordmark.css - default text logo when no logo file is set. Tokens only. */
+.wordmark { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; color: var(--color-dark); font-family: var(--font-heading); line-height: 1.05; }
+.wordmark .wm-mark { display: inline-flex; align-items: center; justify-content: center; width: 52px; height: 52px; border-radius: var(--radius-round); background: var(--color-accent); color: var(--color-white); font-weight: 900; font-size: 1.25rem; letter-spacing: .5px; flex: none; }
+.wordmark .wm-name { display: flex; flex-direction: column; }
+.wordmark .wm-name strong { font-size: 1.5rem; font-weight: 900; letter-spacing: -.2px; }
+.wordmark .wm-name span { font-size: .8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; color: var(--color-accent); }
+.footer_logo .wordmark { color: var(--color-dark); }

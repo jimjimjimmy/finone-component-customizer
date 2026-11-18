@@ -1,0 +1,137 @@
+/*
+ * Base styles for Finalytics placements, so ads render on any theme.
+ * Scoped under .finone-placement; a FinOne theme that already styles these classes can dequeue
+ * this file ('finone-placement'). They never apply to a hero drawn with the theme's own Hero block
+ * (data-finone-render="block") — the theme styles that one.
+ */
+
+/* Full width comes from the theme: the wrapper carries WordPress's own `alignfull` class, which block
+   themes lay out edge to edge (a 100vw breakout fought the theme's padding and ran off one side). */
+.finone-placement {
+	overflow: hidden;
+	box-sizing: border-box;
+}
+.finone-placement *,
+.finone-placement *::before,
+.finone-placement *::after {
+	box-sizing: border-box;
+}
+
+/* Hero: image + content side by side, contained. */
+.finone-placement:not([data-finone-render="block"]) .hero {
+	background-color: #1f3b57; /* denim */
+	color: #fff;
+}
+.finone-placement:not([data-finone-render="block"]) .hero .container {
+	max-width: 1280px;
+	margin: 0 auto;
+	padding: 0;
+}
+.finone-placement:not([data-finone-render="block"]) .hero .row {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	margin: 0;
+}
+.finone-placement:not([data-finone-render="block"]) .hero.reverse .row {
+	flex-direction: row-reverse;
+}
+.finone-placement:not([data-finone-render="block"]) .hero-picture,
+.finone-placement:not([data-finone-render="block"]) .hero-content {
+	flex: 1 1 50%;
+	min-width: 0;
+}
+.finone-placement:not([data-finone-render="block"]) .image-fit {
+	position: relative;
+	width: 100%;
+	aspect-ratio: 16 / 10;
+	overflow: hidden;
+}
+.finone-placement:not([data-finone-render="block"]) .image-fit img {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	max-width: 100%;
+	object-fit: cover;
+	display: block;
+}
+.finone-placement:not([data-finone-render="block"]) .hero-content {
+	padding: clamp(24px, 5vw, 64px);
+}
+.finone-placement:not([data-finone-render="block"]) .hero-content.text-light,
+.finone-placement:not([data-finone-render="block"]) .hero-content.text-light h1 {
+	color: #fff;
+}
+.finone-placement:not([data-finone-render="block"]) .eyebrow {
+	font-size: 0.875rem;
+	font-weight: 600;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	opacity: 0.85;
+	margin-bottom: 0.75rem;
+}
+.finone-placement:not([data-finone-render="block"]) .hero h1 {
+	font-size: clamp(1.75rem, 3.2vw, 2.75rem);
+	line-height: 1.15;
+	margin: 0 0 1.5rem;
+}
+
+/* Buttons */
+.finone-placement:not([data-finone-render="block"]) .flex-buttons {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 12px;
+}
+.finone-placement:not([data-finone-render="block"]) .btn {
+	display: inline-block;
+	padding: 0.75rem 1.5rem;
+	border-radius: 999px;
+	border: 2px solid #fff;
+	font-weight: 600;
+	text-decoration: none;
+	line-height: 1.2;
+	transition: background-color 0.15s, color 0.15s;
+}
+.finone-placement:not([data-finone-render="block"]) .btn-primary-white {
+	background: #fff;
+	color: #1f3b57;
+}
+.finone-placement:not([data-finone-render="block"]) .btn-primary-white:hover {
+	background: transparent;
+	color: #fff;
+}
+.finone-placement:not([data-finone-render="block"]) .btn-secondary-white {
+	background: transparent;
+	color: #fff;
+}
+.finone-placement:not([data-finone-render="block"]) .btn-secondary-white:hover {
+	background: #fff;
+	color: #1f3b57;
+}
+
+/* Default hero without an image: content takes the full width. */
+.finone-placement:not([data-finone-render="block"]) .hero.no-picture .hero-content {
+	flex-basis: 100%;
+	max-width: 760px;
+	padding-top: clamp(48px, 8vw, 112px);
+	padding-bottom: clamp(48px, 8vw, 112px);
+}
+
+/* Stack on small screens. */
+@media (max-width: 767px) {
+	.finone-placement:not([data-finone-render="block"]) .hero-picture,
+	.finone-placement:not([data-finone-render="block"]) .hero-content {
+		flex-basis: 100%;
+	}
+}
+
+/* Demo only: hide the page title on the front page so the hero sits at the top. */
+body.home .wp-block-post-title {
+	display: none;
+}
+
+/* 100vw includes the scrollbar; clip so full-bleed never adds a horizontal scroll. */
+body {
+	overflow-x: clip;
+}

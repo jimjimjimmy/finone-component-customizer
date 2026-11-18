@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="110.5 25.5 179.0 204.8" width="179.0" height="204.8"><g transform="translate(110 0) scale(1.5)" fill="#C98B3C"><line x1="60" y1="96" x2="60" y2="30" stroke="#8A5A24" stroke-width="3"/>
+<ellipse cx="60" cy="26" rx="5" ry="9"/><ellipse cx="51" cy="40" rx="5" ry="9" transform="rotate(-30 51 40)"/><ellipse cx="69" cy="40" rx="5" ry="9" transform="rotate(30 69 40)"/>
+<ellipse cx="51" cy="56" rx="5" ry="9" transform="rotate(-30 51 56)"/><ellipse cx="69" cy="56" rx="5" ry="9" transform="rotate(30 69 56)"/>
+<ellipse cx="51" cy="72" rx="5" ry="9" transform="rotate(-30 51 72)"/><ellipse cx="69" cy="72" rx="5" ry="9" transform="rotate(30 69 72)"/></g>
+<text x="200" y="205" text-anchor="middle" font-family="'Brush Script MT', 'Segoe Script', cursive" font-size="46" fill="#5A3614">Ottoline</text>
+<text x="202" y="230" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="12" letter-spacing="4" fill="#8A5A24">BAKEHOUSE</text></svg>

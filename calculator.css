@@ -1,0 +1,19 @@
+/* calculator.css - Share Certificate Calculator. Reads tokens only; no brand literals. */
+.fin-cd { background: var(--color-surface); border-radius: var(--radius-card); padding: 40px; color: var(--color-dark); }
+.fin-cd__title { font-family: var(--font-heading); font-size: 1.75rem; margin-bottom: 24px; }
+.fin-cd__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.fin-cd__field label, .fin-cd__terms legend { display: block; font-weight: 700; margin-bottom: 8px; font-size: 1rem; float: none; width: auto; padding: 0; }
+.fin-cd__input { display: flex; align-items: center; gap: 8px; background: var(--color-white); border: 1px solid var(--color-gray-3); border-radius: var(--radius-button); padding: 0 16px; height: 50px; }
+.fin-cd__input:focus-within { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+.fin-cd__input input { flex: 1; min-width: 0; border: 0; outline: 0; background: none; font: inherit; font-size: 1.25rem; font-weight: 600; color: var(--color-dark); height: 100%; }
+.fin-cd__terms { border: 0; padding: 0; margin: 28px 0 0; min-width: 0; }
+.fin-cd__pills { display: flex; flex-wrap: wrap; gap: 10px; }
+.fin-cd__pill input { position: absolute; opacity: 0; pointer-events: none; }
+.fin-cd__pill span { display: inline-flex; align-items: center; justify-content: center; min-width: 72px; height: 44px; padding: 0 18px; border: 2px solid var(--color-dark); border-radius: var(--radius-pill); font-weight: 700; cursor: pointer; background: var(--color-white); transition: var(--transition-base); }
+.fin-cd__pill input:checked + span { background: var(--color-dark); color: var(--color-white); }
+.fin-cd__pill input:focus-visible + span { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+.fin-cd__result { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 32px; padding-top: 28px; border-top: 1px solid var(--color-gray-2); }
+.fin-cd__label { display: block; font-size: 0.875rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+.fin-cd__result strong { font-family: var(--font-rate); font-size: clamp(2rem, 1.4rem + 2vw, 3.25rem); color: var(--color-accent); line-height: 1; }
+.fin-cd__fine { font-size: 0.875rem; margin: 20px 0 0; color: var(--color-dark); }
+@media (max-width: 679.98px) { .fin-cd { padding: 24px 20px; } .fin-cd__grid, .fin-cd__result { grid-template-columns: 1fr; } }

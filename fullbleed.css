@@ -1,0 +1,30 @@
+/* fullbleed.css - Stage 3 override layer (loaded by the customizer after blocks.css; kitchen-sink.html stays the 1:1 baseline).
+   Full-bleed backgrounds and photography span 100% of the viewport edge to edge; foreground content stays inside the
+   centred container (--container-max-width). Images are cover-fit and centre-anchored, with height clamps, so the focal
+   subject stays centred on ultra-wide screens (1920px+) without stretching or awkward crops. */
+
+.hero-marquee, .hero-large, .hero-medium, .hero-small, .promo-full, .banner-full { width: 100%; max-width: none; }
+
+/* Foreground stays in the centred inner container */
+.hero-marquee .container, .hero-large .container, .hero-medium .container, .hero-small .container,
+.promo-full .container { max-width: var(--container-max-width, var(--container-max, 1440px)); margin-left: auto; margin-right: auto; }
+
+/* Full-bleed / half-bleed photography: cover + dead-centre focal point, never stretched.
+   Selectors carry extra specificity so they win over the engineer's `.hero .hero-picture .image-fit img { object-position: top }`. */
+.layout.hero-marquee .hero-picture .image-fit, .layout.hero-large .hero-picture .image-fit, .layout.hero-medium .hero-picture .image-fit,
+.layout.hero-small .hero-picture .image-fit, .layout.promo-full .promo-image .image-fit { width: 100%; height: 100%; }
+.layout.hero-marquee .hero-picture .image-fit img, .layout.hero-large .hero-picture .image-fit img, .layout.hero-medium .hero-picture .image-fit img,
+.layout.hero-small .hero-picture .image-fit img, .layout.promo-full .promo-image .image-fit img,
+.layout.banner-full .banner-video img, .layout.banner-full .banner-video video {
+  width: 100%; height: 100%; object-fit: cover; object-position: center center; display: block;
+}
+
+/* Height clamps: grow gently with the viewport, but cap so a 2560px screen never gets a squat or towering band */
+.hero-marquee { min-height: clamp(420px, 50vh, 760px); max-height: 900px; }
+@media (min-width: 1300px) {
+  .hero-large { min-height: clamp(445px, 30vw, 640px); }
+  .hero-medium { min-height: clamp(433px, 28vw, 600px); }
+  .hero-small { min-height: clamp(289px, 20vw, 420px); }
+  .promo-full { min-height: clamp(480px, 26vw, 640px); }
+  .banner-full { max-height: 820px; overflow: hidden; }
+}
