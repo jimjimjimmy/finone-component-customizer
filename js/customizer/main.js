@@ -8,7 +8,7 @@ import { GROUPS, TEMPLATES, VARIANTS, TONES, SPACES, labelOf, fromDemo, fromTemp
 const $ = (s, r = document) => r.querySelector(s);
 const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const KEY = 'finone-customizer-v1';
-const VIEWPORTS = { ultra: 2560, wide: 1920, desktop: 1440, tablet: 768, mobile: 390 };
+const VIEWPORTS = { desktop: 0, mobile: 390 };   /* desktop = fluid, fills the canvas; mobile = centred 390px */
 import { applyOverrides } from '../demo/overrides.js';
 const demo = applyOverrides(await (await fetch('js/demo/granite.json')).json());
 
@@ -22,7 +22,7 @@ const validState = (s) => s && typeof s === 'object' && s.theme?.tokens && s.the
 const clearSaved = () => { try { localStorage.removeItem(KEY); } catch (e) { /* ignore */ } };
 try {
   const s = JSON.parse(localStorage.getItem(KEY) || 'null');
-  if (s) { if (validState(s)) { const f = fresh(); state = { ...f, ...s, org: { ...f.org, ...s.org }, theme: { ...f.theme, ...s.theme, tokens: { ...f.theme.tokens, ...s.theme.tokens } }, controlsHidden: false, selected: null, viewport: 'desktop' }; state.stack.forEach((b) => { b.uid ??= newUid(); }); if (!VIEWPORTS[state.viewport]) state.viewport = 'desktop'; if (!['brand', 'page'].includes(state.tab)) state.tab = 'brand'; } else clearSaved(); }
+  if (s) { if (validState(s)) { const f = fresh(); state = { ...f, ...s, org: { ...f.org, ...s.org }, theme: { ...f.theme, ...s.theme, tokens: { ...f.theme.tokens, ...s.theme.tokens } }, controlsHidden: false, selected: null, viewport: 'desktop' }; state.stack.forEach((b) => { b.uid ??= newUid(); }); if (!(state.viewport in VIEWPORTS)) state.viewport = 'desktop'; if (!['brand', 'page'].includes(state.tab)) state.tab = 'brand'; } else clearSaved(); }
 } catch (e) { clearSaved(); state = fresh(); }
 const save = () => { try { const { controlsHidden, ...rest } = state; const o = clone(rest); ['logo', 'heroImage', 'promoImage'].forEach((k) => { if (String(o.org[k]).startsWith('data:')) o.org[k] = ''; }); localStorage.setItem(KEY, JSON.stringify(o)); } catch (e) { /* quota or blocked: ignore */ } };
 const sel = () => state.stack.find((b) => b.uid === state.selected);
@@ -31,11 +31,9 @@ const status = (m) => { $('#status').textContent = m; };
 /* ---------------- preview frame ---------------- */
 const frame = $('#frame'), wrap = $('#wrap'), stage = $('#stage');
 let renderTimer = 0, pendingScroll = 0, scrollTo = null;
-function fit() {   /* always 100% scale: the stage scrolls horizontally when the chosen width exceeds the window */
-  const w = VIEWPORTS[state.viewport], pad = state.controlsHidden ? 0 : 32;
-  frame.style.width = w + 'px'; frame.style.height = Math.max(400, stage.clientHeight - pad - 16) + 'px'; frame.style.transform = '';
-  wrap.style.width = w + 'px'; wrap.style.height = frame.style.height;
-  status(`${w}px at 100%${w + pad > stage.clientWidth ? ' (scroll sideways)' : ''}`);
+function fit() {   /* sizing is pure CSS (see #wrap[data-vp]); this just syncs the attribute and status text */
+  wrap.dataset.vp = state.viewport; frame.style.cssText = ''; wrap.style.cssText = '';
+  status(state.viewport === 'mobile' ? 'Mobile 390px' : 'Desktop (fluid)');
 }
 function render(immediate) {
   clearTimeout(renderTimer);
@@ -64,7 +62,7 @@ window.addEventListener('resize', fit);
 function setTab(t) { state.tab = t; document.querySelectorAll('.tabs button').forEach((b) => b.classList.toggle('on', b.dataset.tab === t)); document.querySelectorAll('.pane').forEach((p) => p.classList.toggle('on', p.id === 'pane-' + t)); }
 document.querySelector('.tabs').addEventListener('click', (e) => { const b = e.target.closest('button'); if (b) setTab(b.dataset.tab); });
 $('#vp').addEventListener('change', (e) => { state.viewport = e.target.value; fit(); save(); });
-function setHidden(h) { state.controlsHidden = h; document.body.classList.toggle('demo', h); frame.contentDocument?.body.classList.toggle('edit', !h); fit(); }
+function setHidden(h) { state.controlsHidden = h; document.body.classList.toggle('demo', h); try { frame.contentDocument?.body.classList.toggle('edit', !h); } catch (e) { /* frame not ready */ } fit(); }
 $('#hide').addEventListener('click', () => setHidden(true)); $('#showctl').addEventListener('click', () => setHidden(false));
 $('#reset').addEventListener('click', () => { if (confirm('Reset theme, brand data and page to the Granite defaults?')) { state = fresh(); setTab('brand'); paintAll(); render(true); } });
 

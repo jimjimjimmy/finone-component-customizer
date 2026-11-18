@@ -3,7 +3,6 @@
 * { box-sizing: border-box; }
 html, body { height: 100%; margin: 0; }
 body.cz { font: 13px/1.4 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; color: var(--ui-ink); background: var(--ui-bg); display: grid; grid-template-columns: 360px 1fr; grid-template-rows: 100vh; overflow: hidden; }
-body.cz.demo { grid-template-columns: 0 1fr; }
 body.cz.demo #side, body.cz.demo #bar { display: none; }
 #side { background: var(--ui-panel); border-right: 1px solid var(--ui-line); display: flex; flex-direction: column; min-height: 0; }
 .tabs { display: flex; border-bottom: 1px solid var(--ui-line); }
@@ -39,11 +38,16 @@ ul.stack .nm { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis;
 #main { display: flex; flex-direction: column; min-width: 0; min-height: 0; }
 #bar { display: flex; align-items: center; gap: 12px; padding: 8px 14px; background: var(--ui-panel); border-bottom: 1px solid var(--ui-line); }
 #bar .sp { flex: 1; } #bar .st { color: var(--ui-mute); font-size: 12px; }
-#stage { flex: 1; min-height: 0; overflow: auto; padding: 16px; display: flex; justify-content: safe center; align-items: flex-start; background: repeating-conic-gradient(#eceef2 0 25%, #f4f5f7 0 50%) 0 0 / 20px 20px; }
-body.demo #stage { padding: 0; background: #fff; }
-#wrap { position: relative; box-shadow: 0 6px 30px rgba(9,30,66,.25); background: #fff; flex: none; }
-#frame { border: 0; display: block; background: #fff; transform-origin: top left; }
-#showctl { display: none; position: fixed; right: 16px; bottom: 16px; z-index: 10; box-shadow: 0 2px 10px rgba(0,0,0,.3); }
+#stage { flex: 1; min-height: 0; overflow: auto; display: flex; justify-content: center; align-items: stretch; background: repeating-conic-gradient(#eceef2 0 25%, #f4f5f7 0 50%) 0 0 / 20px 20px; }
+#wrap { position: relative; flex: 0 0 auto; width: 100%; background: #fff; }
+#wrap[data-vp="mobile"] { width: 390px; margin: 16px 0; box-shadow: 0 6px 30px rgba(9,30,66,.25); }
+#frame { border: 0; display: block; width: 100%; height: 100%; background: #fff; }
+/* Controls hidden: the preview owns the whole window; a floating pill brings the controls back. */
+body.cz.demo { display: block; }
+body.cz.demo #main { position: fixed; inset: 0; }
+body.cz.demo #stage { overflow: auto; }
+body.cz.demo #wrap[data-vp="mobile"] { margin: 0; box-shadow: none; }
+#showctl { display: none; position: fixed; right: 16px; bottom: 16px; z-index: 2147483000; border-radius: 999px; padding: 10px 18px; box-shadow: 0 4px 16px rgba(0,0,0,.35); }
 body.cz.demo #showctl { display: block; }
 textarea { width: 100%; font: inherit; padding: 6px 8px; border: 1px solid var(--ui-line); border-radius: 4px; resize: vertical; color: var(--ui-ink); }
 .row.col > label { flex: none; }
