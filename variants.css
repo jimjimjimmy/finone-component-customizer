@@ -291,3 +291,9 @@
   .l02 .header-logo img.custom-logo { width: 150px; max-width: 100%; height: auto; }
   .l02 #masthead .container { padding-left: 16px; padding-right: 16px; }
 }
+
+/* ---- Edge promo stacked (<1050px): image first, then copy (same order as the standard promo block's mobile layout); fade runs down into the copy ---- */
+@media (max-width: 1049.98px) {
+  .promo-edge .row, .promo-edge .row.reverse, .promo-edge .row:not(.reverse) { flex-direction: column-reverse; flex-wrap: nowrap; }
+  .promo-edge .promo-image::after, .promo-edge .row:not(.reverse) .promo-image::after { background: linear-gradient(to top, #fff 0%, rgba(255,255,255,0) 30%); }
+}
