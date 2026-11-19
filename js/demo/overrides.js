@@ -23,7 +23,7 @@ export function applyOverrides(demo) {
   const L = 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium.';
   const tile = (icon, title, rate) => ({ icon: U + icon, title, rate, cta: { label: 'Learn more', href: '#' } });
   const r = { lead: 'Rates up to', value: '0.05', unit: '%', label: 'APY' };
-  demo[100] = { type: 'hero', props: { size: 'marquee', fade: true, tone: 'light', bg: 'secondary', image: U + 'hero-woman-child-1920x1080-1.webp', eyebrow: 'Eyebrow Category', title: 'Tap into the Value of Your Home',
+  demo[100] = { type: 'hero', props: { size: 'marquee', fade: true, tone: 'light', bg: 'secondary', image: U + 'hero-woman-child-1920x1080-1.webp', eyebrow: 'Eyebrow Category', title: 'Tap into the Value of<br class="d-none d-lg-inline"> Your Home',
     body: 'Your possibilities are endless with a 12-month Personal Loan at 8.99% APR*.', buttons: [], rates: Array.from({ length: 5 }, () => tile('icon-piggy-outline.svg', 'Savings Account', r)) } };
   demo[101] = { type: 'rateCards', props: { appearance: 'frosted', pt: 'none', pb: 25, buttons: [], tiles: ['Savings Account', 'Savings Account', 'Savings Account', 'Savings Account', 'Savings Account'].map((t) => tile('icon-certificate.webp', t, r)) } };
   demo[102] = { type: 'promo', props: { variant: 'split', reverse: true, brandDark: true, pt: 50, pb: 75, eyebrow: 'Eyebrow Category', title: 'Sed ut perspiciatis unde omnis enim ad minima veniam, quis elam', body: 'Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia enim ipsam voluptatem quia voluptas.',

@@ -168,7 +168,8 @@
 .l02 .hero-fade .hero-content { max-width: none; padding: 0; margin-left: 0; }
 .l02 .hero-fade .hero-content h1 { max-width: 900px; font-weight: 400; text-wrap: wrap; }
 .l02 .hero-fade .hero-fade-body .col, .l02 .hero-fade-body .row > * { padding-left: 0; padding-right: 0; }
-.l02 .hero-fade .hero-content { padding-left: 0 !important; padding-right: 0 !important; }
+.l02 .hero-fade .hero-content { padding-left: 24px !important; padding-right: 24px !important; }   /* 24px inset from the boundary line (Figma) */
+.l02 #masthead .container { padding-left: 25px; padding-right: 25px; box-sizing: border-box; }   /* Figma Menu inset: x=25 inside the 1440 column */
 .l02 .hero-fade .hero-content p { max-width: 587px; }
 
 /* mobile-banking feature: illustration (724) + 80px + copy (554) centred in the column; neutralise the engineer's reverse margin */
