@@ -20,7 +20,7 @@
 .hero-rates.rate-cards-frosted { background: none; }
 .hero-rates .rate-tiles { max-width: none; }
 /* open columns over the gradient: no fill, whisper-thin dividers + hairline frame */
-.hero-rates .swiper-wrapper { gap: 0 !important; border: 1px solid rgba(255,255,255,.2); }
+.hero-rates .swiper-wrapper { gap: 0 !important; border-top: 1px solid rgba(255,255,255,.2); border-bottom: 1px solid rgba(255,255,255,.2); }   /* sides come from the page boundary lines, so the end cards never double up */
 .hero-rates.rate-cards-frosted .card { background: none; backdrop-filter: none; border: 0; border-left: 1px solid rgba(255,255,255,.2); border-radius: 0; box-shadow: none; padding: 0 12px 20px; row-gap: 0; }
 .hero-rates.rate-cards-frosted .card:first-child { border-left: 0; }
 .hero-rates .card .card-header { padding: 22px 0 10px; gap: 10px; font-size: 14px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
@@ -236,3 +236,7 @@
 
 /* rate-card icon follows the Primary (accent) colour: the outline glyph is used as a mask over a token-coloured fill */
 .hero-rates .card .card-header img { background: var(--color-accent); -webkit-mask: url(assets/uploads/icon-piggy-outline.svg) center / contain no-repeat; mask: url(assets/uploads/icon-piggy-outline.svg) center / contain no-repeat; object-position: -300px 0; }
+
+/* brand-dark promo: content sits 24px inside the boundary lines at every width */
+.l02 .layout.promo.promo-brand-dark { padding-left: calc((100% - var(--w)) / 2 + 24px); padding-right: calc((100% - var(--w)) / 2 + 24px); }
+.l02 .layout.promo.promo-brand-dark .container { max-width: none; }
