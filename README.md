@@ -132,3 +132,5 @@ Opt-in variants on existing blocks (no new block types), loaded by the customize
 - Preset "Layout 02 (Indigo & Gold)": accent #F94D2B, Accent control (tertiary) #4B56A8, highlight #FFE299, dark #1C2B39, sharp cards. The Layout 02 template applies it on load.
 - Hero `fade` takes `rates: [tiles]` to render a 5-up frosted rate row inside the hero. Promo `phones: true` renders two overlapping phone mockups (HTML/CSS, outlines use `--color-highlight`).
 - Template stack: gradient-fade hero (+rates), brand-dark app promo, edge-to-edge promo, 3-col promo cards. Alert banner off by default.
+
+Dev server: `npm run serve` (tools/serve.py) sends `Cache-Control: no-store`, so edited ES modules and CSS always reload. Plain `python3 -m http.server` caches modules and can show stale blocks. Saved state key is `finone-customizer-v2`; the Page tab remembers the loaded template.

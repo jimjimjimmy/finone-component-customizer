@@ -7,14 +7,14 @@ import { GROUPS, TEMPLATES, VARIANTS, TONES, SPACES, labelOf, fromDemo, fromTemp
 
 const $ = (s, r = document) => r.querySelector(s);
 const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
-const KEY = 'finone-customizer-v1';
+const KEY = 'finone-customizer-v2';
 const VIEWPORTS = { desktop: 0, mobile: 390 };   /* desktop = fluid, fills the canvas; mobile = centred 390px */
 import { applyOverrides } from '../demo/overrides.js';
 const demo = applyOverrides(await (await fetch('js/demo/granite.json')).json());
 
 /* ---------------- state ---------------- */
 const fresh = () => ({ preset: 'granite', theme: presetTheme('granite'), org: { ...PRESETS.granite.org, logo: '', heroImage: '', promoImage: '' },
-  stack: fromTemplate(demo, 'home'), selected: null, viewport: 'desktop', controlsHidden: false, showAlert: true, tab: 'brand' });
+  stack: fromTemplate(demo, 'home'), selected: null, viewport: 'desktop', controlsHidden: false, showAlert: true, template: 'home', tab: 'brand' });
 let state = fresh();
 /* Saved state is trusted only if it has the full shape; anything else (old version, hand-edited, corrupt) falls back to defaults. */
 const validState = (s) => s && typeof s === 'object' && s.theme?.tokens && s.theme?.fonts?.heading?.[0] && s.theme?.fonts?.body?.[0] && s.theme?.fonts?.rate?.[0]
@@ -139,7 +139,7 @@ function paintPage() {
   const lib = GROUPS.map(([g, types]) => { const items = Object.keys(demo).map(Number).sort((a, c) => a - c).filter((i) => types.includes(demo[i].type)); return `<h5>${g}</h5>${items.map((i) => `<div class="it" data-name="${esc(labelOf(demo[i]).toLowerCase())}"><span>${esc(labelOf(demo[i]))}</span><button class="b sm" data-add="${i}">+ Add</button></div>`).join('')}`; }).join('');
   $('#pane-page').innerHTML = `
   <details open><summary>Page</summary>
-    <div class="row"><label>Start from</label><select id="tpl">${Object.entries(TEMPLATES).map(([k, t]) => `<option value="${k}">${t.name}</option>`).join('')}</select><button class="b" id="tplgo">Load</button></div>
+    <div class="row"><label>Start from</label><select id="tpl">${Object.entries(TEMPLATES).map(([k, t]) => `<option value="${k}"${k === state.template ? ' selected' : ''}>${t.name}</option>`).join('')}</select><button class="b" id="tplgo">Load</button></div>
     <label class="chk" style="margin:6px 0"><input type="checkbox" id="showalert"${state.showAlert === false ? '' : ' checked'}>Show alert banner</label>
     <p class="note">${state.stack.length} blocks (${state.stack.filter((x) => !x.hidden).length} visible). Click a block in the preview to select it. Header and footer are always present.</p>
     <ul class="stack" id="stack">${list || '<li style="cursor:default">Empty page - add blocks from the library below.</li>'}</ul></details>
@@ -167,7 +167,7 @@ const page = $('#pane-page');
 page.addEventListener('click', (e) => {
   const li = e.target.closest('li[data-uid]'), act = e.target.closest('[data-act]'), add = e.target.closest('[data-add]'), ins = e.target.closest('[data-ins]');
   if (add) { const nb = fromDemo(demo, +add.dataset.add); const at = state.stack.findIndex((x) => x.uid === state.selected); state.stack.splice(at < 0 ? state.stack.length : at + 1, 0, nb); state.selected = nb.uid; scrollTo = nb.uid; paintPage(); render(true); return; }
-  if (e.target.id === 'tplgo') { state.showAlert = TEMPLATES[$('#tpl').value].alert !== false; const tp = TEMPLATES[$('#tpl').value].preset; if (tp && state.preset !== tp) { state.preset = tp; state.theme = presetTheme(tp); Object.assign(state.org, PRESETS[tp].org); applyTheme(); paintBrand(); } state.stack = fromTemplate(demo, $('#tpl').value); state.selected = null; paintPage(); render(true); return; }
+  if (e.target.id === 'tplgo') { state.template = $('#tpl').value; state.showAlert = TEMPLATES[$('#tpl').value].alert !== false; const tp = TEMPLATES[$('#tpl').value].preset; if (tp && state.preset !== tp) { state.preset = tp; state.theme = presetTheme(tp); Object.assign(state.org, PRESETS[tp].org); applyTheme(); paintBrand(); } state.stack = fromTemplate(demo, $('#tpl').value); state.selected = null; paintPage(); render(true); return; }
   if (act && li) { const i = +li.dataset.i, x = state.stack[i]; if (act.dataset.act === 'vis') x.hidden = !x.hidden; else { const j = i + (act.dataset.act === 'up' ? -1 : 1); if (j < 0 || j >= state.stack.length) return; [state.stack[i], state.stack[j]] = [state.stack[j], state.stack[i]]; } paintPage(); render(true); return; }
   if (ins) { const b = sel(), i = state.stack.indexOf(b);
     if (ins.dataset.ins === 'dup') { const c = { ...clone(b), uid: fromDemo(demo, b.idx ?? 0).uid }; state.stack.splice(i + 1, 0, c); state.selected = c.uid; }

@@ -50,6 +50,7 @@
   /* ---- Typography ---- */
   --font-body:    "Source Sans 3", "Source Sans 3 Fallback", sans-serif;
   --font-heading: "Source Sans 3", "Source Sans 3 Fallback", sans-serif;
+  --font-display: var(--font-rate);   /* alias: large serif display (hero headline, rate numerals) */
   --font-rate:    "Source Serif 4", "Source Serif 4 Fallback", serif;   /* rate display numerals */
 
   /* ---- Radii ---- */

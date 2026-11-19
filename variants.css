@@ -14,12 +14,12 @@
 .hero-fade .container { padding-top: 0; padding-bottom: 0; }
 .hero-fade .hero-content { text-align: left; max-width: 720px; margin-bottom: 40px; }
 .hero-fade .hero-content .eyebrow { color: var(--color-highlight); font-size: 14px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
-.hero-fade .hero-content h1 { color: #fff; font-family: var(--font-rate); font-weight: 600; font-size: clamp(44px, 5.6vw, 80px); line-height: 1.1; margin: 8px 0 16px; }
+.hero-fade .hero-content h1 { color: #fff; font-family: var(--font-display, var(--font-rate)); font-weight: 600; font-size: clamp(44px, 5.6vw, 80px); line-height: 1.1; margin: 8px 0 16px; }
 .hero-fade .hero-content p { color: var(--color-highlight); font-size: clamp(18px, 1.6vw, 24px); text-shadow: 0 1px 12px rgba(0,0,0,.25); }
 .hero-rates { width: 100%; padding: 0; }
 .hero-rates.rate-cards-frosted { background: none; }
 .hero-rates .rate-tiles { max-width: none; }
-.hero-rates .card .card-body .rate-group div { color: var(--color-highlight); font-family: var(--font-rate); }
+.hero-rates .card .card-body .rate-group div { color: var(--color-highlight); font-family: var(--font-display, var(--font-rate)); }
 .hero-rates .card .card-header, .hero-rates .card .card-header a { text-transform: uppercase; font-size: 14px; font-weight: 700; letter-spacing: .04em; }
 .hero-rates .card .card-header img { filter: none; }
 .hero-rates .card .card-footer a.btn { padding: 8px 18px; font-size: 14px; }
