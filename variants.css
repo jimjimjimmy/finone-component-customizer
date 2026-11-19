@@ -274,8 +274,8 @@
   .rate-cards .swiper-rate-cards .swiper-wrapper { display: flex !important; gap: 0 !important; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; border: 0 !important; -webkit-overflow-scrolling: touch; }
   .rate-cards .swiper-rate-cards .swiper-wrapper::-webkit-scrollbar { display: none; }
   .rate-cards .swiper-rate-cards .swiper-slide, .rate-cards .swiper-rate-cards:not(.swiper-initialized) .swiper-slide {
-    flex: 0 0 100%; width: 100%; margin: 0; scroll-snap-align: center; scroll-snap-stop: always; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 24px; padding: 28px 16px; box-sizing: border-box; }
-  .hero-rates .card { border: 1px solid rgba(255,255,255,.28) !important; background: rgba(255,255,255,.14); border-radius: 24px; }
+    flex: 0 0 100%; width: 100%; margin: 0; scroll-snap-align: center; scroll-snap-stop: always; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: var(--radius-card); padding: 28px 16px; box-sizing: border-box; }
+  .hero-rates .card { border: 1px solid rgba(255,255,255,.28) !important; background: rgba(255,255,255,.14); border-radius: var(--radius-card); }
   .rate-cards .swiper-rate-cards .swiper-button-prev, .rate-cards .swiper-rate-cards .swiper-button-next {
     visibility: visible; display: flex !important; position: absolute; top: 50%; transform: translateY(-50%); width: 44px; height: 44px; border-radius: 50%; background: var(--color-secondary); color: #fff; display: flex; align-items: center; justify-content: center; margin: 0; z-index: 6; cursor: pointer; }
   .rate-cards .swiper-rate-cards .swiper-button-prev { left: -46px; } .rate-cards .swiper-rate-cards .swiper-button-next { right: -46px; }
