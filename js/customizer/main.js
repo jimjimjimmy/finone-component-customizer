@@ -7,7 +7,7 @@ import { GROUPS, TEMPLATES, VARIANTS, TONES, SPACES, labelOf, fromDemo, fromTemp
 
 const $ = (s, r = document) => r.querySelector(s);
 const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
-const KEY = 'finone-customizer-v2';
+const KEY = 'finone-customizer-v3';
 const VIEWPORTS = { desktop: 0, mobile: 390 };   /* desktop = fluid, fills the canvas; mobile = centred 390px */
 import { applyOverrides } from '../demo/overrides.js';
 const demo = applyOverrides(await (await fetch('js/demo/granite.json')).json());

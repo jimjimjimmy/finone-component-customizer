@@ -6,15 +6,18 @@ const STORE = { apple: ['Download on the', 'App Store', '<svg viewBox="0 0 24 24
 export const badgeRow = (badges = []) => badges.length
   ? `<div class="store-badges">${badges.map((b) => { const [a, n, ic] = STORE[b.store] ?? STORE.apple; return `<a href="${b.href ?? '#'}" class="store-badge" aria-label="${a} ${n}">${ic}<span><small>${a}</small><strong>${n}</strong></span></a>`; }).join('')}</div>` : '';
 
-/* Two overlapping phone mockups (pure HTML/CSS; outlines use --color-highlight) with floating stat cards. */
-const row = (a, b, c) => `<li><i></i><span><b>${a}</b><em>${b}</em></span><strong>${c}</strong></li>`;
+/* Two overlapping phone mockups (pure HTML/CSS; frames use --color-highlight). Figma "Online Banking Phone": 724x606 group, front 280x606, rear 196x424 (same UI at 70%), stats cluster to the right. */
+const tx = (name, date, amt, up) => `<li><i class="${up ? 'up' : ''}"></i><span><b>${name}</b><em>${date}</em></span><strong class="${up ? 'pos' : ''}">${amt}</strong></li>`;
+const screen = () => `<div class="scr"><div class="ph-top"><div><b><sup>$</sup>6,890</b><small>June earning</small></div><span class="ph-av"><i></i><u></u></span></div>
+  <div class="ph-tabs"><span class="on">Week</span><span>Month</span><span>Year</span></div>
+  <p class="ph-h">Upcoming Bills</p>
+  <div class="ph-bills"><div class="bill"><small>22 JUNE 2026</small><div class="bill-in"><span><em>Evernote</em><b>$12.50</b></span><i class="go"></i></div></div><div class="bill alt"><small>10 JULY 2026</small><div class="bill-in"><span><em>DirecTV</em><b>$88.90</b></span></div></div></div>
+  <p class="ph-h">Week Transactions</p><ul>${tx('App Met', '13.06.2026', '68.05')}${tx('Target', '10.06.2026', '102.91')}${tx('Credit 11045', '10.06.2026', '150.00', true)}</ul></div>`;
 export const phoneMock = () => `<div class="phones" aria-hidden="true">
-  <div class="phone phone-back"><div class="ph-top"><small>June earning</small><b>$4,215</b></div><div class="ph-ring"><span>20%</span></div><ul>${row('Savings', 'Auto transfer', '+$250')}${row('Checking', 'Direct deposit', '+$1,800')}${row('Credit card', 'Payment', '-$420')}</ul></div>
-  <div class="phone phone-front"><div class="ph-top"><small>Total balance</small><b>$6,890</b></div><div class="ph-tabs"><span class="on">Week</span><span>Month</span><span>Year</span></div>
-    <small class="ph-h">Upcoming bills</small><div class="ph-cards"><div class="ph-card"><small>22 June 2026</small><b>$12.50</b><em>Evernote</em></div><div class="ph-card alt"><small>26 June 2026</small><b>$88.30</b><em>Direct</em></div></div>
-    <small class="ph-h">Week transactions</small><ul>${row('App Met', '13.06.2026', '-$68')}${row('Target', '10.06.2026', '-$102')}${row('Credit card', '08.06.2026', '+$186')}</ul></div>
-  <div class="stat stat-a"><b>20%</b><span>Monthly Stats<br><small>+20 better performance</small></span></div>
-  <div class="stat stat-b"><small>Earning</small><b>$10,221</b></div><div class="stat stat-c"><small>Spending</small><b>$3,986</b></div></div>`;
+  <div class="phone phone-back">${screen()}</div>
+  <div class="phone phone-front">${screen()}</div>
+  <div class="stat stat-a"><span class="ring">20%</span><span><b>Monthly Stats</b><small>+20 better performance</small></span></div>
+  <div class="stat stat-b"><small>Earning</small><b><sup>$</sup> 10,221</b></div><div class="stat stat-c"><small>Spending</small><b><sup>$</sup> 3,986</b></div></div>`;
 
 /* Promo  (ACF: promo-product | promo-split | promo-offset | promo-full), each with `reverse`.
    props: variant, reverse, bg, brandDark (brand-colour background + light text), edge (image flush to the viewport edge, 50/50), badges [{store,href}], phones (two overlapping phone mockups instead of an image), logo, eyebrow, title, body, buttons, image, nested (inside a tab)            */
