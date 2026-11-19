@@ -285,3 +285,9 @@
   .rate-cards .swiper-rate-cards .swiper-pagination-bullet-active { background: rgba(0,0,0,.4); }
   .hero-rates .swiper-pagination-bullet { background: rgba(255,255,255,.35) !important; } .hero-rates .swiper-pagination-bullet-active { background: #fff !important; }
 }
+
+/* ---- Layout 02 header on mobile: logo scales down so it clears the Login / search / menu controls ---- */
+@media (max-width: 767.98px) {
+  .l02 .header-logo img.custom-logo { width: 150px; max-width: 100%; height: auto; }
+  .l02 #masthead .container { padding-left: 16px; padding-right: 16px; }
+}
