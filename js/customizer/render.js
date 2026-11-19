@@ -45,7 +45,7 @@ export function buildDoc(state) {
   const fonts = googleFontsHref(state.theme.fonts);
   return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="vendor/bootstrap.css?v=${BUST}"><link rel="stylesheet" href="vendor/fa-all.min.css"><link rel="stylesheet" href="vendor/ubermenu.min.css"><link rel="stylesheet" href="vendor/tablepress.css">
-<link rel="stylesheet" href="tokens.css?v=${BUST}"><link rel="stylesheet" href="blocks.css?v=${BUST}"><link rel="stylesheet" href="calculator.css?v=${BUST}"><link rel="stylesheet" href="wordmark.css?v=${BUST}"><link rel="stylesheet" href="fullbleed.css?v=${BUST}">
+<link rel="stylesheet" href="tokens.css?v=${BUST}"><link rel="stylesheet" href="blocks.css?v=${BUST}"><link rel="stylesheet" href="calculator.css?v=${BUST}"><link rel="stylesheet" href="wordmark.css?v=${BUST}"><link rel="stylesheet" href="fullbleed.css?v=${BUST}"><link rel="stylesheet" href="variants.css?v=${BUST}">
 <link id="gf" rel="stylesheet" href="${fonts}"><style id="theme-vars">${themeCss(state.theme)}</style><style>${PREVIEW_CSS}</style></head>
 <body class="blocks-kitchen-sink${state.controlsHidden ? '' : ' edit'}"><div class="site-overlay-dark"></div>${skipLinks()}
 <div id="page" class="site">${alertBar(alert)}${siteHeader(header)}<main id="primary" class="site-main">${renderMain(state)}</main>${siteFooter(footer)}</div>${speedbump({ owner: state.org.name })}

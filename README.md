@@ -117,3 +117,13 @@ Open `customizer.html` (`kitchen-sink.html` is unchanged and is the baseline). C
 
 ### Full-bleed layer (`fullbleed.css`)
 Loaded by the customizer only (kitchen-sink / verify stay the 1:1 baseline). Heroes (marquee, large, medium, small), Promo Full and Banner Full span the viewport edge to edge while content stays in the centred `--container-max-width` (alias of `--container-max`, 1440px). Photography is `width/height: 100%`, `object-fit: cover`, `object-position: center center`, with `min-height` clamps (`clamp(...)` by viewport, capped at 640px for splits, 760px marquee, 820px banner). Preview widths now include 1920 and 2560. Promo Split/Offset/Product keep the engineer's `center top` crop.
+
+## Layout 02 (variants.css)
+
+Opt-in variants on existing blocks (no new block types), loaded by the customizer only; the kitchen sink stays the 1:1 baseline.
+
+- Hero marquee `fade: true` - gradient-fade: cover/centre photo dissolving into `--color-tertiary` (#4b56a8 in Granite) plus a left scrim.
+- Rate strip `appearance: 'frosted'` - brand-dark strip, translucent cards, white text.
+- Promo `brandDark: true` (+ `badges: [{store:'apple'|'google'}]`) and `edge: true` (media flush to the viewport edge, 50/50, copy inside the container).
+- Page Builder template "Layout 02": hero fade, frosted rate strip, brand-dark app promo, edge-to-edge promo, 3 image cards. Header and footer are site chrome.
+- Note: `--color-primary` is the accent; the brand-dark blue is `--color-tertiary`, so the variants use that token.

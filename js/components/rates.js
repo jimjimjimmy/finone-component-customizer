@@ -3,10 +3,11 @@ import { SWIPER_PREV, SWIPER_NEXT } from '../svg.js';
 
 const controls = () => `<div class="swiper-button-prev">${SWIPER_PREV}</div><div class="swiper-pagination"></div><div class="swiper-button-next">${SWIPER_NEXT}</div>`;
 
-/* Featured Rate Strip  (ACF: rate-cards)  - Checking / Home Loans / Certificates / Auto Loans ...
+/* Featured Rate Strip  (ACF: rate-cards)  appearance 'default' | 'frosted' (brand-dark strip, translucent cards)  - Checking / Home Loans / Certificates / Auto Loans ...
    tiles: [{ icon, title, href?, text? | rate:{ value, unit:'%', label:'APY', lead:'24 months' }, cta:{label,href} }]  */
 export function rateCards(p = {}) {
-  const { tiles = [], buttons = [], id } = p;
+  const { tiles = [], buttons = [], id, appearance = 'default' } = p;
+  const frosted = appearance === 'frosted';
   const card = (t) => `<div class="card item-stagger swiper-slide item-stagger">
     <div class="card-header">${img(t.icon, { 'aria-hidden': 'true' })}${t.href ? `<a href="${t.href}">${t.title}</a>` : ' ' + t.title + ' '}</div>
     <div class="card-body">${t.rate
@@ -14,11 +15,11 @@ export function rateCards(p = {}) {
       : `<div class="card-text"> ${t.text} </div>`}</div>
     <div class="card-footer"><a href="${t.cta.href ?? '#'}" class="btn btn-primary-dark">${t.cta.label}</a></div>
   </div>`;
-  const strip = layout('rate-cards', { pb: 50 },
+  const strip = layout(cx('rate-cards', frosted && 'rate-cards-frosted'), { pb: 50 },
     `<div class="container"><div class="row"><div class="rate-tiles fade-animate-stagger"><div class="swiper swiper-rate-cards"><div class="swiper-wrapper">${tiles.map(card).join('')}</div>${controls()}</div></div></div></div>`);
   const more = buttons.length
     ? layout('buttons-group', {}, `<div class="container"><div class="row"><div class="col-12 fade-animate-down">${cta(buttons, { align: 'center' })}</div></div></div>`) : '';
-  return section({ pt: 50, pb: 50, id }, strip + more);
+  return section({ pt: 50, pb: 50, id, ...(frosted ? { bg: 'tertiary' } : {}) }, strip + more);
 }
 
 /* Rate Table  (ACF: intro + rates)  - Savings / Checking rate tables.

@@ -62,8 +62,8 @@ window.addEventListener('resize', fit);
 function setTab(t) { state.tab = t; document.querySelectorAll('.tabs button').forEach((b) => b.classList.toggle('on', b.dataset.tab === t)); document.querySelectorAll('.pane').forEach((p) => p.classList.toggle('on', p.id === 'pane-' + t)); }
 document.querySelector('.tabs').addEventListener('click', (e) => { const b = e.target.closest('button'); if (b) setTab(b.dataset.tab); });
 $('#vp').addEventListener('change', (e) => { state.viewport = e.target.value; fit(); save(); });
-function setHidden(h) { state.controlsHidden = h; document.body.classList.toggle('demo', h); try { frame.contentDocument?.body.classList.toggle('edit', !h); } catch (e) { /* frame not ready */ } fit(); }
-$('#hide').addEventListener('click', () => setHidden(true)); $('#showctl').addEventListener('click', () => setHidden(false));
+function setHidden(h) { state.controlsHidden = h; document.body.classList.toggle('demo', h); $('#hide').textContent = h ? 'Show controls' : 'Hide controls'; try { frame.contentDocument?.body.classList.toggle('edit', !h); } catch (e) { /* frame not ready */ } fit(); }
+$('#hide').addEventListener('click', () => setHidden(!state.controlsHidden));
 $('#reset').addEventListener('click', () => { if (confirm('Reset theme, brand data and page to the Granite defaults?')) { state = fresh(); setTab('brand'); paintAll(); render(true); } });
 
 /* ---------------- Brand pane ---------------- */
@@ -196,6 +196,6 @@ function boot() { paintAll(); fit(); render(true); }
 try { boot(); }
 catch (err) {
   console.error('Customizer boot failed with saved state; resetting to defaults.', err);
-  clearSaved(); state = fresh(); document.body.classList.remove('demo');
+  clearSaved(); state = fresh(); document.body.classList.remove('demo'); $('#hide').textContent = 'Hide controls';
   try { boot(); status('Saved state was invalid and has been reset'); } catch (e2) { document.body.insertAdjacentHTML('afterbegin', `<pre style="position:fixed;inset:0;z-index:99;margin:0;padding:20px;background:#fff;color:#b00;white-space:pre-wrap">Customizer failed to start: ${esc(e2.message)}</pre>`); }
 }

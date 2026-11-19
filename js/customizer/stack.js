@@ -7,12 +7,12 @@ export const newUid = () => 'b' + (++n) + Math.random().toString(36).slice(2, 5)
 /* Human label for one of the 58 demo blocks. */
 export function labelOf(entry) {
   const p = entry.props, t = entry.type;
-  const tag = { hero: () => `Hero ${p.size}${p.boxed ? ' boxed' : ''}${p.reverse ? ' reverse' : ''}`, promo: () => `Promo ${p.variant}${p.reverse ? ' reverse' : ''}`,
+  const tag = { hero: () => `Hero ${p.size}${p.fade ? ' gradient-fade' : ''}${p.boxed ? ' boxed' : ''}${p.reverse ? ' reverse' : ''}`, promo: () => `Promo ${p.variant}${p.reverse ? ' reverse' : ''}${p.brandDark ? ' brand-dark' : ''}${p.edge ? ' edge-to-edge' : ''}`,
     banner: () => `Banner ${p.variant}`, steps: () => `Steps ${p.variant}`, quotes: () => `Quotes ${p.variant}`, quicklinks: () => `Quicklinks${p.link ? '' : ' (no link)'}${p.descriptions ? ' + text' : ''}`,
     featureGrid: () => `Feature grid${p.boxed ? ' boxed' : ''}${p.layout === 'vertical' ? ' vertical' : ''}`, introSection: () => `Intro: ${p.eyebrow || p.title || ''}`.slice(0, 40),
     staticCards: () => `Static cards (${p.cards.length})`, rateTable: () => `Rate table: ${p.name.replace('regular_', '')}`, postCards: () => `Posts${p.noBorder ? ' (news)' : ''}`,
     productCards: () => `Product cards${p.noBorder ? ' (no border)' : ''}`, faq: () => 'FAQ accordion', richText: () => 'Rich text', breadcrumbs: () => 'Breadcrumbs', anchorBar: () => 'Anchor bar',
-    certificateCalculator: () => 'Certificate calculator', rateCards: () => 'Featured rate strip', actionCards: () => 'Action cards', promoCards: () => 'Promo cards', mixMatch: () => 'Mix-and-match',
+    certificateCalculator: () => 'Certificate calculator', rateCards: () => `Featured rate strip${p.appearance === 'frosted' ? ' frosted' : ''}`, actionCards: () => 'Action cards', promoCards: () => 'Promo cards', mixMatch: () => 'Mix-and-match',
     compareTable: () => 'Comparison table', logoGrid: () => 'Logo / awards grid', flexibleColumns: () => 'Flexible columns', disclosures: () => 'Disclosures', tabs: () => 'Tabs' }[t];
   return tag ? tag() : t;
 }
@@ -25,6 +25,7 @@ export const TEMPLATES = {
   product: { name: 'Product Detail Page', blocks: [7, 11, 10, 41, 54, 57] },          /* Hero Small Boxed, Rate Strip, Calculator, Comparison Table, FAQ */
   lending: { name: 'Lending / Promo Landing Page', blocks: [1, 15, 33, 42, 22, 57] }, /* Hero Large, Quicklinks (+text), Promo Split, Steps, Action Cards */
   news: { name: 'News & Community Page', blocks: [26, 48, 49, 35, 57] },               /* Intro Medium, Curated Posts, Global News, Promo Offset */
+  layout02: { name: 'Layout 02', blocks: [100, 101, 102, 103, 104] },  /* Gradient-fade hero, frosted rate strip, brand-dark app promo, edge-to-edge promo, 3 cards (header/footer are site chrome) */
   blank: { name: 'Blank canvas', blocks: [] },
 };
 export const fromDemo = (demo, idx) => ({ uid: newUid(), idx, type: demo[idx].type, props: clone(demo[idx].props), hidden: false });
@@ -32,8 +33,9 @@ export const fromTemplate = (demo, id) => TEMPLATES[id].blocks.map((i) => fromDe
 
 /* Variant props exposed per block type. */
 export const VARIANTS = {
-  hero: [['size', 'Size', ['marquee', 'large', 'medium', 'small']], ['boxed', 'Boxed'], ['reverse', 'Reverse'], ['tone', 'Text tone', ['light', 'dark']]],
-  promo: [['variant', 'Variant', ['product', 'split', 'offset', 'full']], ['reverse', 'Reverse']],
+  hero: [['size', 'Size', ['marquee', 'large', 'medium', 'small']], ['boxed', 'Boxed'], ['reverse', 'Reverse'], ['fade', 'Gradient fade (marquee)'], ['tone', 'Text tone', ['light', 'dark']]],
+  promo: [['variant', 'Variant', ['product', 'split', 'offset', 'full']], ['reverse', 'Reverse'], ['brandDark', 'Brand-dark background'], ['edge', 'Edge-to-edge media']],
+  rateCards: [['appearance', 'Appearance', ['default', 'frosted']]],
   quicklinks: [['descriptions', 'Descriptions'], ['link', 'Linked cards']],
   featureGrid: [['boxed', 'Boxed'], ['border', 'Border'], ['layout', 'Layout', ['grid', 'vertical']]],
   banner: [['variant', 'Variant', ['boxed', 'full']]], steps: [['variant', 'Variant', ['number', 'icon', 'image']]], quotes: [['variant', 'Variant', ['plain', 'boxed']]],
