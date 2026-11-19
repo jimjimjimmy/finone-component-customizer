@@ -175,3 +175,5 @@
 /* mobile-banking feature: illustration (724) + 80px + copy (554) centred in the column; neutralise the engineer's reverse margin */
 .promo-brand-dark .row.reverse .promo-content, .promo-brand-dark .row .promo-content { margin: 0; }
 .promo-brand-dark .container { padding: 0; }
+.l02 .promo-cards-3 .container { padding-left: 24px; padding-right: 24px; box-sizing: border-box; }   /* 24px between the cards and the boundary lines */
+@media (min-width: 1050px) { .promo-cards-3 .row > div { flex: 0 0 auto; width: 33.33333%; } }
