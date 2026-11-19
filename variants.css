@@ -250,10 +250,10 @@
 .l02-backdrop .layout.hero-marquee.hero-fade, .l02-backdrop > section { background: transparent !important; }
 .l02-backdrop .layout.promo.promo-brand-dark { background: transparent !important; }
 .l02-backdrop .hero-fade .hero-picture { position: absolute; top: 0; left: 0; right: 0; bottom: auto; height: 100%; z-index: 0; }   /* full stage height on desktop: the gradient always ends solid at the stage bottom (no photo edge) */
-@media (max-width: 767.98px) { .l02-backdrop .hero-fade .hero-picture { max-height: 900px; } }
+@media (max-width: 767.98px) { .l02-backdrop .hero-fade .hero-picture { max-height: 1100px; } }
 .l02-backdrop .hero-fade .hero-picture .image-fit img { object-fit: cover; object-position: center center; }
 .l02-backdrop .hero-fade .hero-picture::after {
   background:
-    linear-gradient(to bottom, rgba(28,43,57,.35) 0%, color-mix(in srgb, var(--fade-brand) 72%, transparent) 55%, var(--fade-brand) 92%),
+    linear-gradient(to bottom, rgba(28,43,57,.35) 0%, color-mix(in srgb, var(--fade-brand) 72%, transparent) 38%, var(--fade-brand) 62%),
     linear-gradient(to right, color-mix(in srgb, #0b1030 62%, transparent) 0%, color-mix(in srgb, var(--fade-brand) 30%, transparent) 40%, rgba(0,0,0,0) 65%); }
 .l02-backdrop .hero-fade-body, .l02-backdrop .hero-rates, .l02-backdrop .promo-brand-dark > * { position: relative; z-index: 5; }
