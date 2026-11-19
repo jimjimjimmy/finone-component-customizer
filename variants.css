@@ -177,3 +177,11 @@
 .promo-brand-dark .container { padding: 0; }
 .l02 .promo-cards-3 .container { padding-left: 24px; padding-right: 24px; box-sizing: border-box; }   /* 24px between the cards and the boundary lines */
 @media (min-width: 1050px) { .promo-cards-3 .row > div { flex: 0 0 auto; width: 33.33333%; } }
+
+/* footer: stay inside the boundary lines with a 24px inset (the engineer's rows use -10px gutters that spill outside the column) */
+.l02 footer .container { padding-left: 24px; padding-right: 24px; box-sizing: border-box; }
+.l02 footer .row { margin-left: 0; margin-right: 0; }
+.l02 footer .row > [class^="col-"], .l02 footer .row > [class*=" col-"] { padding-left: 0; padding-right: 20px; }
+@media (min-width: 1050px) { .l02 footer .footer-col-group { display: flex; flex-wrap: nowrap; gap: 0; } .l02 footer .footer-col { flex: 1 1 0; width: auto; min-width: 0; padding-right: 16px; } }
+.l02 footer .row > :last-child { padding-right: 0; }
+.l02 footer .footer-col:last-child { padding-right: 0; }
