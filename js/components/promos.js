@@ -8,14 +8,16 @@ export const badgeRow = (badges = []) => badges.length
 
 /* Two overlapping phone mockups (pure HTML/CSS; frames use --color-highlight). Figma "Online Banking Phone": 724x606 group, front 280x606, rear 196x424 (same UI at 70%), stats cluster to the right. */
 const tx = (name, date, amt, up) => `<li><i class="${up ? 'up' : ''}"></i><span><b>${name}</b><em>${date}</em></span><strong class="${up ? 'pos' : ''}">${amt}</strong></li>`;
-const screen = () => `<div class="scr"><div class="ph-top"><div><b><sup>$</sup>6,890</b><small>June earning</small></div><span class="ph-av"><i></i><u></u></span></div>
+const screen = (d) => `<div class="scr"><div class="ph-top"><div><b><sup>$</sup>${d.bal}</b><small>${d.sub}</small></div><span class="ph-av"><i></i><u></u></span></div>
   <div class="ph-tabs"><span class="on">Week</span><span>Month</span><span>Year</span></div>
   <p class="ph-h">Upcoming Bills</p>
-  <div class="ph-bills"><div class="bill"><small>22 JUNE 2026</small><div class="bill-in"><span><em>Evernote</em><b>$12.50</b></span><i class="go"></i></div></div><div class="bill alt"><small>10 JULY 2026</small><div class="bill-in"><span><em>DirecTV</em><b>$88.90</b></span></div></div></div>
-  <p class="ph-h">Week Transactions</p><ul>${tx('App Met', '13.06.2026', '68.05')}${tx('Target', '10.06.2026', '102.91')}${tx('Credit 11045', '10.06.2026', '150.00', true)}</ul></div>`;
+  <div class="ph-bills"><div class="bill"><small>${d.b1[0]}</small><div class="bill-in"><span><em>${d.b1[1]}</em><b>${d.b1[2]}</b></span><i class="go"></i></div></div><div class="bill alt"><small>${d.b2[0]}</small><div class="bill-in"><span><em>${d.b2[1]}</em><b>${d.b2[2]}</b></span></div></div></div>
+  <p class="ph-h">Week Transactions</p><ul>${d.tx.map((t) => tx(...t)).join('')}</ul></div>`;
+const FRONT = { bal: '6,890', sub: 'June earning', b1: ['22 JUNE 2026', 'Evernote', '$12.50'], b2: ['10 JULY 2026', 'DirecTV', '$88.90'], tx: [['App Met', '13.06.2026', '68.05'], ['Target', '10.06.2026', '102.91'], ['Credit 11045', '10.06.2026', '150.00', true]] };
+const BACK = { bal: '4,215', sub: 'Savings balance', b1: ['24 JUNE 2026', 'Netflix', '$15.49'], b2: ['02 JULY 2026', 'Spotify', '$10.99'], tx: [['Deposit', '14.06.2026', '1,200.00', true], ['Transfer', '12.06.2026', '250.00'], ['Interest', '01.06.2026', '3.42', true]] };
 export const phoneMock = () => `<div class="phones" aria-hidden="true">
-  <div class="phone phone-back">${screen()}</div>
-  <div class="phone phone-front">${screen()}</div>
+  <div class="phone phone-back">${screen(BACK)}</div>
+  <div class="phone phone-front">${screen(FRONT)}</div>
   <div class="stat stat-a"><span class="ring">20%</span><span><b>Monthly Stats</b><small>+20 better performance</small></span></div>
   <div class="stat stat-b"><small>Earning</small><b><sup>$</sup> 10,221</b></div><div class="stat stat-c"><small>Spending</small><b><sup>$</sup> 3,986</b></div></div>`;
 

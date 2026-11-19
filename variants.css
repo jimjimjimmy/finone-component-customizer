@@ -29,7 +29,7 @@
 .hero-rates .card .card-body .rate-group { margin-top: 2px; }
 .hero-rates .card .card-body .rate-group div { color: var(--color-highlight); font-family: var(--font-display, var(--font-rate)); }
 .hero-rates .card .card-footer { padding: 12px 0 0; }
-.hero-rates .card .card-footer a.btn { padding: 6px 16px; font-size: 12px; letter-spacing: .04em; border-color: rgba(255,255,255,.55); border-radius: 4px; }
+.hero-rates .card .card-footer a.btn { padding: 6px 16px; font-size: 12px; letter-spacing: .04em; border-color: rgba(255,255,255,.55); }
 
 /* ---- Featured Rate Strip: frosted (brand-dark) ---- */
 .rate-cards-frosted { background: var(--fade-brand); }
@@ -109,24 +109,28 @@
 .promo-cards-3 .promo-card .card-body .btn-text { color: var(--color-tertiary); text-transform: uppercase; font-size: 14px; font-weight: 700; letter-spacing: .04em; }
 
 /* ---- Promo brand-dark mobile-banking composition ----
-   1440 container, 80px vertical / 40px horizontal padding, 80px gap, illustration 724x606 left, copy 554px right aligned toward the lower half. */
-.layout.promo.promo-brand-dark { padding-top: 80px; padding-bottom: 80px; --s: 1; }
-.promo-brand-dark .container { max-width: 1440px; padding: 0 40px; }
+   Centred grid column, 80px vertical / 40px horizontal padding, illustration (max 724) + 80px gap + copy (max 554), copy aligned toward the lower half.
+   The illustration is fluid: its box is width:100% (max 724) with a 724/606 aspect ratio and the phones scale in container-query steps. */
+.layout.promo.promo-brand-dark { padding: 80px 40px; }
+.l02 .layout.promo.promo-brand-dark .container { width: 100%; max-width: var(--container-max, 1440px); }
+.promo-brand-dark .container { max-width: var(--container-max, 1440px); margin: 0 auto; padding: 0; }
 .promo-brand-dark .row { gap: 80px; flex-wrap: nowrap; align-items: flex-end; justify-content: center; }
-.promo-brand-dark .promo-image { flex: 0 0 724px; width: 724px; height: calc(606px * var(--s)); margin: 0; padding: 0; position: relative; }
-.promo-brand-dark .promo-content { flex: 0 0 554px; width: 554px; margin: 0; padding: 0 0 56px; align-self: flex-end; }
+.promo-brand-dark .promo-image { flex: 0 1 724px; width: 100%; max-width: 724px; aspect-ratio: 724 / 606; height: auto; margin: 0; padding: 0; position: relative; container-type: inline-size; }
+.promo-brand-dark .promo-content { flex: 0 1 554px; width: auto; max-width: 554px; margin: 0; padding: 0 0 56px; align-self: flex-end; min-width: 0; }
 .layout.promo.promo-brand-dark .promo-content .eyebrow { font-size: 14px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
 .layout.promo.promo-brand-dark .promo-content h2 { font-size: 34px; font-weight: 400; line-height: 1.1; margin: 8px 0 14px; }
 .layout.promo.promo-brand-dark .promo-content p { font-size: 20px; line-height: 1.25; }
-@media (max-width: 1299.98px) { .layout.promo.promo-brand-dark { --s: .8; } .promo-brand-dark .row { gap: 40px; } .promo-brand-dark .promo-content { flex-basis: 400px; width: 400px; } .promo-brand-dark .promo-image { flex-basis: calc(724px * var(--s)); width: calc(724px * var(--s)); } }
-@media (max-width: 1049.98px) { .layout.promo.promo-brand-dark { --s: .8; padding-top: 48px; padding-bottom: 48px; } .promo-brand-dark .row { flex-wrap: wrap; flex-direction: column-reverse; align-items: center; gap: 32px; }
+@media (max-width: 1199.98px) { .promo-brand-dark .row { gap: 40px; } }
+@media (max-width: 1049.98px) { .layout.promo.promo-brand-dark { padding: 48px 24px; } .promo-brand-dark .row { flex-wrap: wrap; flex-direction: column-reverse; align-items: center; gap: 32px; }
   .promo-brand-dark .promo-image { flex: none; width: 100%; } .promo-brand-dark .promo-content { flex: none; width: 100%; max-width: 554px; padding: 0; align-self: center; } }
-@media (max-width: 679.98px) { .layout.promo.promo-brand-dark { --s: .46; } .promo-brand-dark .container { padding: 0 20px; }
-  .layout.promo.promo-brand-dark .promo-content h2 { font-size: 28px; } .layout.promo.promo-brand-dark .promo-content p { font-size: 17px; } }
+@media (max-width: 679.98px) { .layout.promo.promo-brand-dark { padding: 40px 20px; } .layout.promo.promo-brand-dark .promo-content h2 { font-size: 28px; } .layout.promo.promo-brand-dark .promo-content p { font-size: 17px; } }
 
 /* ---- Two overlapping phone mockups, 724x606 group (Figma "Online Banking Phone") ----
    Front 280x606 at (164,0); rear 196x424 at (0,139) - same UI scaled to 70%; stats cluster 40px right of the front phone. */
-.phones { position: absolute; left: 50%; top: 0; width: 724px; height: 606px; margin-left: -362px; transform: scale(var(--s, 1)); transform-origin: top center; }
+.phones { position: absolute; left: 0; top: 0; width: 724px; height: 606px; transform: scale(var(--s, 1)); transform-origin: top left; }
+@container (max-width: 723px) { .phones { --s: .95; } } @container (max-width: 687px) { .phones { --s: .9; } } @container (max-width: 651px) { .phones { --s: .85; } } @container (max-width: 615px) { .phones { --s: .8; } }
+@container (max-width: 579px) { .phones { --s: .75; } } @container (max-width: 542px) { .phones { --s: .7; } } @container (max-width: 506px) { .phones { --s: .65; } } @container (max-width: 470px) { .phones { --s: .6; } }
+@container (max-width: 433px) { .phones { --s: .55; } } @container (max-width: 397px) { .phones { --s: .5; } } @container (max-width: 361px) { .phones { --s: .45; } } @container (max-width: 325px) { .phones { --s: .4; } } @container (max-width: 289px) { .phones { --s: .35; } }
 .phone { position: absolute; background: #fff; border: 8px solid var(--color-highlight); border-radius: 38px; overflow: hidden; color: var(--color-dark); text-align: left; box-shadow: none; }
 .phone-front { left: 164px; top: 0; width: 280px; height: 606px; z-index: 2; }
 .phone-back { left: 0; top: 139px; width: 196px; height: 424px; z-index: 1; }
@@ -221,3 +225,14 @@
 .l02 footer .footer_social li a::before, .l02 footer .footer_social li a svg, .l02 footer .footer_social li a img { width: 24px; height: 24px; font-size: 24px; }
 @media (max-width: 679.98px) { .l02 footer .footer-main .row { flex-wrap: wrap; gap: 20px; } .l02 footer .footer_social { justify-content: flex-start; } }
 .l02 footer h1, .l02 footer h2, .l02 footer h3, .l02 footer h4, .l02 footer h5, .l02 footer h6, .l02 footer .footer-col > :first-child { font-family: var(--font-body); }
+
+/* ---- Edge-to-edge promo: truly full bleed; copy aligns to the centred grid ---- */
+.l02 .layout.promo-edge .container { width: 100%; max-width: none; padding: 0; }
+.l02 .promo-edge .row { margin: 0; }
+.l02 .promo-edge .row.reverse .promo-content { padding: 48px calc((100% - var(--w)) / 2 + 24px) 48px 64px; }
+.l02 .promo-edge .row:not(.reverse) .promo-content { padding: 48px 64px 48px calc((100% - var(--w)) / 2 + 24px); }
+@media (max-width: 1049.98px) { .l02 .promo-edge .row.reverse .promo-content, .l02 .promo-edge .row:not(.reverse) .promo-content { padding: 32px 24px; } }
+.promo-edge .row .promo-content, .promo-edge .row.reverse .promo-content { margin-left: 0; margin-right: 0; }
+
+/* rate-card icon follows the Primary (accent) colour: the outline glyph is used as a mask over a token-coloured fill */
+.hero-rates .card .card-header img { background: var(--color-accent); -webkit-mask: url(assets/uploads/icon-piggy-outline.svg) center / contain no-repeat; mask: url(assets/uploads/icon-piggy-outline.svg) center / contain no-repeat; object-position: -300px 0; }

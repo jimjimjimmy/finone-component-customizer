@@ -92,7 +92,7 @@ function paintBrand() {
     <input type="file" id="upf" accept="image/*" hidden>
     <p class="note">Org name, routing and NMLS re-render the header, footer, alert, disclosures and copy. Hero/Promo images replace the image in every hero and promo block. Uploads live in this session only.</p></details>`;
 }
-let upKey = '';
+let upKey = '', fupPath = '';
 const brand = $('#pane-brand');
 brand.addEventListener('input', (e) => {
   const t = e.target;
@@ -129,7 +129,7 @@ function setColor(key, v, fromHex) {
 function setFont(kind, f) { state.theme.fonts[kind] = f; touchTheme(); }
 function download(name, text, type) { const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([text], { type })); a.download = name; a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 500); }
 async function importFile(f) { if (!f) return; try { const r = importTheme(await f.text()); state.theme = r.theme; if (r.org) Object.assign(state.org, r.org); if (r.page) { state.stack = r.page.filter((x) => x.type && x.props).map((x) => ({ ...x, uid: newUid() })); state.selected = null; paintPage(); } state.preset = 'custom'; applyTheme(); paintBrand(); render(true); msg(`Imported "${r.name}"${r.page ? ` with ${r.page.length} blocks` : ''}`); } catch (err) { msg('Import failed: ' + err.message); } }
-function upload(f) { if (!f) return; const r = new FileReader(); r.onload = () => { state.org[upKey] = r.result; paintBrand(); render(true); }; r.readAsDataURL(f); }
+function upload(f) { if (!f) return; const r = new FileReader(); r.onload = () => { if (fupPath) { const b = sel(); if (b) { setP(b.props, fupPath, r.result); fupPath = ''; paintPage(); render(true); } return; } state.org[upKey] = r.result; paintBrand(); render(true); }; r.readAsDataURL(f); }
 
 /* ---------------- Page pane ---------------- */
 function select(uid, scroll = true) { state.selected = uid; if (scroll) scrollTo = null; paintPage(); markSelected(); if (scroll) frame.contentDocument?.querySelector(`[data-uid="${uid}"]`)?.scrollIntoView({ block: 'start' }); }
@@ -161,10 +161,11 @@ function inspector(b) {
 }
 function copyFields(b) {
   const f = fieldsOf(b); if (!f.length) return '';
-  return `<details open><summary style="font-size:11px">Copy and data (${f.length})</summary>${f.map((x) => `<div class="row col" style="margin:6px 0"><label style="flex:none">${esc(x.label)}</label>${x.multi ? `<textarea data-field="${esc(x.path)}" rows="3">${esc(x.value)}</textarea>` : `<input type="text" data-field="${esc(x.path)}"${x.num ? ' inputmode="decimal"' : ''} value="${esc(x.value)}">`}</div>`).join('')}</details>`;
+  return `<details open><summary style="font-size:11px">Copy and data (${f.length})</summary>${f.map((x) => `<div class="row col" style="margin:6px 0"><label style="flex:none">${esc(x.label)}</label>${x.multi ? `<textarea data-field="${esc(x.path)}" rows="3">${esc(x.value)}</textarea>` : x.image ? `<div class="row" style="margin:0"><input type="text" data-field="${esc(x.path)}" value="${esc(x.value.startsWith('data:') ? '(uploaded file)' : x.value)}" placeholder="https://... or upload"><button class="b sm" data-fup="${esc(x.path)}">Upload</button></div>` : `<input type="text" data-field="${esc(x.path)}"${x.num ? ' inputmode="decimal"' : ''}${x.url ? ' placeholder="https://..."' : ''} value="${esc(x.value)}">`}</div>`).join('')}</details>`;
 }
 const page = $('#pane-page');
 page.addEventListener('click', (e) => {
+  const fup = e.target.closest('[data-fup]'); if (fup) { fupPath = fup.dataset.fup; $('#upf').value = ''; $('#upf').click(); return; }
   const li = e.target.closest('li[data-uid]'), act = e.target.closest('[data-act]'), add = e.target.closest('[data-add]'), ins = e.target.closest('[data-ins]');
   if (add) { const nb = fromDemo(demo, +add.dataset.add); const at = state.stack.findIndex((x) => x.uid === state.selected); state.stack.splice(at < 0 ? state.stack.length : at + 1, 0, nb); state.selected = nb.uid; scrollTo = nb.uid; paintPage(); render(true); return; }
   if (e.target.id === 'tplgo') { state.template = $('#tpl').value; state.showAlert = TEMPLATES[$('#tpl').value].alert !== false; const tp = TEMPLATES[$('#tpl').value].preset; if (tp) { state.preset = tp; state.theme = presetTheme(tp); Object.assign(state.org, PRESETS[tp].org); applyTheme(); paintBrand(); } state.stack = fromTemplate(demo, $('#tpl').value); state.selected = null; paintPage(); render(true); return; }

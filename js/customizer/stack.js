@@ -56,25 +56,31 @@ export const getTone = (b) => (b.type === 'hero' ? b.props.bg : b.props.spacing?
 /* ---- Inline copy & data editing ---- */
 const getP = (o, path) => path.split('.').reduce((a, k) => (a == null ? a : a[k]), o);
 export function setP(o, path, v) { const ks = path.split('.'); const last = ks.pop(); const tgt = ks.reduce((a, k) => a[k], o); tgt[last] = v; }
-const TEXT_KEYS = [['title', 'Title'], ['text', 'Text'], ['body', 'Body'], ['quote', 'Quote'], ['by', 'Author'], ['excerpt', 'Excerpt'], ['q', 'Question']];
+const TEXT_KEYS = [['eyebrow', 'Eyebrow'], ['title', 'Title'], ['text', 'Text'], ['body', 'Body'], ['quote', 'Quote'], ['by', 'Author'], ['excerpt', 'Excerpt'], ['q', 'Question']];
 /* Editable text fields for a block: [{path,label,multi,value}] */
 export function fieldsOf(b) {
   const p = b.props, out = [];
   const add = (path, label, multi) => { const v = getP(p, path); if (typeof v === 'string' && v !== '') out.push({ path, label, multi: !!multi || v.length > 70, value: v }); };
+  const addU = (path, label) => { const v = getP(p, path); if (typeof v === 'string') out.push({ path, label, url: true, value: v }); };
+  const addI = (path, label) => { const v = getP(p, path); if (typeof v === 'string' && v) out.push({ path, label, image: true, value: v }); };
   add('eyebrow', 'Eyebrow'); add('title', 'Headline'); add('body', 'Body', true);
   if (p.main) { add('main.eyebrow', 'Eyebrow'); add('main.title', 'Headline'); add('main.body', 'Body', true); add('main.button.label', 'CTA label'); }
-  (p.buttons || []).forEach((x, i) => add(`buttons.${i}.label`, `Button ${i + 1} label`));
-  if (b.type === 'rateCards') (p.tiles || []).forEach((t, i) => {
-    add(`tiles.${i}.title`, `Tile ${i + 1} title`);
-    if (t.rate) { add(`tiles.${i}.rate.lead`, `Tile ${i + 1} term`); add(`tiles.${i}.rate.value`, `Tile ${i + 1} rate`); add(`tiles.${i}.rate.label`, `Tile ${i + 1} APY/APR`); } else add(`tiles.${i}.text`, `Tile ${i + 1} text`);
-    add(`tiles.${i}.cta.label`, `Tile ${i + 1} button`);
+  if ((b.type === 'hero' || b.type === 'promo') && !p.phones) addI('image', 'Photo (URL or upload)');
+  (p.buttons || []).forEach((x, i) => { add(`buttons.${i}.label`, `Button ${i + 1} label`); addU(`buttons.${i}.href`, `Button ${i + 1} URL`); });
+  (p.badges || []).forEach((x, i) => addU(`badges.${i}.href`, `${x.store === 'google' ? 'Google Play' : 'App Store'} URL`));
+  const tk = b.type === 'rateCards' ? 'tiles' : (b.type === 'hero' && p.rates ? 'rates' : null);
+  if (tk) (p[tk] || []).forEach((t, i) => {
+    add(`${tk}.${i}.title`, `Card ${i + 1} title`);
+    if (t.rate) { add(`${tk}.${i}.rate.lead`, `Card ${i + 1} subtitle`); add(`${tk}.${i}.rate.value`, `Card ${i + 1} rate numeral`); add(`${tk}.${i}.rate.unit`, `Card ${i + 1} unit`); add(`${tk}.${i}.rate.label`, `Card ${i + 1} suffix`); } else add(`${tk}.${i}.text`, `Card ${i + 1} text`);
+    add(`${tk}.${i}.cta.label`, `Card ${i + 1} button`); addU(`${tk}.${i}.cta.href`, `Card ${i + 1} button URL`);
   });
   if (b.type === 'rateTable') { (p.columns || []).forEach((c, i) => add(`columns.${i}`, `Column ${i + 1}`)); (p.rows || []).forEach((r, i) => r.forEach((c, j) => add(`rows.${i}.${j}`, j === r.length - 1 ? `${r[0]} rate` : `Row ${i + 1} col ${j + 1}`))); add('learn.label', 'Link label'); add('open.label', 'Button label'); }
   if (b.type === 'certificateCalculator') ['deposit', 'apy', 'term'].forEach((k) => { if (p[k] !== undefined) out.push({ path: k, label: { deposit: 'Default deposit', apy: 'Default APY %', term: 'Default term (months)' }[k], value: String(p[k]), num: true }); });
   for (const k of ['items', 'cards', 'steps', 'slides', 'posts', 'panels']) (p[k] || []).forEach((it, i) => {
     for (const [key, lab] of TEXT_KEYS) add(`${k}.${i}.${key}`, `${k.replace(/s$/, '')} ${i + 1} ${lab.toLowerCase()}`);
-    ['button', 'link'].forEach((bk) => add(`${k}.${i}.${bk}.label`, `${k.replace(/s$/, '')} ${i + 1} ${bk}`));
+    ['button', 'link'].forEach((bk) => { add(`${k}.${i}.${bk}.label`, `${k.replace(/s$/, '')} ${i + 1} ${bk}`); if (it[bk]) addU(`${k}.${i}.${bk}.href`, `${k.replace(/s$/, '')} ${i + 1} ${bk} URL`); });
+    if (k === 'cards') addI(`${k}.${i}.image`, `card ${i + 1} image (URL or upload)`);
     (it.buttons || []).forEach((_, j) => add(`${k}.${i}.buttons.${j}.label`, `${k.replace(/s$/, '')} ${i + 1} button ${j + 1}`));
   });
-  return out.slice(0, 40);
+  return out.slice(0, 90);
 }
