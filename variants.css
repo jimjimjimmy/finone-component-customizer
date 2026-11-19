@@ -208,3 +208,16 @@
 .hero-fade .hero-content h1 { font-family: var(--font-heading); }
 @media (max-width: 1049.98px) { .br-desktop { display: none; } }
 .l02 .promo h2, .l02 .promo-cards h3 { font-family: var(--font-body); }
+
+/* footer top row: logo left, social icons right, vertically centred on one line */
+.l02 footer .footer-main .row { justify-content: space-between; align-items: center; flex-wrap: nowrap; padding: 36px 0 40px; }
+.l02 footer .footer-main .row > div:nth-child(1) { flex: 0 0 auto; width: auto; }
+.l02 footer .footer-main .row > div:nth-child(2) { display: none; }
+.l02 footer .footer-main .row > div:nth-child(3) { flex: 1 1 auto; width: auto; padding-right: 0; }
+.l02 footer .footer_logo, .l02 footer .footer_logo img { width: 239px; height: auto; max-width: none; }
+.l02 footer .footer_social { padding: 0; justify-content: flex-end; }
+.l02 footer .footer_social ul { gap: 20px; align-items: center; }
+.l02 footer .footer_social li, .l02 footer .footer_social li a { width: 24px; height: 24px; background-size: contain; background-repeat: no-repeat; background-position: center; }
+.l02 footer .footer_social li a::before, .l02 footer .footer_social li a svg, .l02 footer .footer_social li a img { width: 24px; height: 24px; font-size: 24px; }
+@media (max-width: 679.98px) { .l02 footer .footer-main .row { flex-wrap: wrap; gap: 20px; } .l02 footer .footer_social { justify-content: flex-start; } }
+.l02 footer h1, .l02 footer h2, .l02 footer h3, .l02 footer h4, .l02 footer h5, .l02 footer h6, .l02 footer .footer-col > :first-child { font-family: var(--font-body); }
