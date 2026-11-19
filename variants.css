@@ -297,3 +297,4 @@
   .promo-edge .row, .promo-edge .row.reverse, .promo-edge .row:not(.reverse) { flex-direction: column-reverse; flex-wrap: nowrap; }
   .promo-edge .promo-image::after, .promo-edge .row:not(.reverse) .promo-image::after { background: linear-gradient(to top, #fff 0%, rgba(255,255,255,0) 30%); }
 }
+@media (max-width: 1049.98px) { .promo-edge .promo-image { flex: 0 0 auto; height: 280px; } .promo-edge .promo-content { flex: 0 0 auto; } }
