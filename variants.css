@@ -249,7 +249,8 @@
 .l02-backdrop > section, .l02-backdrop .layout.hero-marquee.hero-fade { position: static; }
 .l02-backdrop .layout.hero-marquee.hero-fade, .l02-backdrop > section { background: transparent !important; }
 .l02-backdrop .layout.promo.promo-brand-dark { background: transparent !important; }
-.l02-backdrop .hero-fade .hero-picture { position: absolute; top: 0; left: 0; right: 0; bottom: auto; height: 100%; max-height: clamp(900px, 110vw, 1500px); z-index: 0; }
+.l02-backdrop .hero-fade .hero-picture { position: absolute; top: 0; left: 0; right: 0; bottom: auto; height: 100%; z-index: 0; }   /* full stage height on desktop: the gradient always ends solid at the stage bottom (no photo edge) */
+@media (max-width: 767.98px) { .l02-backdrop .hero-fade .hero-picture { max-height: 900px; } }
 .l02-backdrop .hero-fade .hero-picture .image-fit img { object-fit: cover; object-position: center center; }
 .l02-backdrop .hero-fade .hero-picture::after {
   background:
