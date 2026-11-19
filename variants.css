@@ -14,7 +14,7 @@
 .hero-fade .container { padding-top: 0; padding-bottom: 0; }
 .hero-fade .hero-content { text-align: left; max-width: 720px; margin-bottom: 40px; }
 .hero-fade .hero-content .eyebrow { color: var(--color-highlight); font-size: 14px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
-.hero-fade .hero-content h1 { color: #fff; font-family: var(--font-display, var(--font-rate)); font-weight: 600; font-size: clamp(44px, 5.6vw, 80px); line-height: 1.1; margin: 8px 0 16px; }
+.hero-fade .hero-content h1 { color: #fff; font-family: var(--font-heading); font-weight: 400; font-size: clamp(44px, 5.6vw, 80px); line-height: 1.1; margin: 8px 0 16px; }
 .hero-fade .hero-content p { color: var(--color-highlight); font-size: clamp(18px, 1.6vw, 24px); text-shadow: 0 1px 12px rgba(0,0,0,.25); }
 .hero-rates { width: 100%; padding: 0; }
 .hero-rates.rate-cards-frosted { background: none; }
@@ -203,3 +203,8 @@
   .l02 #masthead .site-branding { margin: 0; }
   .l02 #masthead .ubermenu-nav { flex-wrap: nowrap; justify-content: space-between; white-space: nowrap; }
 }
+
+/* hero title uses the heading font token (Source Serif in the Layout 02 preset); other Layout 02 block titles stay Source Sans bold per Figma */
+.hero-fade .hero-content h1 { font-family: var(--font-heading); }
+@media (max-width: 1049.98px) { .br-desktop { display: none; } }
+.l02 .promo h2, .l02 .promo-cards h3 { font-family: var(--font-body); }

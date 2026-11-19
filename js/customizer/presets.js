@@ -2,7 +2,7 @@
    { name, tokens:{'--color-*': value}, fonts:{heading,body,rate}, geometry:{button,card}, org:{name,routing,nmls} }
    Colour tokens are the exact names in tokens.css. Org data here is fictional apart from Granite (the engineer's copy). */
 export const FONT_LISTS = {
-  heading: [['Source Sans 3', 'sans-serif'], ['Merriweather', 'serif'], ['Playfair Display', 'serif'], ['Lora', 'serif'], ['Poppins', 'sans-serif'], ['Montserrat', 'sans-serif'], ['DM Serif Display', 'serif'], ['Roboto Slab', 'serif'], ['Libre Baskerville', 'serif'], ['Raleway', 'sans-serif'], ['Work Sans', 'sans-serif']],
+  heading: [['Source Sans 3', 'sans-serif'], ['Source Serif 4', 'serif'], ['Merriweather', 'serif'], ['Playfair Display', 'serif'], ['Lora', 'serif'], ['Poppins', 'sans-serif'], ['Montserrat', 'sans-serif'], ['DM Serif Display', 'serif'], ['Roboto Slab', 'serif'], ['Libre Baskerville', 'serif'], ['Raleway', 'sans-serif'], ['Work Sans', 'sans-serif']],
   body: [['Source Sans 3', 'sans-serif'], ['Inter', 'sans-serif'], ['Open Sans', 'sans-serif'], ['Nunito Sans', 'sans-serif'], ['DM Sans', 'sans-serif'], ['Lato', 'sans-serif'], ['Roboto', 'sans-serif'], ['Public Sans', 'sans-serif'], ['IBM Plex Sans', 'sans-serif']],
   rate: [['Source Serif 4', 'serif'], ['DM Serif Display', 'serif'], ['Playfair Display', 'serif'], ['Merriweather', 'serif'], ['Lora', 'serif'], ['Fraunces', 'serif'], ['Roboto Slab', 'serif'], ['Poppins', 'sans-serif'], ['Source Sans 3', 'sans-serif']],
 };
@@ -15,7 +15,7 @@ export const PRESETS = {
     fonts: { heading: ['Source Sans 3', 'sans-serif'], body: ['Source Sans 3', 'sans-serif'], rate: ['Source Serif 4', 'serif'] }, geometry: { button: 'soft', card: 'rounded' },
     org: { name: 'Granite Credit Union', routing: '324078721', nmls: '582825' } },
   layout02: { name: 'Layout 02 (Indigo & Gold)', tokens: { ...base, '--color-accent': '#F94D2B', '--color-secondary': '#45bfe5', '--color-tertiary': '#4B56A8', '--color-surface': '#F5F5F5', '--color-highlight': '#FFE299', '--color-dark': '#1C2B39', '--color-white': '#FFFFFF' },
-    fonts: { heading: ['Source Sans 3', 'sans-serif'], body: ['Source Sans 3', 'sans-serif'], rate: ['Source Serif 4', 'serif'] }, geometry: { button: 'soft', card: 'sharp' },
+    fonts: { heading: ['Source Serif 4', 'serif'], body: ['Source Sans 3', 'sans-serif'], rate: ['Source Serif 4', 'serif'] }, geometry: { button: 'soft', card: 'sharp' },
     org: { name: 'Finalytics.ai', routing: '324078721', nmls: '582825', logo: 'assets/uploads/finalytics-logo.png' } },
   harbor: { name: 'Harbor Federal Credit Union', tokens: { '--color-tint': '#E3EAF1', '--color-tertiary-light': '#5C7DB0', '--color-accent': '#0A6C8F', '--color-accent-dark': '#074E67', '--color-secondary': '#8DB4D1', '--color-tertiary': '#13315C', '--color-surface': '#F3F6F9', '--color-highlight': '#F6C453', '--color-dark': '#0B2545', '--color-white': '#FFFFFF' },
     fonts: { heading: ['Merriweather', 'serif'], body: ['Inter', 'sans-serif'], rate: ['DM Serif Display', 'serif'] }, geometry: { button: 'soft', card: 'rounded' },
