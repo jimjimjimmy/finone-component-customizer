@@ -240,3 +240,20 @@
 /* brand-dark promo: content sits 24px inside the boundary lines at every width */
 .l02 .layout.promo.promo-brand-dark { padding-left: calc((100% - var(--w)) / 2 + 24px); padding-right: calc((100% - var(--w)) / 2 + 24px); }
 .l02 .layout.promo.promo-brand-dark .container { max-width: none; }
+
+/* ---- Shared hero + brand-dark promo backdrop (Layout 02) ----
+   renderMain wraps a gradient-fade hero followed by a brand-dark promo in .l02-backdrop. The hero photo is lifted out of the hero and
+   stretched behind both sections (cover, top-centre so faces stay framed); one gradient dissolves it into the brand colour at the bottom.
+   The promo background is transparent here and falls back to solid brand colour anywhere else. */
+.l02-backdrop { position: relative; background: var(--fade-brand); isolation: isolate; }
+.l02-backdrop > section, .l02-backdrop .layout.hero-marquee.hero-fade { position: static; }
+.l02-backdrop .layout.hero-marquee.hero-fade, .l02-backdrop > section { background: transparent !important; }
+.l02-backdrop .layout.promo.promo-brand-dark { background: transparent !important; }
+.l02-backdrop .hero-fade .hero-picture { position: absolute; top: 0; left: 0; right: 0; bottom: auto; height: 100%; max-height: 1500px; z-index: 0; }
+.l02-backdrop .hero-fade .hero-picture .image-fit img { object-fit: cover; object-position: center top; }
+.l02-backdrop .hero-fade .hero-picture::after {
+  background:
+    linear-gradient(to bottom, rgba(0,0,0,0) 22%, color-mix(in srgb, var(--fade-brand) 45%, transparent) 50%, color-mix(in srgb, var(--fade-brand) 80%, transparent) 76%, var(--fade-brand) 100%),
+    linear-gradient(to right, color-mix(in srgb, #0b1030 62%, transparent) 0%, color-mix(in srgb, var(--fade-brand) 30%, transparent) 40%, rgba(0,0,0,0) 65%); }
+.l02-backdrop .hero-fade-body, .l02-backdrop .hero-rates, .l02-backdrop .promo-brand-dark > * { position: relative; z-index: 5; }
+@media (max-width: 767.98px) { .l02-backdrop .hero-fade .hero-picture { max-height: 1100px; } }

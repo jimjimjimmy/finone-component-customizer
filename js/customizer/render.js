@@ -27,11 +27,19 @@ export function blockProps(b, org) {
 const withUid = (html, uid) => html.replace(/^(\s*<section)/, `$1 data-uid="${uid}"`);
 
 export function renderMain(state) {
-  return state.stack.filter((b) => !b.hidden).map((b) => {
+  const vis = state.stack.filter((b) => !b.hidden);
+  const html = vis.map((b) => {
     const props = blockProps(b, state.org);
     if (b.type === 'tabs') props.panels = props.panels.map((p) => ({ ...p, block: { ...p.block, props: swapOrg(p.block.props, state.org) } }));
-    return withUid(renderBlock({ type: b.type, props }), b.uid);
-  }).join('\n');
+    return { html: withUid(renderBlock({ type: b.type, props }), b.uid), fade: b.type === 'hero' && !!props.fade, dark: b.type === 'promo' && !!props.brandDark };
+  });
+  /* gradient-fade hero directly followed by a brand-dark promo: share one photo backdrop that dissolves into the brand colour behind the phones */
+  const out = [];
+  for (let i = 0; i < html.length; i++) {
+    if (html[i].fade && html[i + 1]?.dark) { out.push(`<div class="l02-backdrop">${html[i].html}\n${html[i + 1].html}</div>`); i++; }
+    else out.push(html[i].html);
+  }
+  return out.join('\n');
 }
 
 const PREVIEW_CSS = `[data-uid]{cursor:pointer}body.edit [data-uid].is-selected{outline:3px solid #2684ff;outline-offset:-3px;position:relative}
