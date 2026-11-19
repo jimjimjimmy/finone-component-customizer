@@ -304,3 +304,20 @@
   #page.l02::before, #page.l02::after { display: none; }
   .promo-edge .promo-content, .l02 .promo-edge .row.reverse .promo-content, .l02 .promo-edge .row:not(.reverse) .promo-content { padding-left: 24px; padding-right: 24px; }
 }
+
+/* ---- Mobile: content sits 16px from the left and right edges ---- */
+@media (max-width: 767.98px) {
+  .l02 #masthead .container { padding-left: 6px; padding-right: 6px; }                      /* + 10px header grid = 16px */
+  .l02 .layout .container, .l02 .layout.promo .container { padding-left: 0; padding-right: 0; margin-left: 0; margin-right: 0; width: 100%; max-width: none; }
+  .l02 footer .footer-main { padding-left: 0; padding-right: 0; }
+  .l02 .hero-fade .hero-content { padding-left: 16px !important; padding-right: 16px !important; }
+  .l02 .layout.promo.promo-brand-dark { padding-left: 16px; padding-right: 16px; }
+  .l02 .promo-brand-dark .container, .l02 .promo-brand-dark .row { padding-left: 0; padding-right: 0; }
+  .l02 .promo-edge .promo-content, .l02 .promo-edge .row.reverse .promo-content, .l02 .promo-edge .row:not(.reverse) .promo-content { padding-left: 16px; padding-right: 16px; }
+  .l02 .promo-cards, .l02 .layout.promo-cards { padding-left: 16px; padding-right: 16px; }
+  .l02 .rate-cards .container, .l02 .hero-rates .container { padding-left: 16px !important; padding-right: 16px !important; }
+  .l02 .rate-cards .swiper-rate-cards .swiper-slide { padding: 28px 56px; }
+  .l02 .rate-cards .swiper-rate-cards .swiper-button-prev { left: 8px; } .l02 .rate-cards .swiper-rate-cards .swiper-button-next { right: 8px; }
+  .l02 footer .container { padding-left: 16px; padding-right: 16px; margin-left: 0; margin-right: 0; width: 100%; max-width: none; }
+  .l02 footer .footer-links { padding-left: 0; padding-right: 0; }
+}
