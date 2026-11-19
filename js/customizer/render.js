@@ -62,5 +62,12 @@ export function buildDoc(state) {
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="vendor/main.min.js"></script>
 <script type="module">import { wireCertificateCalculator } from './js/components/calculator.js'; wireCertificateCalculator();</script>
-<script>${PREVIEW_JS}</script></body></html>`;
+<script>${PREVIEW_JS}</script>
+<script>(function(){var mq=matchMedia('(max-width:679.98px)');function wire(sw){var w=sw.querySelector('.swiper-wrapper'),sl=[].slice.call(w.children),pg=sw.querySelector('.swiper-pagination'),pv=sw.querySelector('.swiper-button-prev'),nx=sw.querySelector('.swiper-button-next');if(!sl.length||sw.__car)return;sw.__car=1;
+pg.innerHTML=sl.map(function(){return '<span class="swiper-pagination-bullet"></span>'}).join('');var dots=[].slice.call(pg.children);
+function cur(){return Math.round(w.scrollLeft/w.clientWidth)}function go(i){i=(i+sl.length)%sl.length;w.scrollTo({left:i*w.clientWidth,behavior:'smooth'})}
+function mark(){var c=cur();dots.forEach(function(d,i){d.classList.toggle('swiper-pagination-bullet-active',i===c)})}
+w.addEventListener('scroll',mark);pv.addEventListener('click',function(){go(cur()-1)});nx.addEventListener('click',function(){go(cur()+1)});dots.forEach(function(d,i){d.addEventListener('click',function(){go(i)})});mark()}
+function run(){if(mq.matches)document.querySelectorAll('.swiper-rate-cards').forEach(wire)}run();mq.addEventListener&&mq.addEventListener('change',run)})();</script>
+</body></html>`;
 }
