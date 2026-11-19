@@ -298,3 +298,9 @@
   .promo-edge .promo-image::after, .promo-edge .row:not(.reverse) .promo-image::after { background: linear-gradient(to top, #fff 0%, rgba(255,255,255,0) 30%); }
 }
 @media (max-width: 1049.98px) { .promo-edge .promo-image { flex: 0 0 auto; height: 280px; } .promo-edge .promo-content { flex: 0 0 auto; } }
+
+/* ---- Mobile: no vertical boundary lines (desktop only); copy keeps 24px side padding ---- */
+@media (max-width: 767.98px) {
+  #page.l02::before, #page.l02::after { display: none; }
+  .promo-edge .promo-content, .l02 .promo-edge .row.reverse .promo-content, .l02 .promo-edge .row:not(.reverse) .promo-content { padding-left: 24px; padding-right: 24px; }
+}
