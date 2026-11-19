@@ -12,7 +12,7 @@ export function labelOf(entry) {
     featureGrid: () => `Feature grid${p.boxed ? ' boxed' : ''}${p.layout === 'vertical' ? ' vertical' : ''}`, introSection: () => `Intro: ${p.eyebrow || p.title || ''}`.slice(0, 40),
     staticCards: () => `Static cards (${p.cards.length})`, rateTable: () => `Rate table: ${p.name.replace('regular_', '')}`, postCards: () => `Posts${p.noBorder ? ' (news)' : ''}`,
     productCards: () => `Product cards${p.noBorder ? ' (no border)' : ''}`, faq: () => 'FAQ accordion', richText: () => 'Rich text', breadcrumbs: () => 'Breadcrumbs', anchorBar: () => 'Anchor bar',
-    certificateCalculator: () => 'Certificate calculator', rateCards: () => `Featured rate strip${p.appearance === 'frosted' ? ' frosted' : ''}`, actionCards: () => 'Action cards', promoCards: () => 'Promo cards', mixMatch: () => 'Mix-and-match',
+    certificateCalculator: () => 'Certificate calculator', rateCards: () => `Featured rate strip${p.appearance === 'frosted' ? ' frosted' : ''}`, actionCards: () => 'Action cards', promoCards: () => `Promo cards${p.cols === 3 ? ' (3-col)' : ''}`, mixMatch: () => 'Mix-and-match',
     compareTable: () => 'Comparison table', logoGrid: () => 'Logo / awards grid', flexibleColumns: () => 'Flexible columns', disclosures: () => 'Disclosures', tabs: () => 'Tabs' }[t];
   return tag ? tag() : t;
 }
@@ -25,7 +25,7 @@ export const TEMPLATES = {
   product: { name: 'Product Detail Page', blocks: [7, 11, 10, 41, 54, 57] },          /* Hero Small Boxed, Rate Strip, Calculator, Comparison Table, FAQ */
   lending: { name: 'Lending / Promo Landing Page', blocks: [1, 15, 33, 42, 22, 57] }, /* Hero Large, Quicklinks (+text), Promo Split, Steps, Action Cards */
   news: { name: 'News & Community Page', blocks: [26, 48, 49, 35, 57] },               /* Intro Medium, Curated Posts, Global News, Promo Offset */
-  layout02: { name: 'Layout 02', blocks: [100, 101, 102, 103, 104] },  /* Gradient-fade hero, frosted rate strip, brand-dark app promo, edge-to-edge promo, 3 cards (header/footer are site chrome) */
+  layout02: { name: 'Layout 02', alert: false, blocks: [100, 101, 102, 103, 105] },  /* Gradient-fade hero, frosted rate strip, brand-dark app promo, edge-to-edge promo, 3 cards (header/footer are site chrome) */
   blank: { name: 'Blank canvas', blocks: [] },
 };
 export const fromDemo = (demo, idx) => ({ uid: newUid(), idx, type: demo[idx].type, props: clone(demo[idx].props), hidden: false });

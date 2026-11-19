@@ -16,10 +16,11 @@ export function actionCards(p = {}) {
 
 /* Promo Cards  (ACF: promo-cards) - image-led two-up cards. cards: [{eyebrow,title,body,button,image}]           */
 export function promoCards(p = {}) {
-  const { title, body, cards = [], bg = 'surface' } = p;
+  const { title, body, cards = [], bg = 'surface', cols = 2 } = p;
+  const col = cols === 3 ? 'col-12 col-md-6 col-lg-4' : 'col-12 col-md-6';
   return section({ pt: 75, pb: 75, bg },
-    intro({ eyebrow: '', title, body, width: 8 }) +
-    layout('promo-cards', {}, `<div class="container"><div class="row fade-animate-stagger">${cards.map((c) => `<div class="col-12 col-md-6 item-stagger"><div class="card promo-card">
+    (title || body ? intro({ eyebrow: '', title, body, width: 8 }) : '') +
+    layout(cols === 3 ? 'promo-cards promo-cards-3' : 'promo-cards', {}, `<div class="container"><div class="row fade-animate-stagger">${cards.map((c) => `<div class="${col} item-stagger"><div class="card promo-card">
       <div class="card-body"><p class="eyebrow">${c.eyebrow}</p><h3>${c.title}</h3> ${c.body} ${cta([c.button], { align: 'center' })}</div>
       <div class="card-image">${img(c.image)}</div></div></div>`).join('')}</div></div>`));
 }

@@ -14,7 +14,7 @@ const demo = applyOverrides(await (await fetch('js/demo/granite.json')).json());
 
 /* ---------------- state ---------------- */
 const fresh = () => ({ preset: 'granite', theme: presetTheme('granite'), org: { ...PRESETS.granite.org, logo: '', heroImage: '', promoImage: '' },
-  stack: fromTemplate(demo, 'home'), selected: null, viewport: 'desktop', controlsHidden: false, tab: 'brand' });
+  stack: fromTemplate(demo, 'home'), selected: null, viewport: 'desktop', controlsHidden: false, showAlert: true, tab: 'brand' });
 let state = fresh();
 /* Saved state is trusted only if it has the full shape; anything else (old version, hand-edited, corrupt) falls back to defaults. */
 const validState = (s) => s && typeof s === 'object' && s.theme?.tokens && s.theme?.fonts?.heading?.[0] && s.theme?.fonts?.body?.[0] && s.theme?.fonts?.rate?.[0]
@@ -33,7 +33,7 @@ const frame = $('#frame'), wrap = $('#wrap'), stage = $('#stage');
 let renderTimer = 0, pendingScroll = 0, scrollTo = null;
 function fit() {   /* sizing is pure CSS (see #wrap[data-vp]); this just syncs the attribute and status text */
   wrap.dataset.vp = state.viewport; frame.style.cssText = ''; wrap.style.cssText = '';
-  status(state.viewport === 'mobile' ? 'Mobile 390px' : 'Desktop (fluid)');
+  status('');
 }
 function render(immediate) {
   clearTimeout(renderTimer);
@@ -140,6 +140,7 @@ function paintPage() {
   $('#pane-page').innerHTML = `
   <details open><summary>Page</summary>
     <div class="row"><label>Start from</label><select id="tpl">${Object.entries(TEMPLATES).map(([k, t]) => `<option value="${k}">${t.name}</option>`).join('')}</select><button class="b" id="tplgo">Load</button></div>
+    <label class="chk" style="margin:6px 0"><input type="checkbox" id="showalert"${state.showAlert === false ? '' : ' checked'}>Show alert banner</label>
     <p class="note">${state.stack.length} blocks (${state.stack.filter((x) => !x.hidden).length} visible). Click a block in the preview to select it. Header and footer are always present.</p>
     <ul class="stack" id="stack">${list || '<li style="cursor:default">Empty page - add blocks from the library below.</li>'}</ul></details>
   ${b ? inspector(b) : '<p class="note" style="margin:10px 0">Select a block to edit its spacing, background and variant.</p>'}
@@ -166,7 +167,7 @@ const page = $('#pane-page');
 page.addEventListener('click', (e) => {
   const li = e.target.closest('li[data-uid]'), act = e.target.closest('[data-act]'), add = e.target.closest('[data-add]'), ins = e.target.closest('[data-ins]');
   if (add) { const nb = fromDemo(demo, +add.dataset.add); const at = state.stack.findIndex((x) => x.uid === state.selected); state.stack.splice(at < 0 ? state.stack.length : at + 1, 0, nb); state.selected = nb.uid; scrollTo = nb.uid; paintPage(); render(true); return; }
-  if (e.target.id === 'tplgo') { state.stack = fromTemplate(demo, $('#tpl').value); state.selected = null; paintPage(); render(true); return; }
+  if (e.target.id === 'tplgo') { state.showAlert = TEMPLATES[$('#tpl').value].alert !== false; state.stack = fromTemplate(demo, $('#tpl').value); state.selected = null; paintPage(); render(true); return; }
   if (act && li) { const i = +li.dataset.i, x = state.stack[i]; if (act.dataset.act === 'vis') x.hidden = !x.hidden; else { const j = i + (act.dataset.act === 'up' ? -1 : 1); if (j < 0 || j >= state.stack.length) return; [state.stack[i], state.stack[j]] = [state.stack[j], state.stack[i]]; } paintPage(); render(true); return; }
   if (ins) { const b = sel(), i = state.stack.indexOf(b);
     if (ins.dataset.ins === 'dup') { const c = { ...clone(b), uid: fromDemo(demo, b.idx ?? 0).uid }; state.stack.splice(i + 1, 0, c); state.selected = c.uid; }
@@ -175,6 +176,7 @@ page.addEventListener('click', (e) => {
   if (li && !act) select(li.dataset.uid);
 });
 page.addEventListener('change', (e) => {
+  if (e.target.id === 'showalert') { state.showAlert = e.target.checked; save(); render(true); return; }
   const t = e.target, b = sel();
   if (t.dataset.sp && b) { setSpacing(b, t.dataset.sp, t.value); render(true); }
   else if (t.hasAttribute('data-tone') && b) { setTone(b, t.value); render(true); }
