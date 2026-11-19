@@ -134,3 +134,6 @@ Opt-in variants on existing blocks (no new block types), loaded by the customize
 - Template stack: gradient-fade hero (+rates), brand-dark app promo, edge-to-edge promo, 3-col promo cards. Alert banner off by default.
 
 Dev server: `npm run serve` (tools/serve.py) sends `Cache-Control: no-store`, so edited ES modules and CSS always reload. Plain `python3 -m http.server` caches modules and can show stale blocks. Saved state key is `finone-customizer-v2`; the Page tab remembers the loaded template.
+
+### Layout 02 grid and logo
+`#page.l02` (added when the Layout 02 template is loaded) defines `--w`: 75% (max 1440px) at 1700px+, `100% - 80px` at 1050px+, `100% - 40px` below. Header, hero copy, rate row and feature share it, with hairline boundary lines. Logo: `assets/uploads/finalytics-logo.png`, keyed from the Figma logo export (the export is 239x56 at 1x, so it is not retina-sharp; replace with the SVG when available). The Layout 02 preset sets org to Finalytics.ai with that logo.

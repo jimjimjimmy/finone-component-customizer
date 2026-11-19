@@ -152,3 +152,25 @@
 .ring { width: 48px; height: 48px; border-radius: 50%; border: 1px solid rgba(28,43,57,.55); display: grid; place-items: center; font-weight: 700; font-size: 13px; flex: none; }
 .stat-b { left: 484px; top: 385px; width: 112px; height: 68px; padding: 12px; } .stat-c { left: 612px; top: 385px; width: 112px; height: 68px; padding: 12px; }
 .promo-brand-dark .promo-content { padding-bottom: 67px; }
+
+/* ---- Layout 02 page grid: one shared content column (1920 ref: 240px margins, 1440px column) + hairline boundary lines ---- */
+#page.l02 { --w: calc(100% - 40px); position: relative; }
+@media (min-width: 1050px) { #page.l02 { --w: min(1440px, calc(100% - 80px)); } }
+@media (min-width: 1700px) { #page.l02 { --w: min(1440px, 75%); } }
+.l02 .container, .l02 .container-fluid:not(.g-0) { width: var(--w); max-width: none; margin-left: auto; margin-right: auto; padding-left: 0; padding-right: 0; }
+.l02 .container.g-0 { padding: 0; }
+.l02 .hero-fade .row, .l02 .rate-tiles { margin-left: 0; margin-right: 0; }
+#page.l02::before, #page.l02::after { content: ""; position: absolute; top: 0; bottom: 0; width: 1px; background: rgba(160,166,210,.28); pointer-events: none; z-index: 6; }
+#page.l02::before { left: calc(50% - var(--w) / 2); } #page.l02::after { left: calc(50% + var(--w) / 2 - 1px); }
+.l02 .header-logo img.custom-logo { width: 239px; max-width: none; height: auto; }
+
+/* hero copy: shared left edge with the rate row; 80px serif, 1.1, "Tap into the Value of / Your Home" */
+.l02 .hero-fade .hero-content { max-width: none; padding: 0; margin-left: 0; }
+.l02 .hero-fade .hero-content h1 { max-width: 900px; font-weight: 400; text-wrap: wrap; }
+.l02 .hero-fade .hero-fade-body .col, .l02 .hero-fade-body .row > * { padding-left: 0; padding-right: 0; }
+.l02 .hero-fade .hero-content { padding-left: 0 !important; padding-right: 0 !important; }
+.l02 .hero-fade .hero-content p { max-width: 587px; }
+
+/* mobile-banking feature: illustration (724) + 80px + copy (554) centred in the column; neutralise the engineer's reverse margin */
+.promo-brand-dark .row.reverse .promo-content, .promo-brand-dark .row .promo-content { margin: 0; }
+.promo-brand-dark .container { padding: 0; }

@@ -16,7 +16,7 @@ export const PRESETS = {
     org: { name: 'Granite Credit Union', routing: '324078721', nmls: '582825' } },
   layout02: { name: 'Layout 02 (Indigo & Gold)', tokens: { ...base, '--color-accent': '#F94D2B', '--color-secondary': '#45bfe5', '--color-tertiary': '#4B56A8', '--color-surface': '#F5F5F5', '--color-highlight': '#FFE299', '--color-dark': '#1C2B39', '--color-white': '#FFFFFF' },
     fonts: { heading: ['Source Sans 3', 'sans-serif'], body: ['Source Sans 3', 'sans-serif'], rate: ['Source Serif 4', 'serif'] }, geometry: { button: 'soft', card: 'sharp' },
-    org: { name: 'Granite Credit Union', routing: '324078721', nmls: '582825' } },
+    org: { name: 'Finalytics.ai', routing: '324078721', nmls: '582825', logo: 'assets/uploads/finalytics-logo.png' } },
   harbor: { name: 'Harbor Federal Credit Union', tokens: { '--color-tint': '#E3EAF1', '--color-tertiary-light': '#5C7DB0', '--color-accent': '#0A6C8F', '--color-accent-dark': '#074E67', '--color-secondary': '#8DB4D1', '--color-tertiary': '#13315C', '--color-surface': '#F3F6F9', '--color-highlight': '#F6C453', '--color-dark': '#0B2545', '--color-white': '#FFFFFF' },
     fonts: { heading: ['Merriweather', 'serif'], body: ['Inter', 'sans-serif'], rate: ['DM Serif Display', 'serif'] }, geometry: { button: 'soft', card: 'rounded' },
     org: { name: 'Harbor Federal Credit Union', routing: '221473889', nmls: '410227' } },
