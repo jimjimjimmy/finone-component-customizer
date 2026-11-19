@@ -127,3 +127,8 @@ Opt-in variants on existing blocks (no new block types), loaded by the customize
 - Promo `brandDark: true` (+ `badges: [{store:'apple'|'google'}]`) and `edge: true` (media flush to the viewport edge, 50/50, copy inside the container).
 - Page Builder template "Layout 02": hero fade, frosted rate strip, brand-dark app promo, edge-to-edge promo, 3 image cards. Header and footer are site chrome.
 - Note: `--color-primary` is the accent; the brand-dark blue is `--color-tertiary`, so the variants use that token.
+
+### Layout 02 refinements
+- Preset "Layout 02 (Indigo & Gold)": accent #F94D2B, Accent control (tertiary) #4B56A8, highlight #FFE299, dark #1C2B39, sharp cards. The Layout 02 template applies it on load.
+- Hero `fade` takes `rates: [tiles]` to render a 5-up frosted rate row inside the hero. Promo `phones: true` renders two overlapping phone mockups (HTML/CSS, outlines use `--color-highlight`).
+- Template stack: gradient-fade hero (+rates), brand-dark app promo, edge-to-edge promo, 3-col promo cards. Alert banner off by default.

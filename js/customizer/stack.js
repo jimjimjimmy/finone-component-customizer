@@ -7,7 +7,7 @@ export const newUid = () => 'b' + (++n) + Math.random().toString(36).slice(2, 5)
 /* Human label for one of the 58 demo blocks. */
 export function labelOf(entry) {
   const p = entry.props, t = entry.type;
-  const tag = { hero: () => `Hero ${p.size}${p.fade ? ' gradient-fade' : ''}${p.boxed ? ' boxed' : ''}${p.reverse ? ' reverse' : ''}`, promo: () => `Promo ${p.variant}${p.reverse ? ' reverse' : ''}${p.brandDark ? ' brand-dark' : ''}${p.edge ? ' edge-to-edge' : ''}`,
+  const tag = { hero: () => `Hero ${p.size}${p.fade ? ' gradient-fade' : ''}${p.rates?.length ? ' + rates' : ''}${p.boxed ? ' boxed' : ''}${p.reverse ? ' reverse' : ''}`, promo: () => `Promo ${p.variant}${p.reverse ? ' reverse' : ''}${p.brandDark ? ' brand-dark' : ''}${p.edge ? ' edge-to-edge' : ''}`,
     banner: () => `Banner ${p.variant}`, steps: () => `Steps ${p.variant}`, quotes: () => `Quotes ${p.variant}`, quicklinks: () => `Quicklinks${p.link ? '' : ' (no link)'}${p.descriptions ? ' + text' : ''}`,
     featureGrid: () => `Feature grid${p.boxed ? ' boxed' : ''}${p.layout === 'vertical' ? ' vertical' : ''}`, introSection: () => `Intro: ${p.eyebrow || p.title || ''}`.slice(0, 40),
     staticCards: () => `Static cards (${p.cards.length})`, rateTable: () => `Rate table: ${p.name.replace('regular_', '')}`, postCards: () => `Posts${p.noBorder ? ' (news)' : ''}`,
@@ -25,7 +25,7 @@ export const TEMPLATES = {
   product: { name: 'Product Detail Page', blocks: [7, 11, 10, 41, 54, 57] },          /* Hero Small Boxed, Rate Strip, Calculator, Comparison Table, FAQ */
   lending: { name: 'Lending / Promo Landing Page', blocks: [1, 15, 33, 42, 22, 57] }, /* Hero Large, Quicklinks (+text), Promo Split, Steps, Action Cards */
   news: { name: 'News & Community Page', blocks: [26, 48, 49, 35, 57] },               /* Intro Medium, Curated Posts, Global News, Promo Offset */
-  layout02: { name: 'Layout 02', alert: false, blocks: [100, 101, 102, 103, 105] },  /* Gradient-fade hero, frosted rate strip, brand-dark app promo, edge-to-edge promo, 3 cards (header/footer are site chrome) */
+  layout02: { name: 'Layout 02', alert: false, preset: 'layout02', blocks: [100, 102, 103, 105] },  /* Gradient-fade hero, frosted rate strip, brand-dark app promo, edge-to-edge promo, 3 cards (header/footer are site chrome) */
   blank: { name: 'Blank canvas', blocks: [] },
 };
 export const fromDemo = (demo, idx) => ({ uid: newUid(), idx, type: demo[idx].type, props: clone(demo[idx].props), hidden: false });

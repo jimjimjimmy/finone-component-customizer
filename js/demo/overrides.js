@@ -24,10 +24,10 @@ export function applyOverrides(demo) {
   const tile = (icon, title, rate) => ({ icon: U + icon, title, rate, cta: { label: 'Learn more', href: '#' } });
   const r = { lead: 'Rates up to', value: '0.05', unit: '%', label: 'APY' };
   demo[100] = { type: 'hero', props: { size: 'marquee', fade: true, tone: 'light', bg: 'secondary', image: U + 'hero-woman-child-1920x1080-1.webp', eyebrow: 'Eyebrow Category', title: 'Tap into the Value of Your Home',
-    body: 'Your possibilities are endless with a 12-month Personal Loan at 8.99% APR*.', buttons: [] } };
+    body: 'Your possibilities are endless with a 12-month Personal Loan at 8.99% APR*.', buttons: [], rates: Array.from({ length: 5 }, () => tile('icon-certificate.webp', 'Savings Account', r)) } };
   demo[101] = { type: 'rateCards', props: { appearance: 'frosted', pt: 'none', pb: 25, buttons: [], tiles: ['Savings Account', 'Savings Account', 'Savings Account', 'Savings Account', 'Savings Account'].map((t) => tile('icon-certificate.webp', t, r)) } };
   demo[102] = { type: 'promo', props: { variant: 'split', reverse: true, brandDark: true, pt: 50, pb: 75, eyebrow: 'Eyebrow Category', title: 'Sed ut perspiciatis unde omnis iste natus error sit', body: L + ' Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.',
-    badges: [{ store: 'apple', href: '#' }, { store: 'google', href: '#' }], buttons: [], image: U + 'promo-product-600x600-1.png' } };
+    phones: true, badges: [{ store: 'apple', href: '#' }, { store: 'google', href: '#' }], buttons: [], image: U + 'promo-product-600x600-1.png' } };
   demo[103] = { type: 'promo', props: { variant: 'split', reverse: true, edge: true, pt: 'none', pb: 'none', eyebrow: 'Eyebrow Category', title: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem',
     body: L + ' Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.', buttons: [{ label: 'Apply Now', href: '#', variant: 'primary' }, { label: 'Learn More', href: '#', variant: 'secondary' }], image: U + 'promo-full-1920x1080-1.webp' } };
   demo[104] = { type: 'staticCards', props: { pt: 75, pb: 75, bg: 'none', eyebrow: '', title: '', body: '', cards: ['card-couple-on-counch', 'card-family-hiking', 'card-mom-kids'].map((n) => ({ type: 'image', title: 'Sed ut perspiciatis unde omnis', body: L, image: U + n + '-480x240-1.webp', button: { label: 'Learn More', href: '#', variant: 'secondary' } })) } };

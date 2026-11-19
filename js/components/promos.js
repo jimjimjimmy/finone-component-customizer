@@ -6,15 +6,24 @@ const STORE = { apple: ['Download on the', 'App Store', '<svg viewBox="0 0 24 24
 export const badgeRow = (badges = []) => badges.length
   ? `<div class="store-badges">${badges.map((b) => { const [a, n, ic] = STORE[b.store] ?? STORE.apple; return `<a href="${b.href ?? '#'}" class="store-badge" aria-label="${a} ${n}">${ic}<span><small>${a}</small><strong>${n}</strong></span></a>`; }).join('')}</div>` : '';
 
+/* Two overlapping phone mockups (pure HTML/CSS; outlines use --color-highlight) with floating stat cards. */
+const row = (a, b, c) => `<li><i></i><span><b>${a}</b><em>${b}</em></span><strong>${c}</strong></li>`;
+export const phoneMock = () => `<div class="phones" aria-hidden="true">
+  <div class="phone phone-back"><div class="ph-top"><small>Total balance</small><b>$6,890</b></div><div class="ph-tabs"><span class="on">Week</span><span>Month</span><span>Year</span></div>
+    <div class="ph-card"><small>Upcoming</small><b>$12.50</b><em>Evernote</em></div><ul>${row('Target', '10.06.2026', '-$102')}${row('App Met', '13.06.2026', '-$68')}</ul></div>
+  <div class="phone phone-front"><div class="ph-top"><small>June earning</small><b>$4,215</b></div><div class="ph-ring"><span>20%</span></div><ul>${row('Savings', 'Auto transfer', '+$250')}${row('Checking', 'Direct deposit', '+$1,800')}${row('Credit card', 'Payment', '-$420')}</ul></div>
+  <div class="stat stat-a"><b>20%</b><span>Monthly Stats<br><small>+20 better performance</small></span></div>
+  <div class="stat stat-b"><small>Earning</small><b>$10,221</b></div><div class="stat stat-c"><small>Spending</small><b>$3,986</b></div></div>`;
+
 /* Promo  (ACF: promo-product | promo-split | promo-offset | promo-full), each with `reverse`.
-   props: variant, reverse, bg, brandDark (brand-colour background + light text), edge (image flush to the viewport edge, 50/50), badges [{store,href}], logo, eyebrow, title, body, buttons, image, nested (inside a tab)            */
+   props: variant, reverse, bg, brandDark (brand-colour background + light text), edge (image flush to the viewport edge, 50/50), badges [{store,href}], phones (two overlapping phone mockups instead of an image), logo, eyebrow, title, body, buttons, image, nested (inside a tab)            */
 export function promo(p = {}) {
   const { variant = 'split', reverse = false, bg = 'none', sectionBg = 'none', secSp, logo, eyebrow: e, title, body, buttons = [], image, nested = false,
-          pt = 50, pb = 50, mt = 'none', mb = 'none', imageClass, brandDark = false, edge = false, badges = [] } = p;
+          pt = 50, pb = 50, mt = 'none', mb = 'none', imageClass, brandDark = false, edge = false, badges = [], phones = false } = p;
   const fade = reverse ? 'fade-animate-right' : 'fade-animate-left';
   const inner = `<div class="container"><div class="row g-0 align-items-center ${reverse ? 'reverse' : ''}">
       <div class="promo-content ${fade}">${logo ? `<div class="promo-logo">${img(logo)}</div>` : ''}${eyebrow(e)}<h2>${title}</h2><p>${body}</p>${cta(buttons)}${badgeRow(badges)}</div>
-      <div class="promo-image">${imageFit(image, imageClass ? { class: imageClass } : {})}</div>
+      <div class="promo-image">${phones ? phoneMock() : imageFit(image, imageClass ? { class: imageClass } : {})}</div>
     </div></div>`;
   const mods = cx(brandDark && 'promo-brand-dark', edge && 'promo-edge');
   if (nested) return layout(`promo promo-${variant} ${mods}`.trim(), { spacing: false }, inner);

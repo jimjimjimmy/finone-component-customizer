@@ -1,3 +1,4 @@
+import { rateTiles } from './rates.js';
 import { section, layout, cta, eyebrow, img, imageFit, color, attrs, cx } from '../lib.js';
 
 /* Hero  (ACF: hero-marquee | hero-large | hero-medium | hero-small | hero-boxed)
@@ -6,6 +7,7 @@ import { section, layout, cta, eyebrow, img, imageFit, color, attrs, cx } from '
      boxed     boolean   - contained card on a tinted section (large => .hlarge, others => .hsmall)
      tone      'light' | 'dark'   - text tone (light = white text, for dark backgrounds / image overlays)
      bg        tone name or CSS colour for the hero surface (token name: 'dark','surface','accent',...)
+     rates     [tiles] - (fade only) integrated frosted rate row inside the hero
      fade      boolean  - marquee only: gradient-fade variant (photo dissolves into the brand colour)
      overlay   0-100  marquee image overlay darkness (%)
      reverse   boolean  - image/content swap sides
@@ -13,7 +15,7 @@ import { section, layout, cta, eyebrow, img, imageFit, color, attrs, cx } from '
      image     src; eyebrow; title; body (html); buttons [{label,href,variant}]; id            */
 export function hero(p = {}) {
   const { size = 'large', boxed = false, tone = 'light', bg = 'dark', overlay = 50, reverse = false, noImage = false,
-          image, imageClass = 'attachment-full size-full', fade = false, eyebrow: e, title, body, buttons = [], id, align, bgColor } = p;
+          image, imageClass = 'attachment-full size-full', fade = false, rates, eyebrow: e, title, body, buttons = [], id, align, bgColor } = p;
   const light = tone === 'light';
   const txt = (extra = '') => cx('hero-content', extra, light && 'text-light');
   const bgPos = 'background-position: center;background-size: cover;background-repeat: no-repeat;';
@@ -32,9 +34,9 @@ export function hero(p = {}) {
 
   if (size === 'marquee' && fade) {   /* gradient-fade: photo dissolves at the bottom into --color-tertiary; left scrim keeps copy legible */
     const inner = `<div class="hero-picture">${imageFit(image, { class: imageClass })}</div>
-      <div class="container g-0"><div class="row"><div class="col">
+      <div class="hero-fade-body"><div class="container g-0"><div class="row"><div class="col">
         <div class="${txt('fade-animate-left')}">${eyebrow(e)}<h1>${title}</h1>${body ? `<p>${body}</p>` : ''}${cta(buttons, { align: 'start' })}</div>
-      </div></div></div>`;
+      </div></div></div>${rates?.length ? `<div class="hero-rates rate-cards rate-cards-frosted">${rateTiles(rates)}</div>` : ''}</div>`;
     return section({ id: id ?? 'customID' }, layout('hero hero-marquee hero-fade', { bg: 'none', style: bgPos }, inner));
   }
 
