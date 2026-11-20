@@ -483,7 +483,7 @@
 /* hero: full-bleed split. Photo fills the left, a brand-yellow panel (707px at 1920) holds the copy, rate cards sit beneath it */
 @media (min-width: 1050px) {
   #page.l08 .layout.hero-panel { display: grid; grid-template-columns: minmax(0, 1fr) clamp(520px, 36.8vw, 707px); grid-template-rows: 1fr auto; column-gap: 1px; min-height: clamp(700px, 49.2vw, 944px); max-height: none; background: var(--color-highlight); overflow: hidden; }
-  #page.l08 .hero-panel .hero-picture { position: relative; inset: auto; grid-column: 1; grid-row: 1 / 3; width: 100%; height: 100%; max-height: none; }
+  #page.l08 .hero-panel .hero-picture { position: relative; inset: auto; grid-column: 1; grid-row: 1 / 3; width: 100%; height: 100%; max-height: none; box-shadow: 1px 0 0 var(--color-white); }
   #page.l08 .hero-panel .hero-picture::after { display: none; }
   #page.l08 .hero-panel .hero-picture .image-fit, #page.l08 .hero-panel .hero-picture img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center center; }
   #page.l08 .hero-panel .hero-fade-body { grid-column: 2; grid-row: 1; background: var(--color-highlight); padding: 24px 0 80px; justify-content: flex-end; width: auto; }
