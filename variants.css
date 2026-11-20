@@ -534,6 +534,12 @@
 #page.l08 .intro .col-12, #page.l08 .intro .col-lg-8 { flex: 0 0 100%; max-width: 100%; text-align: left !important; }
 #page.l08 .intro h2 { font-family: var(--font-body); font-weight: 400; font-size: clamp(32px, 2.5vw, 48px); line-height: 1.1; color: var(--color-dark); }
 #page.l08 .promo-cards .intro, #page.l08 .intro .container { padding-left: 24px; padding-right: 24px; box-sizing: border-box; }
+#page.l08 .promo-cards-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; max-width: 1440px; margin: 0 auto; padding: 0 24px; box-sizing: border-box; }
+#page.l08 .promo-cards-head .intro { flex: 1 1 auto; min-width: 0; }
+#page.l08 .promo-cards-head .intro .container { padding-left: 0; padding-right: 0; }
+#page.l08 .promo-cards-head-link { flex: 0 0 auto; width: auto; max-width: none; margin: 0; padding: 0 0 8px; }
+#page.l08 .promo-cards-head-link .btn { color: var(--color-accent); font-weight: 700; white-space: nowrap; }
+@media (max-width: 679.98px) { #page.l08 .promo-cards-head { flex-direction: column; align-items: flex-start; gap: 0; padding: 0 16px; } #page.l08 .promo-cards-head-link { padding: 0 0 16px; } }
 /* l08 below 1050px: photo on top, brand-yellow copy panel, then the rate cards (nothing overlays the photo) */
 @media (max-width: 1049.98px) {
   #page.l08 .layout.hero-panel { display: block; min-height: 0; background: var(--color-highlight); }

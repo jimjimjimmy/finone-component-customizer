@@ -77,7 +77,7 @@ export function applyOverrides(demo) {
   demo[122] = { type: 'promo', props: { variant: 'split', reverse: true, edge: true, pt: 'none', pb: 'none', eyebrow: 'Eyebrow category', title: 'Sed ut perspiciatis unde omnis enim ad minima veniam, quis elam',
     body: 'Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia enim ipsam voluptatem quia voluptas.',
     buttons: [{ label: 'Apply Now', href: '#', variant: 'primary' }, { label: 'Learn More', href: '#', variant: 'secondary' }], image: U + 'hero-boxes-large-01.webp' } };
-  demo[123] = { type: 'promoCards', props: { pt: 75, pb: 75, bg: 'none', cols: 3, title: 'What’s Happening at Granite Credit Union', body: '', spacing: { section: { bg: 'secondary' }, layouts: {} },
+  demo[123] = { type: 'promoCards', props: { pt: 75, pb: 75, bg: 'none', cols: 3, title: 'What’s Happening at Granite Credit Union', body: '', headerLink: { label: 'All Articles →', href: '#' }, spacing: { section: { bg: 'secondary' }, layouts: {} },
     cards: [['card-couple-on-counch', 'Eyebrow category'], ['card-family-hiking', 'Eyebrow category'], ['card-mom-kids', 'Eyebrow category']].map(([n, e]) => ({ eyebrow: e, title: 'Sed ut perspiciatis unde omnis', body: '<p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione.</p>', button: { label: 'Learn More', href: '#', variant: 'text' }, image: U + n + '-480x240-1.webp' })) } };
   return demo;
 }
