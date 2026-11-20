@@ -3,7 +3,7 @@
    once on fresh markup and listeners can never be duplicated. Token/font changes bypass this (live CSS-variable binding). */
 import { renderBlock, skipLinks, alertBar, siteHeader, siteFooter, speedbump } from '../blocks.js';
 import { header as H, alert as A, footer as F } from '../demo/chrome.js';
-import { themeCss, googleFontsHref, clone } from './theme.js';
+import { themeCss, googleFontsHref, clone, overrideStyle, overrideFonts } from './theme.js';
 
 const FINALYTICS_LOGO = 'assets/uploads/finalytics-logo.png';
 const DEFAULT_ORG = 'Granite Credit Union';
@@ -25,14 +25,16 @@ export function blockProps(b, org) {
   if (org.promoImage && b.type === 'promo') props.image = org.promoImage;
   return props;
 }
-const withUid = (html, uid) => html.replace(/^(\s*<section)/, `$1 data-uid="${uid}"`);
+const withUid = (html, uid, css = '') => html.replace(/^(\s*<section)([^>]*)>/, (m, a, rest) => {
+  let attrs = rest; if (css) attrs = /\sstyle="/.test(attrs) ? attrs.replace(/(\sstyle=")/, `$1${css.replace(/"/g, '&quot;')};`) : `${attrs} style="${css.replace(/"/g, '&quot;')}"`;
+  return `${a} data-uid="${uid}"${attrs}>`; });
 
 export function renderMain(state) {
   const vis = state.stack.filter((b) => !b.hidden);
   const html = vis.map((b) => {
     const props = blockProps(b, state.org);
     if (b.type === 'tabs') props.panels = props.panels.map((p) => ({ ...p, block: { ...p.block, props: swapOrg(p.block.props, state.org) } }));
-    return { html: withUid(renderBlock({ type: b.type, props }), b.uid), fade: b.type === 'hero' && !!props.fade, dark: b.type === 'promo' && !!props.brandDark };
+    return { html: withUid(renderBlock({ type: b.type, props }), b.uid, overrideStyle(b.props.override)), fade: b.type === 'hero' && !!props.fade, dark: b.type === 'promo' && !!props.brandDark };
   });
   /* gradient-fade hero directly followed by a brand-dark promo: share one photo backdrop that dissolves into the brand colour behind the phones */
   const out = [];
@@ -51,7 +53,7 @@ var s=e.target.closest('[data-uid]');if(s&&document.body.classList.contains('edi
 const BUST = Date.now();   /* per page-load cache bust for local stylesheets (edits show on reload) */
 export function buildDoc(state) {
   const { header, footer, alert } = orgChrome(state.org);
-  const fonts = googleFontsHref(state.theme.fonts);
+  const fonts = googleFontsHref(state.theme.fonts, overrideFonts(state.stack));
   return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="vendor/bootstrap.css?v=${BUST}"><link rel="stylesheet" href="vendor/fa-all.min.css"><link rel="stylesheet" href="vendor/ubermenu.min.css"><link rel="stylesheet" href="vendor/tablepress.css">
 <link rel="stylesheet" href="tokens.css?v=${BUST}"><link rel="stylesheet" href="blocks.css?v=${BUST}"><link rel="stylesheet" href="calculator.css?v=${BUST}"><link rel="stylesheet" href="wordmark.css?v=${BUST}"><link rel="stylesheet" href="fullbleed.css?v=${BUST}"><link rel="stylesheet" href="variants.css?v=${BUST}">

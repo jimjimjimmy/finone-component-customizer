@@ -1,5 +1,5 @@
 /* Theme model: colour controls, font loading, CSS generation, colour helpers, import/export. */
-import { BUTTON_SHAPES, CARD_RADII, PRESETS } from './presets.js';
+import { BUTTON_SHAPES, CARD_RADII, PRESETS, FONT_LISTS } from './presets.js';
 
 /* The seven brand colour controls, bound to the exact tokens in tokens.css. `derive` recomputes dependent tokens. */
 export const COLOR_CONTROLS = [
@@ -22,8 +22,8 @@ export const isHex = (v) => /^#[0-9a-fA-F]{6}$/.test(v);
 
 export const fontStack = ([name, kind]) => `"${name}", ${kind}`;
 const SELF_HOSTED = ['Source Sans 3', 'Source Serif 4'];
-export const googleFontsHref = (fonts) => {
-  const names = [...new Set(Object.values(fonts).map((f) => f[0]).filter((n) => !SELF_HOSTED.includes(n)))];
+export const googleFontsHref = (fonts, extra = []) => {
+  const names = [...new Set([...Object.values(fonts).map((f) => f[0]), ...extra].filter((n) => !SELF_HOSTED.includes(n)))];
   return names.length ? 'https://fonts.googleapis.com/css2?' + names.map((n) => `family=${n.replace(/ /g, '+')}:wght@400;600;700;900`).join('&') + '&display=swap' : '';
 };
 
@@ -48,3 +48,24 @@ export function importTheme(json) {
   const g = PRESETS.granite;
   return { theme: clone({ tokens: { ...g.tokens, ...j.tokens }, fonts: { ...g.fonts, ...j.fonts }, geometry: { ...g.geometry, ...j.geometry } }), org: j.org ?? null, page: Array.isArray(j.page) ? j.page : null, name: j.name ?? 'Imported' };
 }
+
+/* Per-block overrides: b.props.override = { colors:{primary:'#hex',...}, fonts:{heading:'Name',body:'Name',rate:'Name'} }.
+   Unset keys inherit the Brand tab. Returned as inline custom properties for that block's <section>, so the block's own
+   var(--color-*) / var(--font-*) reads resolve to the override while every other block keeps following the brand. */
+const kindOf = (role, name) => (FONT_LISTS[role].find((f) => f[0] === name) || [name, 'sans-serif']);
+export function overrideVars(o) {
+  if (!o) return {};
+  const v = {};
+  for (const c of COLOR_CONTROLS) {
+    const x = o.colors?.[c.key]; if (!isHex(x)) continue;
+    v[c.token] = x; for (const [t, f] of Object.entries(c.derive || {})) v[t] = f(x);
+    if (c.key === 'primary') v['--color-primary'] = x;
+    if (c.key === 'accent') v['--fade-brand'] = x;
+  }
+  for (const role of ['heading', 'body', 'rate']) { const n = o.fonts?.[role]; if (n) v[`--font-${role}`] = fontStack(kindOf(role, n)); }
+  if (v['--font-rate']) v['--font-display'] = v['--font-rate'];
+  return v;
+}
+export const overrideStyle = (o) => { const v = overrideVars(o); const css = Object.entries(v).map(([k, x]) => `${k}:${x}`).join(';'); return o?.fonts?.body && css ? css + ';font-family:var(--font-body)' : css; };
+export const overrideFonts = (stack) => stack.flatMap((b) => ['heading', 'body', 'rate'].map((r) => b.props.override?.fonts?.[r]).filter(Boolean));
+export const hasOverride = (o) => !!o && (Object.values(o.colors || {}).some(Boolean) || Object.values(o.fonts || {}).some(Boolean));

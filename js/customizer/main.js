@@ -1,6 +1,6 @@
 /* main.js - Theme and Page Customizer controller. */
 import { PRESETS, FONT_LISTS } from './presets.js';
-import { COLOR_CONTROLS, themeCss, googleFontsHref, isHex, contrast, presetTheme, exportTheme, importTheme, clone } from './theme.js';
+import { COLOR_CONTROLS, themeCss, googleFontsHref, overrideFonts, hasOverride, isHex, contrast, presetTheme, exportTheme, importTheme, clone } from './theme.js';
 import { buildDoc } from './render.js';
 import { blocks as REGISTRY } from '../blocks.js';
 import { GROUPS, TEMPLATES, VARIANTS, TONES, SPACES, labelOf, fromDemo, fromTemplate, setSpacing, setTone, getTone, fromSpace, fieldsOf, setP, newUid } from './stack.js';
@@ -52,7 +52,7 @@ function markSelected() { const d = frame.contentDocument; if (!d) return; d.que
 /* Live token binding: swap the CSS-variable block and font link inside the preview, no reload. */
 function applyTheme() {
   const d = frame.contentDocument; save();
-  if (d?.getElementById('theme-vars')) { d.getElementById('theme-vars').textContent = themeCss(state.theme); d.getElementById('gf').setAttribute('href', googleFontsHref(state.theme.fonts)); }
+  if (d?.getElementById('theme-vars')) { d.getElementById('theme-vars').textContent = themeCss(state.theme); d.getElementById('gf').setAttribute('href', googleFontsHref(state.theme.fonts, overrideFonts(state.stack))); }
   const gf = googleFontsHref(state.theme.fonts); let l = $('#gf-ui'); if (!l) { l = document.createElement('link'); l.id = 'gf-ui'; l.rel = 'stylesheet'; document.head.appendChild(l); } l.href = gf;
 }
 window.addEventListener('message', (e) => { if (e.data?.type === 'select') { select(e.data.uid, false); setTab('page'); } });
@@ -156,8 +156,18 @@ function inspector(b) {
     <div class="btns"><button class="b sm" data-ins="dup">Duplicate</button><button class="b sm" data-ins="vis">${b.hidden ? 'Show' : 'Hide'}</button><button class="b sm x" data-ins="del">Remove</button></div>
     <h4>Spacing (section)</h4><div class="grid2">${['pt', 'pb', 'mt', 'mb'].map(spSel).join('')}</div>
     <h4>Background tone</h4><div class="grid2"><div><select data-tone>${TONES.map((v) => `<option${getTone(b) === v ? ' selected' : ''}>${v}</option>`).join('')}</select></div></div>
+    ${overrideFields(b)}
     ${copyFields(b)}
     ${vars ? `<h4>Variants</h4><div class="grid2">${vars}</div>` : ''}</div>`;
+}
+function overrideFields(b) {
+  const o = b.props.override ?? {}, tk = state.theme.tokens;
+  const cols = COLOR_CONTROLS.map((c) => { const v = o.colors?.[c.key]; return `<div class="ov"><label>${c.label}${v ? '' : ' <em>(brand)</em>'}</label><div class="row"><input type="color" data-ocolor="${c.key}" value="${isHex(v) ? v : (isHex(tk[c.token]) ? tk[c.token] : '#000000')}"><button class="b sm" data-oclear="colors.${c.key}"${v ? '' : ' disabled'} title="Back to brand">Brand</button></div></div>`; }).join('');
+  const fnt = ['heading', 'body', 'rate'].map((r) => `<div><label>${r[0].toUpperCase() + r.slice(1)} font</label><select data-ofont="${r}"><option value="">Brand (${esc(state.theme.fonts[r][0])})</option>${FONT_LISTS[r].map(([n]) => `<option${o.fonts?.[r] === n ? ' selected' : ''}>${esc(n)}</option>`).join('')}</select></div>`).join('');
+  return `<details${hasOverride(o) ? ' open' : ''}><summary style="font-size:11px">Colour and font overrides${hasOverride(o) ? ' (set)' : ''}</summary>
+    <p class="note">Blocks follow the Brand tab. Set a value here to override this block only; "Brand" returns it to the brand value.</p>
+    <div class="grid2">${cols}</div><div class="grid2" style="margin-top:6px">${fnt}</div>
+    <div class="btns" style="margin-top:6px"><button class="b sm" data-oclear="all"${hasOverride(o) ? '' : ' disabled'}>Reset all to brand</button></div></details>`;
 }
 function copyFields(b) {
   const f = fieldsOf(b); if (!f.length) return '';
@@ -165,6 +175,7 @@ function copyFields(b) {
 }
 const page = $('#pane-page');
 page.addEventListener('click', (e) => {
+  const clr = e.target.closest('[data-oclear]'); if (clr && sel()) { const b = sel(); if (clr.dataset.oclear === 'all') delete b.props.override; else { const [g, k] = clr.dataset.oclear.split('.'); if (b.props.override?.[g]) delete b.props.override[g][k]; } paintPage(); render(true); return; }
   const fup = e.target.closest('[data-fup]'); if (fup) { fupPath = fup.dataset.fup; $('#upf').value = ''; $('#upf').click(); return; }
   const li = e.target.closest('li[data-uid]'), act = e.target.closest('[data-act]'), add = e.target.closest('[data-add]'), ins = e.target.closest('[data-ins]');
   if (add) { const nb = fromDemo(demo, +add.dataset.add); const at = state.stack.findIndex((x) => x.uid === state.selected); state.stack.splice(at < 0 ? state.stack.length : at + 1, 0, nb); state.selected = nb.uid; scrollTo = nb.uid; paintPage(); render(true); return; }
@@ -181,6 +192,8 @@ page.addEventListener('change', (e) => {
   const t = e.target, b = sel();
   if (t.dataset.sp && b) { setSpacing(b, t.dataset.sp, t.value); render(true); }
   else if (t.hasAttribute('data-tone') && b) { setTone(b, t.value); render(true); }
+  else if (t.dataset.ofont !== undefined && b) { b.props.override ??= {}; b.props.override.fonts ??= {}; if (t.value) b.props.override.fonts[t.dataset.ofont] = t.value; else delete b.props.override.fonts[t.dataset.ofont]; paintPage(); render(true); }
+  else if (t.dataset.ocolor && b) { b.props.override ??= {}; b.props.override.colors ??= {}; b.props.override.colors[t.dataset.ocolor] = t.value; paintPage(); render(true); }
   else if (t.dataset.var && b) { b.props[t.dataset.var] = t.type === 'checkbox' ? t.checked : t.value; if (b.type === 'hero' && t.dataset.var === 'tone') { /* text tone only */ } paintPage(); render(true); }
 });
 page.addEventListener('input', (e) => {
