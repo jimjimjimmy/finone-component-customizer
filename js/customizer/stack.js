@@ -27,6 +27,7 @@ export const TEMPLATES = {
   news: { name: 'News & Community Page', blocks: [26, 48, 49, 35, 57] },               /* Intro Medium, Curated Posts, Global News, Promo Offset */
   layout02: { name: 'Layout 02', alert: false, preset: 'layout02', blocks: [100, 102, 103, 105] },  /* Gradient-fade hero, frosted rate strip, brand-dark app promo, edge-to-edge promo, 3 cards (header/footer are site chrome) */
   layout03: { name: 'Layout 03 (Ironbridge)', alert: false, preset: 'ironbridge', blocks: [110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 57] },  /* split hero + stats strip, about, featured edge promo, quick links, photo tiles, events, member types, quote, news, CTA band */
+  layout08: { name: 'Layout 08 (Yellow panel hero)', alert: false, preset: 'layout08', blocks: [120, 121, 122, 123] },  /* split panel hero + rate row, app promo on photo, edge feature, article cards (header/footer are site chrome) */
   blank: { name: 'Blank canvas', blocks: [] },
 };
 export const fromDemo = (demo, idx) => ({ uid: newUid(), idx, type: demo[idx].type, props: clone(demo[idx].props), hidden: false });

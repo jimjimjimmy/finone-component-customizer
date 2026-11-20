@@ -65,5 +65,19 @@ export function applyOverrides(demo) {
     buttons: [{ label: 'View all news', href: '#', variant: 'secondary' }] } };
   demo[119] = { type: 'promo', props: { variant: 'split', reverse: true, sectionBg: 'secondary', pt: 75, pb: 75, eyebrow: 'Branch appointments', title: 'Book a free money check-up',
     body: 'Sit down with a member advisor in person or online. We will look at your budget, your goals and the products that genuinely fit.', buttons: [{ label: 'Book an appointment', href: '#', variant: 'primary-white' }], image: A + 'cta.svg' } };
+
+  /* 6. Layout 08 (Figma "Layout 08 v2", node 195:42261): composed from existing blocks; yellow panel hero, indigo app promo on a photo, edge feature, article cards.
+     Photos are local placeholders (the Figma stock comps are watermarked and are not copied into the repo). */
+  const rt = { lead: 'Rates up to', value: '0.05', unit: '%', label: 'APY*' };
+  demo[120] = { type: 'hero', props: { size: 'marquee', fade: true, panel: true, tone: 'light', bg: 'none', image: U + 'hero-large-1920x860-1.webp', eyebrow: 'Eyebrow category', title: 'Tap into the Value of Your Home',
+    body: 'Your possibilities are endless with a 12-month Personal Loan at 8.99% APR*.', buttons: [], rates: Array.from({ length: 3 }, () => tile('icon-piggy-outline.svg', 'Savings Account', rt)) } };
+  demo[121] = { type: 'promo', props: { variant: 'split', reverse: false, brandDark: true, pt: 50, pb: 75, bgImage: U + 'hero-woman-child-1920x1080-1.webp', eyebrow: 'Eyebrow category', title: 'Sed ut perspiciatis unde omnis enim ad minima veniam, quis elam',
+    body: 'Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia enim ipsam voluptatem quia voluptas.',
+    phones: true, badges: [{ store: 'apple', href: '#' }, { store: 'google', href: '#' }], buttons: [], image: U + 'promo-product-600x600-1.png' } };
+  demo[122] = { type: 'promo', props: { variant: 'split', reverse: true, edge: true, pt: 'none', pb: 'none', eyebrow: 'Eyebrow category', title: 'Sed ut perspiciatis unde omnis enim ad minima veniam, quis elam',
+    body: 'Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia enim ipsam voluptatem quia voluptas.',
+    buttons: [{ label: 'Apply Now', href: '#', variant: 'primary' }, { label: 'Learn More', href: '#', variant: 'secondary' }], image: U + 'hero-boxes-large-01.webp' } };
+  demo[123] = { type: 'promoCards', props: { pt: 75, pb: 75, bg: 'none', cols: 3, title: 'What’s Happening at Granite Credit Union', body: '', spacing: { section: { bg: 'secondary' }, layouts: {} },
+    cards: [['card-couple-on-counch', 'Eyebrow category'], ['card-family-hiking', 'Eyebrow category'], ['card-mom-kids', 'Eyebrow category']].map(([n, e]) => ({ eyebrow: e, title: 'Sed ut perspiciatis unde omnis', body: '<p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione.</p>', button: { label: 'Learn More', href: '#', variant: 'text' }, image: U + n + '-480x240-1.webp' })) } };
   return demo;
 }

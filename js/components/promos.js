@@ -25,7 +25,7 @@ export const phoneMock = () => `<div class="phones" aria-hidden="true">
    props: variant, reverse, bg, brandDark (brand-colour background + light text), edge (image flush to the viewport edge, 50/50), badges [{store,href}], phones (two overlapping phone mockups instead of an image), logo, eyebrow, title, body, buttons, image, nested (inside a tab)            */
 export function promo(p = {}) {
   const { variant = 'split', reverse = false, bg = 'none', sectionBg = 'none', secSp, logo, eyebrow: e, title, body, buttons = [], image, nested = false,
-          pt = 50, pb = 50, mt = 'none', mb = 'none', imageClass, brandDark = false, edge = false, badges = [], phones = false } = p;
+          pt = 50, pb = 50, mt = 'none', mb = 'none', imageClass, brandDark = false, edge = false, badges = [], phones = false, bgImage } = p;
   const fade = reverse ? 'fade-animate-right' : 'fade-animate-left';
   const inner = `<div class="container"><div class="row g-0 align-items-center ${reverse ? 'reverse' : ''}">
       <div class="promo-content ${fade}">${logo ? `<div class="promo-logo">${img(logo)}</div>` : ''}${eyebrow(e)}<h2>${title}</h2><p>${body}</p>${cta(buttons)}${badgeRow(badges)}</div>
@@ -33,7 +33,7 @@ export function promo(p = {}) {
     </div></div>`;
   const mods = cx(brandDark && 'promo-brand-dark', edge && 'promo-edge');
   if (nested) return layout(`promo promo-${variant} ${mods}`.trim(), { spacing: false }, inner);
-  return section({ bg: brandDark ? 'tertiary' : sectionBg, ...(secSp ?? {}), spacing: true }, layout(`promo promo-${variant} ${mods}`.trim(), { bg: brandDark ? 'none' : bg, pt, pb, mt, mb }, inner));
+  return section({ bg: brandDark ? 'tertiary' : sectionBg, ...(secSp ?? {}), spacing: true }, layout(`promo promo-${variant} ${mods}`.trim(), { bg: brandDark ? 'none' : bg, pt, pb, mt, mb, ...(bgImage ? { style: `--promo-bg:url('${bgImage}')` } : {}) }, inner));
 }
 
 /* Banner  (ACF: banner-boxed | banner-full) - looping video with overlay copy.

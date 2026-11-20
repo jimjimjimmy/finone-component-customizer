@@ -471,3 +471,87 @@
   .l03 .promo-cards-3 .promo-card:hover .card-image img, .l03 .promo-cards-3 .promo-card:focus-within .card-image img { transform: scale(1.04); }
 }
 .l03 footer.site-footer .footer_logo img { background: var(--color-white); padding: 10px 14px; border-radius: var(--radius-sm); }   /* the Finalytics logo is dark: sits on a white chip over the dark footer */
+
+/* =====================================================================================================================
+   Layout 08 (Figma "Layout 08 v2", 195:42261) - every rule is scoped under #page.l08 (render.js adds l08 next to l02, so the
+   header, footer, content column and mobile rules are shared with Layout 02; this block only overrides what differs).
+   Palette comes from the layout08 preset: Primary/Accent indigo, Highlight yellow (panel, phone frames), Secondary pale yellow
+   (articles band), Surface cream (cards, footer). No colours are hard-coded here.
+   ===================================================================================================================== */
+#page.l08::before, #page.l08::after { display: none; }
+
+/* hero: full-bleed split. Photo fills the left, a brand-yellow panel (707px at 1920) holds the copy, rate cards sit beneath it */
+@media (min-width: 1050px) {
+  #page.l08 .layout.hero-panel { display: grid; grid-template-columns: minmax(0, 1fr) clamp(520px, 36.8vw, 707px); grid-template-rows: 1fr auto; column-gap: 1px; min-height: clamp(700px, 49.2vw, 944px); max-height: none; background: var(--color-highlight); overflow: hidden; }
+  #page.l08 .hero-panel .hero-picture { position: relative; inset: auto; grid-column: 1; grid-row: 1 / 3; width: 100%; height: 100%; max-height: none; }
+  #page.l08 .hero-panel .hero-picture::after { display: none; }
+  #page.l08 .hero-panel .hero-picture .image-fit, #page.l08 .hero-panel .hero-picture img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center center; }
+  #page.l08 .hero-panel .hero-fade-body { grid-column: 2; grid-row: 1; background: var(--color-highlight); padding: 24px 0 80px; justify-content: flex-end; width: auto; }
+  #page.l08 .hero-panel .hero-fade-body .container { width: 100%; max-width: none; }
+  #page.l08 .hero-panel .hero-rates { grid-column: 2; grid-row: 2; width: 100%; }
+}
+#page.l08 .hero-panel .hero-content { max-width: none; margin: 0; padding: 0 80px 0 40px !important; }
+#page.l08 .hero-panel .hero-content .eyebrow { color: var(--color-dark); font-weight: 900; letter-spacing: .1em; }
+#page.l08 .hero-panel .hero-content h1 { color: var(--color-white); font-weight: 600; font-size: clamp(48px, 4.17vw, 80px); line-height: 1.1; max-width: none; }
+#page.l08 .hero-panel .hero-content p { color: var(--color-dark); text-shadow: none; max-width: none; font-size: clamp(18px, 1.25vw, 24px); line-height: 1.3; }
+#page.l08 .hero-panel .hero-rates .swiper-wrapper { gap: 1px !important; border: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); transform: none !important; width: 100% !important; }
+#page.l08 .hero-panel .hero-rates .container { width: 100%; max-width: none; padding: 0 !important; }
+#page.l08 .hero-panel .hero-rates .swiper-slide { width: auto !important; margin: 0 !important; }
+#page.l08 .hero-panel .hero-rates .card { background: color-mix(in srgb, var(--color-highlight) 80%, #000); border: 0 !important; border-radius: 0; align-items: center; text-align: center; padding: 24px; height: 100%; }
+#page.l08 .hero-panel .hero-rates .card .card-header { padding: 0; justify-content: center; color: var(--color-dark); }
+#page.l08 .hero-panel .hero-rates .card .card-header img { background: var(--color-white); }
+#page.l08 .hero-panel .hero-rates .card .card-body { align-items: center; color: var(--color-dark); }
+#page.l08 .hero-panel .hero-rates .card .card-body .rate-group div { color: var(--color-white); }
+#page.l08 .hero-panel .hero-rates .card .card-footer { padding: 4px 0 0; }
+#page.l08 .hero-panel .hero-rates .card .card-footer a.btn { border: 0; background: none; color: var(--color-dark); font-weight: 700; text-transform: uppercase; padding: 2px 16px; }
+
+/* mobile-banking promo: indigo band with the photo blended in (overlay) and a 20% darkening, as in Figma */
+#page.l08 .layout.promo.promo-brand-dark { min-height: clamp(560px, 39.9vw, 766px); display: flex; align-items: center;
+  background-color: var(--fade-brand); background-image: linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.2)), var(--promo-bg, none); background-size: cover; background-position: center; background-blend-mode: normal, overlay; }
+#page.l08 .promo-brand-dark .promo-content h2 { color: var(--color-gray-2); font-weight: 400; font-size: clamp(26px, 1.77vw, 34px); line-height: 1.1; }
+@media (max-width: 1049.98px) { #page.l08 .layout.promo.promo-brand-dark { display: block; min-height: 0; } }
+
+/* edge feature: tall, photo dominant */
+@media (min-width: 1050px) { #page.l08 .promo-edge .row { min-height: clamp(560px, 47vw, 904px); } }
+#page.l08 .promo-edge .promo-content h2 { color: var(--color-accent); font-weight: 400; font-size: clamp(26px, 1.77vw, 34px); line-height: 1.1; }
+
+/* article cards: pale-yellow band, cream text panels, square corners */
+#page.l08 .promo-cards-3 .card { background: var(--color-surface); border: 0; border-radius: 0; box-shadow: none; }
+
+/* footer: cream, as in Figma */
+#page.l08 footer, #page.l08 footer .footer-main, #page.l08 footer .footer-links { background: var(--color-surface); }
+/* l08: rate numerals scale with the panel; section heading sits left, in the body font, level with the cards */
+#page.l08 .hero-panel .hero-rates .card .card-body .rate-group { display: grid; grid-template-columns: auto auto; grid-template-areas: "n u" "n l"; justify-content: center; align-items: center; column-gap: 4px; width: auto; margin: 0; }
+#page.l08 .hero-panel .hero-rates .card .rate-group .div1 { grid-area: n; font-size: clamp(30px, calc(3.33vw - 3px), 64px); line-height: 1; letter-spacing: -.05em; width: auto; }
+#page.l08 .hero-panel .hero-rates .card .rate-group .div2 { grid-area: u; font-size: clamp(18px, 1.88vw, 36px); font-weight: 700; line-height: 1; width: auto; text-align: left; align-self: end; }
+#page.l08 .hero-panel .hero-rates .card .rate-group .div3 { grid-area: l; font-size: clamp(11px, .83vw, 16px); font-weight: 600; line-height: 1.2; width: auto; text-align: left; align-self: start; }
+@media (min-width: 1050px) {
+  #page.l08 .hero-panel .hero-rates .card .card-header { font-size: clamp(11px, .73vw, 14px); gap: 6px; }
+  #page.l08 .hero-panel .hero-rates .card { padding: 24px 12px; }
+}
+/* l08: section heading sits left, in the body font, level with the cards */
+#page.l08 .intro .row { justify-content: flex-start; }
+#page.l08 .intro .col-12, #page.l08 .intro .col-lg-8 { flex: 0 0 100%; max-width: 100%; text-align: left !important; }
+#page.l08 .intro h2 { font-family: var(--font-body); font-weight: 400; font-size: clamp(32px, 2.5vw, 48px); line-height: 1.1; color: var(--color-dark); }
+#page.l08 .promo-cards .intro, #page.l08 .intro .container { padding-left: 24px; padding-right: 24px; box-sizing: border-box; }
+/* l08 below 1050px: photo on top, brand-yellow copy panel, then the rate cards (nothing overlays the photo) */
+@media (max-width: 1049.98px) {
+  #page.l08 .layout.hero-panel { display: block; min-height: 0; background: var(--color-highlight); }
+  #page.l08 .hero-panel .hero-picture { position: relative; inset: auto; width: 100%; height: clamp(240px, 56vw, 420px); max-height: none; }
+  #page.l08 .hero-panel .hero-picture::after { display: none; }
+  #page.l08 .hero-panel .hero-picture .image-fit, #page.l08 .hero-panel .hero-picture img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  #page.l08 .hero-panel .hero-fade-body { background: var(--color-highlight); padding: 32px 0 24px; }
+  #page.l08 .hero-panel .hero-fade-body .container { width: 100%; }
+  #page.l08 .hero-panel .hero-content { padding: 0 16px !important; }
+  #page.l08 .hero-panel .hero-content h1 { font-size: clamp(40px, 8vw, 64px); }
+  #page.l08 .hero-panel .hero-rates .swiper-wrapper { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 679.98px) {
+  #page.l08 .hero-panel .hero-rates .swiper-wrapper { display: flex !important; }
+  #page.l08 .hero-panel .hero-rates .swiper-slide { flex: 0 0 100%; }
+  #page.l08 .hero-panel .hero-rates .swiper-pagination-bullet { background: color-mix(in srgb, var(--color-dark) 35%, transparent) !important; }
+  #page.l08 .hero-panel .hero-rates .swiper-pagination-bullet-active { background: var(--color-dark) !important; }
+  #page.l08 .hero-panel .hero-rates .card .card-body .rate-group .div1 { font-size: 56px; }
+  #page.l08 .hero-panel .hero-rates .card .card-body .rate-group .div2 { font-size: 30px; }
+  #page.l08 .hero-panel .hero-rates .card .card-body .rate-group .div3 { font-size: 14px; }
+}
