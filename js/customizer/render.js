@@ -5,6 +5,7 @@ import { renderBlock, skipLinks, alertBar, siteHeader, siteFooter, speedbump } f
 import { header as H, alert as A, footer as F } from '../demo/chrome.js';
 import { themeCss, googleFontsHref, clone } from './theme.js';
 
+const FINALYTICS_LOGO = 'assets/uploads/finalytics-logo.png';
 const DEFAULT_ORG = 'Granite Credit Union';
 const swapOrg = (obj, org) => JSON.parse(JSON.stringify(obj).split(DEFAULT_ORG).join(org.name).split('FinOne Financial Credit Union').join(org.name)
   .split('Routing #322484265').join(`Routing #${org.routing}`));
@@ -12,8 +13,8 @@ const swapOrg = (obj, org) => JSON.parse(JSON.stringify(obj).split(DEFAULT_ORG).
 export function orgChrome(org) {
   const header = swapOrg(clone(H), org), footer = swapOrg(clone(F), org), alert = swapOrg(clone(A), org);
   footer.member.routing = `Routing # ${org.routing}`; footer.member.nmls = `NMLS: ${org.nmls}`;
-  if (!org.logo) { header.logo = { href: header.logo.href, wordmark: org.name }; footer.logo = { href: footer.logo.href, wordmark: org.name }; }
-  if (org.logo) { header.logo = { ...header.logo, src: org.logo, alt: org.name, width: undefined, height: undefined }; footer.logo = { ...footer.logo, src: org.logo, alt: org.name, width: undefined, height: undefined }; }
+  const logo = org.logo || FINALYTICS_LOGO;   /* every template uses the Finalytics logo unless a logo is uploaded or set */
+  header.logo = { ...header.logo, src: logo, alt: org.name, width: undefined, height: undefined }; footer.logo = { ...footer.logo, src: logo, alt: org.name, width: undefined, height: undefined };
   return { header, footer, alert };
 }
 

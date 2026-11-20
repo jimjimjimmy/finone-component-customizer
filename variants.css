@@ -470,3 +470,4 @@
   .l03 .promo-cards-3 .promo-card .card-image img { transition: transform .45s cubic-bezier(.16, 1, .3, 1); }
   .l03 .promo-cards-3 .promo-card:hover .card-image img, .l03 .promo-cards-3 .promo-card:focus-within .card-image img { transform: scale(1.04); }
 }
+.l03 footer.site-footer .footer_logo img { background: var(--color-white); padding: 10px 14px; border-radius: var(--radius-sm); }   /* the Finalytics logo is dark: sits on a white chip over the dark footer */
