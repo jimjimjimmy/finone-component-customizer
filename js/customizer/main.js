@@ -14,7 +14,7 @@ const demo = applyOverrides(await (await fetch('js/demo/granite.json')).json());
 
 /* ---------------- state ---------------- */
 const fresh = () => ({ preset: 'granite', theme: presetTheme('granite'), org: { ...PRESETS.granite.org, logo: '', heroImage: '', promoImage: '' },
-  stack: fromTemplate(demo, 'home'), selected: null, viewport: 'desktop', controlsHidden: false, showAlert: true, template: 'home', tab: 'brand' });
+  stack: fromTemplate(demo, 'home'), selected: null, viewport: 'desktop', zoom: 1, controlsHidden: false, showAlert: true, template: 'home', tab: 'brand' });
 let state = fresh();
 /* Saved state is trusted only if it has the full shape; anything else (old version, hand-edited, corrupt) falls back to defaults. */
 const validState = (s) => s && typeof s === 'object' && s.theme?.tokens && s.theme?.fonts?.heading?.[0] && s.theme?.fonts?.body?.[0] && s.theme?.fonts?.rate?.[0]
@@ -31,10 +31,28 @@ const status = (m) => { $('#status').textContent = m; };
 /* ---------------- preview frame ---------------- */
 const frame = $('#frame'), wrap = $('#wrap'), stage = $('#stage');
 let renderTimer = 0, pendingScroll = 0, scrollTo = null;
-function fit() {   /* sizing is pure CSS (see #wrap[data-vp]); this just syncs the attribute and status text */
-  wrap.dataset.vp = state.viewport; frame.style.cssText = ''; wrap.style.cssText = '';
+/* Zoom: the page is laid out at (stage width / zoom) CSS px, capped at the 1920 design width, and scaled down, so zooming out shows a wider, shorter overview of the whole page. */
+const ZOOMS = [0.25, 0.33, 0.5, 0.67, 0.75, 1];
+function fit() {
+  const z = ZOOMS.includes(state.zoom) || (state.zoom > 0.2 && state.zoom < 1) ? state.zoom : 1;
+  wrap.dataset.vp = state.viewport; frame.style.cssText = ''; wrap.style.cssText = ''; wrap.classList.toggle('zoomed', z < 1);
+  if (z < 1) {
+    const baseW = state.viewport === 'mobile' ? 390 : Math.min(stage.clientWidth / z, 1920), hh = state.viewport === 'mobile' ? stage.clientHeight - 32 : stage.clientHeight;
+    wrap.style.cssText = `width:${Math.round(baseW * z)}px;height:${hh}px`;
+    frame.style.cssText = `width:${Math.round(baseW)}px;height:${Math.round(hh / z)}px;transform:scale(${z});transform-origin:0 0`;
+  }
+  $('#zval').textContent = Math.round(z * 100) + '%'; $('#zout').disabled = z <= ZOOMS[0] + 0.001; $('#zin').disabled = z >= 1;
   status('');
 }
+function setZoom(z) { state.zoom = Math.max(0.2, Math.min(1, z)); fit(); save(); }
+const stepZoom = (dir) => { const cur = state.zoom || 1; const next = dir > 0 ? ZOOMS.find((v) => v > cur + 0.001) : [...ZOOMS].reverse().find((v) => v < cur - 0.001); if (next) setZoom(next); };
+function fitPage() {   /* smallest zoom that shows the whole page height, measured after the reflow at that zoom */
+  let n = 0; const go = () => { let H = 0; try { H = frame.contentDocument.documentElement.scrollHeight; } catch (e) { return; }
+    const target = Math.max(0.2, Math.min(1, stage.clientHeight / Math.max(H, 1))); if (Math.abs(target - state.zoom) > 0.01 && n++ < 3) { setZoom(target); setTimeout(go, 250); } };
+  setZoom(Math.min(state.zoom || 1, 0.5)); setTimeout(go, 250);
+}
+$('#zout').addEventListener('click', () => stepZoom(-1)); $('#zin').addEventListener('click', () => stepZoom(1)); $('#zval').addEventListener('click', () => setZoom(1)); $('#zfit').addEventListener('click', fitPage);
+window.addEventListener('resize', () => { if ((state.zoom || 1) < 1) fit(); });
 function render(immediate) {
   clearTimeout(renderTimer);
   renderTimer = setTimeout(() => {
