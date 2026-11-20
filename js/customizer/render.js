@@ -51,8 +51,20 @@ const PREVIEW_JS = `document.addEventListener('click',function(e){var a=e.target
 var s=e.target.closest('[data-uid]');if(s&&document.body.classList.contains('edit'))parent.postMessage({type:'select',uid:s.dataset.uid},'*');},true);`;
 
 const BUST = Date.now();   /* per page-load cache bust for local stylesheets (edits show on reload) */
+/* Layout 08 footer copy, as in the Figma frame: five link columns, two disclaimer paragraphs, no legal row or copyright line */
+function layout08Footer(footer, org) {
+  const col = (title, links) => ({ title, slug: title.toLowerCase(), links: links.map((label) => ({ label, href: '#' })) });
+  const all = ['Checking & Savings', 'Loans', 'Credit Cards', 'Home Loans', 'Invest & Insure', 'Business', 'Commercial'];
+  footer.columns = [col('Save', all), col('Spend', all.slice(1)), col('Borrow', ['Checking & Savings', 'Home Loans', 'Invest & Insure', 'Business', 'Commercial']), col('Explore', all.slice(1)), col('Business', all.slice(0, 5))];
+  footer.legal = []; footer.copyright = { year: '', owner: '' };
+  footer.disclosures = ['*APR = Annual Percentage Rate. Rate based on creditworthiness and term of loan. Rates are subject to change at any time and are not guaranteed.<br>**APY = Annual Percentage Yield.',
+    `We provide links to third party partners independent from ${org.name}. These links are provided only as a convenience. We do not manage the content of those sites. The privacy and security policies of external websites will differ from those of ${org.name}.`];
+  footer.member.cta = { ...footer.member.cta, label: 'Become a Member' };
+}
 export function buildDoc(state) {
   const { header, footer, alert } = orgChrome(state.org);
+  if (state.template === 'layout08') layout08Footer(footer, state.org);
+  if (state.template === 'layout08' && (!state.org.logo || state.org.logo === FINALYTICS_LOGO)) header.logo = { ...header.logo, src: 'assets/uploads/finalytics-logo-white.svg' };   /* the Figma bar is dark */
   const fonts = googleFontsHref(state.theme.fonts, overrideFonts(state.stack));
   return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="vendor/bootstrap.css?v=${BUST}"><link rel="stylesheet" href="vendor/fa-all.min.css"><link rel="stylesheet" href="vendor/ubermenu.min.css"><link rel="stylesheet" href="vendor/tablepress.css">
