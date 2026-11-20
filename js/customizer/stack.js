@@ -26,6 +26,7 @@ export const TEMPLATES = {
   lending: { name: 'Lending / Promo Landing Page', blocks: [1, 15, 33, 42, 22, 57] }, /* Hero Large, Quicklinks (+text), Promo Split, Steps, Action Cards */
   news: { name: 'News & Community Page', blocks: [26, 48, 49, 35, 57] },               /* Intro Medium, Curated Posts, Global News, Promo Offset */
   layout02: { name: 'Layout 02', alert: false, preset: 'layout02', blocks: [100, 102, 103, 105] },  /* Gradient-fade hero, frosted rate strip, brand-dark app promo, edge-to-edge promo, 3 cards (header/footer are site chrome) */
+  layout03: { name: 'Layout 03 (Ironbridge)', alert: false, preset: 'ironbridge', blocks: [110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 57] },  /* split hero + stats strip, about, featured edge promo, quick links, photo tiles, events, member types, quote, news, CTA band */
   blank: { name: 'Blank canvas', blocks: [] },
 };
 export const fromDemo = (demo, idx) => ({ uid: newUid(), idx, type: demo[idx].type, props: clone(demo[idx].props), hidden: false });
@@ -56,7 +57,7 @@ export const getTone = (b) => (b.type === 'hero' ? b.props.bg : b.props.spacing?
 /* ---- Inline copy & data editing ---- */
 const getP = (o, path) => path.split('.').reduce((a, k) => (a == null ? a : a[k]), o);
 export function setP(o, path, v) { const ks = path.split('.'); const last = ks.pop(); const tgt = ks.reduce((a, k) => a[k], o); tgt[last] = v; }
-const TEXT_KEYS = [['eyebrow', 'Eyebrow'], ['title', 'Title'], ['text', 'Text'], ['body', 'Body'], ['quote', 'Quote'], ['by', 'Author'], ['excerpt', 'Excerpt'], ['q', 'Question']];
+const TEXT_KEYS = [['eyebrow', 'Eyebrow'], ['title', 'Title'], ['text', 'Text'], ['body', 'Body'], ['quote', 'Quote'], ['by', 'Author'], ['excerpt', 'Excerpt'], ['q', 'Question'], ['cta', 'Link label']];
 /* Editable text fields for a block: [{path,label,multi,value}] */
 export function fieldsOf(b) {
   const p = b.props, out = [];
@@ -65,6 +66,7 @@ export function fieldsOf(b) {
   const addI = (path, label) => { const v = getP(p, path); if (typeof v === 'string' && v) out.push({ path, label, image: true, value: v }); };
   add('eyebrow', 'Eyebrow'); add('title', 'Headline'); add('body', 'Body', true);
   if (p.main) { add('main.eyebrow', 'Eyebrow'); add('main.title', 'Headline'); add('main.body', 'Body', true); add('main.button.label', 'CTA label'); }
+  if (p.main) addI('main.image', 'Main image (URL or upload)');
   if ((b.type === 'hero' || b.type === 'promo') && !p.phones) addI('image', 'Photo (URL or upload)');
   (p.buttons || []).forEach((x, i) => { add(`buttons.${i}.label`, `Button ${i + 1} label`); addU(`buttons.${i}.href`, `Button ${i + 1} URL`); });
   (p.badges || []).forEach((x, i) => addU(`badges.${i}.href`, `${x.store === 'google' ? 'Google Play' : 'App Store'} URL`));
@@ -79,7 +81,7 @@ export function fieldsOf(b) {
   for (const k of ['items', 'cards', 'steps', 'slides', 'posts', 'panels']) (p[k] || []).forEach((it, i) => {
     for (const [key, lab] of TEXT_KEYS) add(`${k}.${i}.${key}`, `${k.replace(/s$/, '')} ${i + 1} ${lab.toLowerCase()}`);
     ['button', 'link'].forEach((bk) => { add(`${k}.${i}.${bk}.label`, `${k.replace(/s$/, '')} ${i + 1} ${bk}`); if (it[bk]) addU(`${k}.${i}.${bk}.href`, `${k.replace(/s$/, '')} ${i + 1} ${bk} URL`); });
-    if (k === 'cards') addI(`${k}.${i}.image`, `card ${i + 1} image (URL or upload)`);
+    if (k === 'cards' || k === 'posts') addI(`${k}.${i}.image`, `${k.replace(/s$/, '')} ${i + 1} image (URL or upload)`);
     (it.buttons || []).forEach((_, j) => add(`${k}.${i}.buttons.${j}.label`, `${k.replace(/s$/, '')} ${i + 1} button ${j + 1}`));
   });
   return out.slice(0, 90);

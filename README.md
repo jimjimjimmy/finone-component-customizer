@@ -137,3 +137,7 @@ Dev server: `npm run serve` (tools/serve.py) sends `Cache-Control: no-store`, so
 
 ### Layout 02 grid and logo
 `#page.l02` (added when the Layout 02 template is loaded) defines `--w`: 75% (max 1440px) at 1700px+, `100% - 80px` at 1050px+, `100% - 40px` below. Header, hero copy, rate row and feature share it, with hairline boundary lines. Logo: `assets/uploads/finalytics-logo.png`, keyed from the Figma logo export (the export is 239x56 at 1x, so it is not retina-sharp; replace with the SVG when available). The Layout 02 preset sets org to Finalytics.ai with that logo.
+
+## Layout 03 "Ironbridge" (variants.css, bottom)
+
+Template "Layout 03 (Ironbridge)" and preset "Ironbridge Members CU (Layout 03)": split hero with a hanging stats strip, about, edge promo on the brand band, quick links, photo tiles, events, membership types, quote, news, CTA band. Composed only from existing blocks (demo entries 110-119 in `js/demo/overrides.js`); restyled by rules scoped under `#page.l03` (set by `render.js`). Signature details: chamfered corners (clip-path) and a ruler-tick "gauge" rule. Placeholder art: `assets/l03/` (`node tools/gen_l03_assets.mjs`). Stat figures, dates and quotes are marked placeholders. Audit helper: `tools/l03_audit.js`. See `run-log.md` for mapping, DIFF list and skill feedback.

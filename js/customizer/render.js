@@ -56,7 +56,7 @@ export function buildDoc(state) {
 <link rel="stylesheet" href="tokens.css?v=${BUST}"><link rel="stylesheet" href="blocks.css?v=${BUST}"><link rel="stylesheet" href="calculator.css?v=${BUST}"><link rel="stylesheet" href="wordmark.css?v=${BUST}"><link rel="stylesheet" href="fullbleed.css?v=${BUST}"><link rel="stylesheet" href="variants.css?v=${BUST}">
 <link id="gf" rel="stylesheet" href="${fonts}"><style id="theme-vars">${themeCss(state.theme)}</style><style>${PREVIEW_CSS}</style></head>
 <body class="blocks-kitchen-sink${state.controlsHidden ? '' : ' edit'}"><div class="site-overlay-dark"></div>${skipLinks()}
-<div id="page" class="site${state.template === 'layout02' ? ' l02' : ''}">${state.showAlert === false ? '' : alertBar(alert)}${siteHeader(header)}<main id="primary" class="site-main">${renderMain(state)}</main>${siteFooter(footer)}</div>${speedbump({ owner: state.org.name })}
+<div id="page" class="site${state.template === 'layout02' ? ' l02' : ''}${state.template === 'layout03' ? ' l03' : ''}">${state.showAlert === false ? '' : alertBar(alert)}${siteHeader(header)}<main id="primary" class="site-main">${renderMain(state)}</main>${siteFooter(footer)}</div>${speedbump({ owner: state.org.name })}
 <script>window.wp_ajax={ajaxurl:'#',swiperUrl:'./swiper.min.js'};</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
