@@ -538,6 +538,7 @@
   #page.l08 .layout.promo-edge { position: relative; }
   #page.l08 .promo-edge .row, #page.l08 .promo-edge .row.reverse { flex-direction: row; position: static; min-height: clamp(560px, 47.0833vw, 904px); align-items: flex-end; justify-content: flex-end; padding-bottom: clamp(80px, 9.5313vw, 183px); box-sizing: border-box; }
   #page.l08 .promo-edge .promo-image { position: absolute; inset: 0; width: 100%; flex: none; }
+  #page.l08 .promo-edge .promo-image img { object-fit: cover; object-position: 50% 50%; }   /* Figma: object-cover, centred */
   #page.l08 .promo-edge .promo-image::after, #page.l08 .promo-edge .row:not(.reverse) .promo-image::after { background: linear-gradient(121.1666deg, rgba(255,255,255,0) 36.27%, rgba(255,255,255,.8) 53.337%, #fff 95.867%), linear-gradient(174.0355deg, rgba(255,255,255,0) 32.845%, rgba(255,255,255,.64) 68.249%, rgba(255,255,255,.643) 68.88%, rgba(255,255,255,.8) 103.12%); }
   #page.l08 .promo-edge .row .promo-content, #page.l08 .promo-edge .row.reverse .promo-content { position: relative; z-index: 1; flex: 0 1 679px; width: 679px; max-width: 100%; align-self: flex-end; margin: 0 max(24px, calc((100% - 1360px) / 2)) 0 0; padding: 24px 40px; box-sizing: border-box; }
 }

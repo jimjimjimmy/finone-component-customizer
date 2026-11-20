@@ -76,7 +76,7 @@ export function applyOverrides(demo) {
     phones: true, badges: [{ store: 'apple', href: '#' }, { store: 'google', href: '#' }], buttons: [], image: U + 'promo-product-600x600-1.png' } };
   demo[122] = { type: 'promo', props: { variant: 'split', reverse: true, edge: true, pt: 'none', pb: 'none', eyebrow: 'Eyebrow category', title: 'Sed ut perspiciatis unde omnis enim ad minima veniam, quis elam',
     body: 'Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia enim ipsam voluptatem quia voluptas.',
-    buttons: [{ label: 'Apply Now', href: '#', variant: 'primary' }, { label: 'Learn More', href: '#', variant: 'secondary' }], image: U + 'hero-boxes-large-01.webp' } };
+    buttons: [{ label: 'Apply Now', href: '#', variant: 'primary' }, { label: 'Learn More', href: '#', variant: 'secondary' }], image: U + 'l08-edge-feature.jpg' } };
   demo[123] = { type: 'promoCards', props: { pt: 75, pb: 75, bg: 'none', cols: 3, title: 'What’s Happening at Granite Credit Union', body: '', headerLink: { label: 'All Articles', href: '#' }, spacing: { section: { bg: 'secondary' }, layouts: {} },
     cards: ['l08-article-1.jpg', 'l08-article-2.jpg', 'l08-article-3.png'].map((f) => ({ eyebrow: 'Eyebrow category', title: 'Sed ut perspiciatis unde omnis', body: '<p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione.</p>', button: { label: 'Learn More', href: '#', variant: 'text' }, image: U + f })) } };
   return demo;
