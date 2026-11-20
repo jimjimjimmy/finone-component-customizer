@@ -63,15 +63,16 @@ function layout08Footer(footer, org) {
 }
 export function buildDoc(state) {
   const { header, footer, alert } = orgChrome(state.org);
-  if (state.template === 'layout08') layout08Footer(footer, state.org);
-  if (state.template === 'layout08' && (!state.org.logo || state.org.logo === FINALYTICS_LOGO)) header.logo = { ...header.logo, src: 'assets/uploads/finalytics-logo-white.svg' };   /* the Figma bar is dark */
+  const l08 = state.template === 'layout08' || state.template === 'layout08v3';
+  if (l08) layout08Footer(footer, state.org);
+  if (l08 && (!state.org.logo || state.org.logo === FINALYTICS_LOGO)) header.logo = { ...header.logo, src: 'assets/uploads/finalytics-logo-white.svg' };   /* the Figma bar is dark */
   const fonts = googleFontsHref(state.theme.fonts, overrideFonts(state.stack));
   return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="vendor/bootstrap.css?v=${BUST}"><link rel="stylesheet" href="vendor/fa-all.min.css"><link rel="stylesheet" href="vendor/ubermenu.min.css"><link rel="stylesheet" href="vendor/tablepress.css">
 <link rel="stylesheet" href="tokens.css?v=${BUST}"><link rel="stylesheet" href="blocks.css?v=${BUST}"><link rel="stylesheet" href="calculator.css?v=${BUST}"><link rel="stylesheet" href="wordmark.css?v=${BUST}"><link rel="stylesheet" href="fullbleed.css?v=${BUST}"><link rel="stylesheet" href="variants.css?v=${BUST}">
 <link id="gf" rel="stylesheet" href="${fonts}"><style id="theme-vars">${themeCss(state.theme)}</style><style>${PREVIEW_CSS}</style></head>
 <body class="blocks-kitchen-sink${state.controlsHidden ? '' : ' edit'}"><div class="site-overlay-dark"></div>${skipLinks()}
-<div id="page" class="site${state.template === 'layout02' || state.template === 'layout08' ? ' l02' : ''}${state.template === 'layout08' ? ' l08' : ''}${state.template === 'layout03' ? ' l03' : ''}">${state.showAlert === false ? '' : alertBar(alert)}${siteHeader(header)}<main id="primary" class="site-main">${renderMain(state)}</main>${siteFooter(footer)}</div>${speedbump({ owner: state.org.name })}
+<div id="page" class="site${state.template === 'layout02' || l08 ? ' l02' : ''}${l08 ? ' l08' : ''}${state.template === 'layout08v3' ? ' l08v3' : ''}${state.template === 'layout03' ? ' l03' : ''}">${state.showAlert === false ? '' : alertBar(alert)}${siteHeader(header)}<main id="primary" class="site-main">${renderMain(state)}</main>${siteFooter(footer)}</div>${speedbump({ owner: state.org.name })}
 <script>window.wp_ajax={ajaxurl:'#',swiperUrl:'./swiper.min.js'};</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>

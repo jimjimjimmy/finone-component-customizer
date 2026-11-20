@@ -692,3 +692,63 @@
   #page.l08 #masthead .ubermenu-nav > li.btn-search > a { font-size: 0; }
   #page.l08 #masthead .ubermenu-nav > li.btn-search a { width: 24px; filter: brightness(0) invert(1); }
 }
+
+/* =====================================================================================================================
+   LAYOUT 08 v3  (Figma "Layout 08 v3", node 210:44688). Same theme and blocks as Layout 08; scoped to #page.l08v3.
+   Mirrored panel hero, split app promo, image-left feature on cream, flat article band, yellow footer, plus soft wave
+   overlays (SVGs composited from the Figma wave vectors; hero + app promo use soft-light, the footer seam uses multiply).
+   ===================================================================================================================== */
+#page.l08v3 .acf-section, #page.l08v3 .layout.hero-panel, #page.l08v3 .layout.promo-edge { position: relative; }
+
+/* hero: panel on the LEFT (707px), photo on the right, waves across the bottom 306px */
+@media (min-width: 1050px) {
+  #page.l08v3 .layout.hero-panel { grid-template-columns: clamp(520px, 36.8229vw, 707px) minmax(0, 1fr); }
+  #page.l08v3 .hero-panel .hero-picture { grid-column: 2; }
+  #page.l08v3 .hero-panel .hero-fade-body, #page.l08v3 .hero-panel .hero-rates { grid-column: 1; }
+  #page.l08v3 .layout.hero-panel::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: clamp(180px, 15.9375vw, 306px); background: url(assets/uploads/l08v3-waves-hero.svg) 0 0 / 100% 100% no-repeat; mix-blend-mode: soft-light; pointer-events: none; z-index: 5; }
+}
+
+/* app promo: dark text panel (indigo + 40% black) on the left 1092px, indigo phone panel on the right, waves at the bottom */
+#page.l08v3 .acf-section:has(> .layout.promo-brand-dark) { background: var(--color-tertiary); }
+#page.l08v3 .acf-section:has(> .layout.promo-brand-dark)::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: clamp(240px, 21.5104vw, 413px); background: url(assets/uploads/l08v3-waves-feature.svg) 0 0 / 100% 100% no-repeat; mix-blend-mode: soft-light; pointer-events: none; z-index: 5; }
+@media (min-width: 1050px) {
+  #page.l08v3 .layout.promo.promo-brand-dark { display: grid; grid-template-columns: 56.875% minmax(0, 1fr); min-height: clamp(560px, 45.8333vw, 880px); padding: 0 !important; background: none; }
+  #page.l08v3 .promo-brand-dark .container, #page.l08v3 .promo-brand-dark .row { display: contents; }
+  #page.l08v3 .promo-brand-dark .promo-content { grid-column: 1; flex: none; width: auto; max-width: none; align-self: stretch; display: flex; flex-direction: column; justify-content: center; padding: 24px clamp(40px, 6.25vw, 120px) 0; box-sizing: border-box; background: linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.4)), var(--color-tertiary); }
+  #page.l08v3 .promo-brand-dark .promo-image { grid-column: 2; flex: none; width: 100%; max-width: none; aspect-ratio: auto; height: auto; display: flex; align-items: center; justify-content: center; }
+  #page.l08v3 .promo-brand-dark .phones { --s: 1; position: relative; left: auto; top: auto; flex: none; width: 560px; height: 606px; transform: scale(var(--s)); transform-origin: center center; }
+  #page.l08v3 .promo-brand-dark .phone-back { display: none; }
+  #page.l08v3 .promo-brand-dark .phone-front { left: 0; }
+  #page.l08v3 .promo-brand-dark .stat-a, #page.l08v3 .promo-brand-dark .stat-b { left: 320px; }
+  #page.l08v3 .promo-brand-dark .stat-c { left: 448px; }
+}
+@container (max-width: 559px) { #page.l08v3 .promo-brand-dark .phones { --s: .95; } } @container (max-width: 531px) { #page.l08v3 .promo-brand-dark .phones { --s: .9; } }
+@container (max-width: 503px) { #page.l08v3 .promo-brand-dark .phones { --s: .85; } } @container (max-width: 475px) { #page.l08v3 .promo-brand-dark .phones { --s: .8; } }
+@container (max-width: 447px) { #page.l08v3 .promo-brand-dark .phones { --s: .75; } } @container (max-width: 419px) { #page.l08v3 .promo-brand-dark .phones { --s: .7; } }
+
+/* feature: photo flush left (729px), copy on cream to its right */
+@media (min-width: 1050px) {
+  #page.l08v3 .layout.promo-edge { background: var(--color-surface); }
+  #page.l08v3 .promo-edge .container { max-width: none; width: 100%; padding: 0; }
+  #page.l08v3 .promo-edge .row, #page.l08v3 .promo-edge .row.reverse { width: 100%; margin: 0; min-height: clamp(560px, 45.8333vw, 880px); align-items: center; justify-content: flex-end; padding-bottom: 0; }
+  #page.l08v3 .promo-edge .promo-image { inset: 0 auto 0 0; width: 37.96875%; }
+  #page.l08v3 .promo-edge .promo-image::after { display: none; }
+  #page.l08v3 .promo-edge .promo-image img { object-fit: cover; object-position: 19.21% 50%; }
+  #page.l08v3 .promo-edge .row .promo-content, #page.l08v3 .promo-edge .row.reverse .promo-content { flex: 0 0 62.03125%; width: 62.03125%; max-width: none; align-self: center; margin: 0; padding: 24px clamp(40px, 10.4167vw, 200px); }
+}
+
+/* articles: flat 50% yellow band, 40px heading, header and cards share the 1440 container with no side inset */
+#page.l08v3 .acf-section:has(> .promo-cards-head) { background: rgba(255, 226, 153, .5) !important; padding: clamp(60px, 7.1875vw, 138px) clamp(16px, 6.25vw, 120px) !important; box-sizing: border-box; --wh: clamp(150px, 15.9375vw, 306px); }
+#page.l08v3 .promo-cards-head { padding: 0; }
+#page.l08v3 .promo-cards-head .intro h2 { font-size: clamp(28px, 2.0833vw, 40px); }
+#page.l08v3 .promo-cards-3 .container { padding: 40px 0; }
+@media (max-width: 679.98px) { #page.l08v3 .promo-cards-head { padding: 0; } #page.l08v3 .promo-cards-3 .container { padding: 24px 0; } }
+/* footer seam: the waves sit over the bottom of the band (the footer paints over their lower third), multiply blend */
+#page.l08v3 .acf-section:has(> .promo-cards-head)::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: calc(var(--wh) * .6765); background: url(assets/uploads/l08v3-waves-footer.svg) 0 0 / 100% var(--wh) no-repeat; mix-blend-mode: multiply; pointer-events: none; z-index: 3; }
+#page.l08v3 footer.site-footer { background: #FFE19D; position: relative; z-index: 4; }
+
+/* Figma rounds 110% of 34px to 37px (two lines = 74), and its button strokes sit inside the 36px box (no extra 2px) */
+#page.l08 .promo .promo-content h2 { line-height: 1.0882; }
+#page.l08 .promo-edge .promo-content .btn-secondary { padding: 5px 17px 6px; }
+#page.l08 .hero-panel .hero-content p { line-height: 1.2917; }   /* Figma rounds 130% of 24px (31.2) to 31px: two lines = 62 */
+@media (min-width: 1050px) { #page.l08v3 .layout.hero-panel { column-gap: 0; } }   /* v3 has no 1px seam between the panel and the photo */

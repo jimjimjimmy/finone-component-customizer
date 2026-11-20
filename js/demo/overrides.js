@@ -79,5 +79,11 @@ export function applyOverrides(demo) {
     buttons: [{ label: 'Apply Now', href: '#', variant: 'primary' }, { label: 'Learn More', href: '#', variant: 'secondary' }], image: U + 'l08-edge-feature.jpg' } };
   demo[123] = { type: 'promoCards', props: { pt: 75, pb: 75, bg: 'none', cols: 3, title: 'What’s Happening at Granite Credit Union', body: '', headerLink: { label: 'All Articles', href: '#' }, spacing: { section: { bg: 'secondary' }, layouts: {} },
     cards: ['l08-article-1.jpg', 'l08-article-2.jpg', 'l08-article-3.png'].map((f) => ({ eyebrow: 'Eyebrow category', title: 'Sed ut perspiciatis unde omnis', body: '<p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione.</p>', button: { label: 'Learn More', href: '#', variant: 'text' }, image: U + f })) } };
+  /* 7. Layout 08 v3 (Figma node 210:44688): same theme, mirrored hero with waves, split app promo, image-left feature on cream, flat article band.
+     Blocks 130-133 reuse the Layout 08 block types; the differences live in `#page.l08v3` rules in variants.css. */
+  demo[130] = { type: 'hero', props: { ...demo[120].props, image: U + 'l08v3-hero.png' } };
+  demo[131] = { type: 'promo', props: { ...demo[121].props, bgImage: undefined } };
+  demo[132] = { type: 'promo', props: { ...demo[122].props, reverse: false } };
+  demo[133] = { type: 'promoCards', props: { ...demo[123].props, spacing: { section: { bg: 'none' }, layouts: {} } } };
   return demo;
 }

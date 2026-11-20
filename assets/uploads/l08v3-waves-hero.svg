@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="306" viewBox="0 0 1920 306" preserveAspectRatio="none" fill="none">
+<path opacity="0.5" d="M1087 90.865C715.5 90.865 380 0 0 0V306H1920V41.0358C1608.5 41.0358 1458.5 90.865 1087 90.865Z" fill="#FFE299"/>
+<path transform="translate(0 15)" opacity="0.5" d="M1920 0C934.15 0 592.524 101.174 0 101.174V291H1920V0Z" fill="white"/>
+<path transform="translate(0 47)" opacity="0.5" d="M1920 100.193C939.214 100.193 945.617 0 0 0V259H1920V100.193Z" fill="white"/>
+</svg>
