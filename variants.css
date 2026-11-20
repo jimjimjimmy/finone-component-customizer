@@ -569,15 +569,20 @@
 #page.l08 .promo-cards .intro, #page.l08 .intro .container { padding-left: 24px; padding-right: 24px; box-sizing: border-box; }
 /* articles band (Figma 195:42267): 1440 container, 48px heading + "All Articles" link, three 480px cards (200 photo + 280 cream panel) */
 #page.l08 .acf-section:has(> .promo-cards-head) { padding-top: clamp(60px, 5.5vw, 105.6px) !important; padding-bottom: clamp(60px, 5.5vw, 105.6px) !important; }
+#page.l08 .acf-section:has(> .promo-cards-head) { background: #ffe299 url(assets/uploads/l08-articles-bg.png) center / cover no-repeat !important; background-blend-mode: overlay; }   /* Figma: #ffe299 + photo at mix-blend overlay */
+#page.l08 .promo-cards-3 .promo-card .card-image { position: relative; overflow: hidden; }
+#page.l08 .promo-cards-3 .row > div:nth-child(1) .card-image img { position: absolute; width: 191.61%; height: 126.66%; left: -26.76%; top: -26.66%; max-width: none; }   /* Figma crop: zoomed on the couple */
+#page.l08 .promo-cards-3 .row > div:nth-child(3) .card-image img { object-fit: fill; object-position: center bottom; }   /* Figma stretches this one to the frame */
 #page.l08 .promo-cards-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; max-width: 1440px; margin: 0 auto; padding: 0 40px; box-sizing: border-box; }
 #page.l08 .promo-cards-head .intro { flex: 1 1 auto; min-width: 0; padding: 0 !important; margin: 0; }
 #page.l08 .promo-cards-head .intro .container, #page.l08 .promo-cards-head .intro .row, #page.l08 .promo-cards-head .intro [class*="col"] { padding: 0; margin: 0; max-width: none; width: 100%; flex: 0 0 100%; text-align: left !important; }
 #page.l08 .promo-cards-head .intro .eyebrow:empty, #page.l08 .promo-cards-head .intro p:empty { display: none; }
 #page.l08 .promo-cards-head .intro h2 { color: #313233; font-size: clamp(32px, 2.5vw, 48px); line-height: 1.1; margin: 0; }
-#page.l08 .promo-cards-head-link { flex: 0 0 auto; width: auto; max-width: none; margin: 0; padding: 0; }
+#page.l08 .promo-cards-head-link { display: flex; align-items: center; line-height: 1.1; flex: 0 0 auto; width: auto; max-width: none; margin: 0; padding: 0; }
 #page.l08 .promo-cards-head-link .btn { display: inline-flex; align-items: center; gap: 8px; padding: 0; border: 0; background: none; color: #313233; font-size: 16px; font-weight: 600; line-height: 1.1; letter-spacing: 0; text-transform: none; white-space: nowrap; }
 #page.l08 .promo-cards-head-link .btn::after { content: ""; width: 16px; height: 16px; background: currentColor; -webkit-mask: url(assets/uploads/icon-arrow-forward.svg) center / contain no-repeat; mask: url(assets/uploads/icon-arrow-forward.svg) center / contain no-repeat; }
-#page.l08 .promo-cards-3 .container { max-width: 1440px; margin: 0 auto; padding: 40px; box-sizing: border-box; }
+#page.l08 .layout.promo-cards-3 { padding-left: 0; padding-right: 0; }   /* the l02 mobile rule pads this 16px; the header does not */
+#page.l08 .promo-cards-3 .container { width: 100%; max-width: 1440px; margin: 0 auto; padding: 40px; box-sizing: border-box; }
 #page.l08 .promo-cards-3 .row { margin: 0; gap: 40px; align-items: stretch; }
 #page.l08 .promo-cards-3 .row > div { padding: 0; }
 @media (min-width: 1050px) { #page.l08 .promo-cards-3 .row { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); } #page.l08 .promo-cards-3 .row > div { width: auto; flex: none; } }
