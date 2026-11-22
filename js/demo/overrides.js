@@ -85,5 +85,21 @@ export function applyOverrides(demo) {
   demo[131] = { type: 'promo', props: { ...demo[121].props, bgImage: undefined } };
   demo[132] = { type: 'promo', props: { ...demo[122].props, reverse: false } };
   demo[133] = { type: 'promoCards', props: { ...demo[123].props, spacing: { section: { bg: 'none' }, layouts: {} } } };
+
+  /* 6. Mobile Home v01 (Figma 230:48309): copy, rates and imagery as in the frame. Assets are local copies of the Figma exports. */
+  const M = 'assets/m01/', mrate = (v) => ({ lead: 'Rates up to', value: v, unit: '%', label: 'APY*', track: true });
+  const mt = (v) => ({ icon: U + 'icon-piggy-outline.svg', title: 'savings account', rate: mrate(v), cta: { label: 'Learn More', href: '#' } });
+  demo[140] = { type: 'hero', props: { size: 'marquee', fade: true, tone: 'light', bg: 'tertiary', image: M + 'hero.png', eyebrow: 'Eyebrow category', title: 'Tap into the Value of Your Home',
+    body: 'Your possibilities are endless with a 12-month Personal Loan at 8.99% APR*.', buttons: [] } };
+  demo[141] = { type: 'rateCards', props: { appearance: 'frosted', pt: 'none', pb: 'none', tiles: [mt('28.05'), mt('11.05'), mt('0.05')], buttons: [{ label: 'See all rates', href: '#', variant: 'primary' }] } };
+  demo[142] = { type: 'promo', props: { variant: 'split', reverse: false, brandDark: true, pt: 'none', pb: 'none', eyebrow: 'Eyebrow category', title: 'Sed ut perspiciatis unde omnis enim ad minima veniam, quis elam',
+    body: 'Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia enim ipsam voluptatem quia voluptas.',
+    phones: 'img', phoneImage: M + 'phone-screen.png', stats: { ring: '20%', title: 'Monthly Stats', noteLead: '+20', note: 'better performance', earningLabel: 'Earning', earning: '10,221', spendingLabel: 'Spending', spending: '3,986' },
+    badges: [{ store: 'apple', href: '#', src: M + 'badge-ios.svg' }, { store: 'google', href: '#', src: M + 'badge-android.svg' }], buttons: [] } };
+  demo[143] = { type: 'promo', props: { variant: 'split', reverse: true, edge: true, pt: 'none', pb: 'none', eyebrow: 'Eyebrow category', title: 'Sed ut perspiciatis unde omnis enim ad minima veniam, quis elam',
+    body: 'Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia enim ipsam voluptatem quia voluptas.',
+    buttons: [{ label: 'Apply now', href: '#', variant: 'primary' }, { label: 'Learn More', href: '#', variant: 'secondary' }], image: M + 'feature-image.jpg' } };
+  demo[144] = { type: 'promoCards', props: { pt: 'none', pb: 'none', bg: 'none', cols: 3, title: 'What’s Happening at Granite', body: '',
+    cards: [0, 1, 2].map(() => ({ eyebrow: 'Eyebrow category', title: 'Sed ut perspiciatis unde omnis', body: '<p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione.</p>', button: { label: 'Learn more', href: '#', variant: 'text' }, image: M + 'article.jpg' })) } };
   return demo;
 }

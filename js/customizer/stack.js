@@ -28,6 +28,7 @@ export const TEMPLATES = {
   layout02: { name: 'Layout 02', alert: false, preset: 'layout02', blocks: [100, 102, 103, 105] },  /* Gradient-fade hero, frosted rate strip, brand-dark app promo, edge-to-edge promo, 3 cards (header/footer are site chrome) */
   layout03: { name: 'Layout 03 (Ironbridge)', alert: false, preset: 'ironbridge', blocks: [110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 57] },  /* split hero + stats strip, about, featured edge promo, quick links, photo tiles, events, member types, quote, news, CTA band */
   layout08: { name: 'Layout 08 (Yellow panel hero)', alert: false, preset: 'layout08', blocks: [120, 121, 122, 123] },  /* split panel hero + rate row, app promo on photo, edge feature, article cards (header/footer are site chrome) */
+  mobile01: { name: 'Mobile Home v01 (Figma 230:48309)', alert: false, preset: 'layout02', blocks: [140, 141, 142, 143, 144] },  /* Figma Mobile Home v01: hero text, 3 rate cards, app feature, image + article, article carousel (footer is site chrome) */
   layout08v3: { name: 'Layout 08 v3 (Waves)', alert: false, preset: 'layout08', blocks: [130, 131, 132, 133] },  /* Figma 210:44688: mirrored panel hero with waves, split app promo, image-left feature on cream, flat article band, yellow footer */
   blank: { name: 'Blank canvas', blocks: [] },
 };
@@ -68,8 +69,9 @@ export function fieldsOf(b) {
   const addI = (path, label) => { const v = getP(p, path); if (typeof v === 'string' && v) out.push({ path, label, image: true, value: v }); };
   add('eyebrow', 'Eyebrow'); add('title', 'Headline'); add('body', 'Body', true);
   if (p.main) { add('main.eyebrow', 'Eyebrow'); add('main.title', 'Headline'); add('main.body', 'Body', true); add('main.button.label', 'CTA label'); }
+  if (p.phones === 'img') { addI('phoneImage', 'Phone screen image (URL or upload)'); for (const [k, l] of [['ring', 'Stat ring'], ['title', 'Stat title'], ['noteLead', 'Stat note (bold)'], ['note', 'Stat note'], ['earningLabel', 'Earning label'], ['earning', 'Earning amount'], ['spendingLabel', 'Spending label'], ['spending', 'Spending amount']]) add(`stats.${k}`, l); }
   if (p.main) addI('main.image', 'Main image (URL or upload)');
-  if ((b.type === 'hero' || b.type === 'promo') && !p.phones) addI('image', 'Photo (URL or upload)');
+  if ((b.type === 'hero' || b.type === 'promo') && (!p.phones || p.phones === 'img') && p.phones !== 'img') addI('image', 'Photo (URL or upload)');
   (p.buttons || []).forEach((x, i) => { add(`buttons.${i}.label`, `Button ${i + 1} label`); addU(`buttons.${i}.href`, `Button ${i + 1} URL`); });
   (p.badges || []).forEach((x, i) => addU(`badges.${i}.href`, `${x.store === 'google' ? 'Google Play' : 'App Store'} URL`));
   const tk = b.type === 'rateCards' ? 'tiles' : (b.type === 'hero' && p.rates ? 'rates' : null);

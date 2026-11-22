@@ -8,7 +8,7 @@ const controls = () => `<div class="swiper-button-prev">${SWIPER_PREV}</div><div
 export const rateTile = (t) => `<div class="card item-stagger swiper-slide item-stagger">
     <div class="card-header">${img(t.icon, { 'aria-hidden': 'true' })}${t.href ? `<a href="${t.href}">${t.title}</a>` : ' ' + t.title + ' '}</div>
     <div class="card-body">${t.rate
-      ? ` ${t.rate.lead} <div class="rate-group"><div class="div1">${t.rate.value}</div><div class="div2">${t.rate.unit ?? '%'}</div><div class="div3">${t.rate.label}<sup>*</sup></div></div>`
+      ? ` ${t.rate.lead} <div class="rate-group"><div class="div1">${t.rate.track ? String(t.rate.value).replace(/^(\d+\.)(.*)$/, '<span class="trk">$1</span>$2') : t.rate.value}</div><div class="div2">${t.rate.unit ?? '%'}</div><div class="div3">${t.rate.label}<sup>*</sup></div></div>`
       : `<div class="card-text"> ${t.text} </div>`}</div>
     <div class="card-footer"><a href="${t.cta.href ?? '#'}" class="btn btn-primary-dark">${t.cta.label}</a></div>
   </div>`;

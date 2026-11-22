@@ -4,7 +4,7 @@ import { section, layout, eyebrow, img, imageFit, cta, cx } from '../lib.js';
 const STORE = { apple: ['Download on the', 'App Store', '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.6c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.1-2.8.9-3.5.9s-1.8-.8-3-.8c-1.5 0-3 .9-3.8 2.3-1.6 2.8-.4 7 1.2 9.3.8 1.1 1.700 2.400 2.900 2.300 1.200 0 1.600-.7 3-.7s1.800.7 3 .7 2-1.100 2.800-2.200c.9-1.300 1.200-2.500 1.200-2.600-.1 0-2.400-.9-2.400-3.900zM14.100 5.800c.6-.8 1.100-1.800.9-2.800-.9 0-2 .6-2.600 1.400-.6.700-1.100 1.700-.9 2.700 1 .1 2-.5 2.600-1.300z"/></svg>'],
   google: ['GET IT ON', 'Google Play', '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 2.500v19l10-9.500L4 2.500zm11.200 8.300L6.100 2.100l10.700 6.100-1.600 2.600zm0 2.400 1.600 2.600-10.700 6.100 9.100-8.700zm3.300-3.800-2 1.200-1.800-1.700 1.800-1.700 2 1.200c.9.500.9 1.500 0 1z"/></svg>'] };
 export const badgeRow = (badges = []) => badges.length
-  ? `<div class="store-badges">${badges.map((b) => { const [a, n, ic] = STORE[b.store] ?? STORE.apple; return `<a href="${b.href ?? '#'}" class="store-badge" aria-label="${a} ${n}">${ic}<span><small>${a}</small><strong>${n}</strong></span></a>`; }).join('')}</div>` : '';
+  ? `<div class="store-badges">${badges.map((b) => { const [a, n, ic] = STORE[b.store] ?? STORE.apple; if (b.src) return `<a href="${b.href ?? '#'}" class="store-badge store-badge-img" aria-label="${a} ${n}"><img src="${b.src}" alt=""></a>`; return `<a href="${b.href ?? '#'}" class="store-badge" aria-label="${a} ${n}">${ic}<span><small>${a}</small><strong>${n}</strong></span></a>`; }).join('')}</div>` : '';
 
 /* Two overlapping phone mockups (pure HTML/CSS; frames use --color-highlight). Figma "Online Banking Phone": 724x606 group, front 280x606, rear 196x424 (same UI at 70%), stats cluster to the right. */
 const tx = (name, date, amt, up) => `<li><i class="${up ? 'up' : ''}"></i><span><b>${name}</b><em>${date}</em></span><strong class="${up ? 'pos' : ''}">${amt}</strong></li>`;
@@ -21,15 +21,20 @@ export const phoneMock = () => `<div class="phones" aria-hidden="true">
   <div class="stat stat-a"><span class="ring">20%</span><span><b>Monthly Stats</b><small>+20 better performance</small></span></div>
   <div class="stat stat-b"><small>Earning</small><b><sup>$</sup> 10,221</b></div><div class="stat stat-c"><small>Spending</small><b><sup>$</sup> 3,986</b></div></div>`;
 
+/* Phone pair as photos of the app screen (Figma "Online Banking Phone", mobile): two overlapping phones plus a stats stack. s = stats copy. */
+export const phoneImg = (src, s = {}) => `<div class="phones-img" aria-hidden="true"><div class="ph-pair"><div class="ph-sm"><img src="${src}" alt=""></div><div class="ph-lg"><img src="${src}" alt=""></div></div>
+  <div class="ph-stats"><div class="ph-stat-a"><span class="ph-ring">${s.ring ?? ''}</span><span class="ph-stat-t"><b>${s.title ?? ''}</b><small><strong>${s.noteLead ?? ''}</strong> ${s.note ?? ''}</small></span></div>
+  <div class="ph-stat-row"><div class="ph-stat"><small>${s.earningLabel ?? ''}</small><b><i>$</i>${s.earning ?? ''}</b></div><div class="ph-stat"><small>${s.spendingLabel ?? ''}</small><b><i>$</i>${s.spending ?? ''}</b></div></div></div></div>`;
+
 /* Promo  (ACF: promo-product | promo-split | promo-offset | promo-full), each with `reverse`.
    props: variant, reverse, bg, brandDark (brand-colour background + light text), edge (image flush to the viewport edge, 50/50), badges [{store,href}], phones (two overlapping phone mockups instead of an image), logo, eyebrow, title, body, buttons, image, nested (inside a tab)            */
 export function promo(p = {}) {
   const { variant = 'split', reverse = false, bg = 'none', sectionBg = 'none', secSp, logo, eyebrow: e, title, body, buttons = [], image, nested = false,
-          pt = 50, pb = 50, mt = 'none', mb = 'none', imageClass, brandDark = false, edge = false, badges = [], phones = false, bgImage } = p;
+          pt = 50, pb = 50, mt = 'none', mb = 'none', imageClass, brandDark = false, edge = false, badges = [], phones = false, bgImage, phoneImage, stats } = p;
   const fade = reverse ? 'fade-animate-right' : 'fade-animate-left';
   const inner = `<div class="container"><div class="row g-0 align-items-center ${reverse ? 'reverse' : ''}">
       <div class="promo-content ${fade}">${logo ? `<div class="promo-logo">${img(logo)}</div>` : ''}${eyebrow(e)}<h2>${title}</h2><p>${body}</p>${cta(buttons)}${badgeRow(badges)}</div>
-      <div class="promo-image">${phones ? phoneMock() : imageFit(image, imageClass ? { class: imageClass } : {})}</div>
+      <div class="promo-image">${phones === 'img' ? phoneImg(phoneImage, stats) : phones ? phoneMock() : imageFit(image, imageClass ? { class: imageClass } : {})}</div>
     </div></div>`;
   const mods = cx(brandDark && 'promo-brand-dark', edge && 'promo-edge');
   if (nested) return layout(`promo promo-${variant} ${mods}`.trim(), { spacing: false }, inner);
